@@ -245,6 +245,19 @@ const finalOutput = data.filter((a) => a > 55).map((a) => a * 5).reduce((a, b) =
 console.log(finalOutput)
 
 ====================================
+// Javascript Objects(key - value pairs) ==> {}
+// fitness information 
+// const fitnessData = [ "stepsTaken", 10000, "caloriesBurned", 200 ]
+
+// const fitnessData = {
+//     stepsTaken: 10000,
+//     caloriesBurned: 200
+// }
+
+// // console.log(fitnessData)
+// console.log(fitnessData.stepsTaken)
+
+
 const details = [ 
     {
         name: "Raju",
