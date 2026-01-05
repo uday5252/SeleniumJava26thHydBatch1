@@ -243,3 +243,19 @@ console.log(result)
 const data = [ 10, 20, 30, 40, 50, 60, 70, 80, 90 ]
 const finalOutput = data.filter((a) => a > 55).map((a) => a * 5).reduce((a, b) => a + b)
 console.log(finalOutput)
+
+====================================
+const details = [ 
+    {
+        name: "Raju",
+        marks: [ 50, 67, 89, 99 ]
+    }, 
+    { 
+        name: "Mary",
+        marks: [ 45, 89, 23, 65 ]
+    }, 
+    {
+        name: "Cook",
+        marks: [ 56, 43, 90, 100 ]
+    } 
+]
