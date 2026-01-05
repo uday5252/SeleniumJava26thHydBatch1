@@ -272,3 +272,47 @@ const details = [
         marks: [ 56, 43, 90, 100 ]
     } 
 ]
+=========================================
+
+// Array of objects
+const details = [ 
+    {
+        name: "Raju",
+        marks: [ 50, 67, 89, 99 ]
+    }, 
+    { 
+        name: "Mary",
+        marks: [ 45, 89, 23, 65 ]
+    }, 
+    {
+        name: "Cook",
+        marks: [ 56, 43, 90, 100 ]
+    } 
+]
+
+const totalMarks = details.map(function(i)
+{
+    // [ 50, 67, 89, 99 ]
+    const sumMarks = i.marks.reduce(function(a, b)
+    {
+        return a + b
+    })
+
+   return sumMarks
+})
+
+// [305, 222, 289]
+
+const highestMark = totalMarks.reduce(function(a, b)
+{
+    if(a > b)
+    {
+        return a
+    }
+    else
+    {
+        return b
+    }
+})
+
+console.log(highestMark)
