@@ -45,5 +45,68 @@ for(var i = 1; i < 11; i++)
 
 console.log(i)
 
+======================================
+let a = 10
+let b = 20
+console.log(a + b)
 
+let c = 30
+let d = 40
+console.log(c + d)
+
+Functions ==> we can use functions to make certain code to be resuable multiple table
+
+FUNCTION DECALRATION
+
+function add(num1, num2) // variables(parameters)
+{
+    console.log(num1 + num2)    
+}
+
+add(10, 20) // values(arguments)
+
+
+function add(num1, num2) // variables(parameters)
+{
+    return num1 + num2  
+}
+
+let result = add(10, 20) // values(arguments)
+console.log(result)
+
+FUNCTION EXPRESSION
+
+const add = function(num1, num2)
+{
+    console.log(num1 + num2)    
+}
+
+add(100, 200)
+
+
+
+
+
+function add(num1, num2) 
+{
+    console.log(num1 + num2)    
+}
+
+add(10, 20)
+
+
+
+
+const add = function(num1, num2)
+{
+    console.log(num1 + num2)    
+}
+
+add(100, 200)
+
+
+
+const add = (num1, num2) => num1 + num2    
+const result = add(400, 300)
+console.log(result)
 
