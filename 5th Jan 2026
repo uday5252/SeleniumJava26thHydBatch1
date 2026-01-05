@@ -110,3 +110,136 @@ const add = (num1, num2) => num1 + num2
 const result = add(400, 300)
 console.log(result)
 
+==============================================
+// write the JS code, to multiply each and every element with 5
+
+// const numbers = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// numbers.forEach(function(ele, index, arr)
+// {
+//     console.log(ele * 5)
+// })
+
+// write the JS code, to multiply each and every element with 5 and print the output in array format only
+
+// [ 50, 100, 150, ........... ]
+
+// map()
+
+
+
+// const numbers = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// // result = [ 50, 100 ]
+
+// const result = numbers.map(function(ele, index, arr)
+// {
+//     return ele * 5
+// })
+
+// console.log(result)
+
+
+// const numbers = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// // result = [ 50, 100 ]
+
+// const result = numbers.forEach(function(ele, index, arr)
+// {
+//     return ele * 5
+// })
+
+// console.log(result) //udefined
+
+
+// const numbers = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// const result = numbers.map(function(ele, index, arr)
+// {
+//     if( ele > 55)
+//     {
+//         return ele * 5
+//     }
+// })
+
+// console.log(result) // 8 elements
+
+
+// const numbers = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// const result = numbers.filter(function(ele, index, arr)
+// {
+//     if( ele > 55)
+//     {
+//         return ele * 5
+//     }
+// })
+
+// console.log(result) // 3 elements ==> [ 60, 70, 80 ]
+
+
+
+// const data = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+// // [ 300, 350, 400 ]
+// const result = data.filter(function(a)
+// {
+//     if(a > 55)
+//     {
+//         return a
+//     }
+// })
+
+// const output = result.map(function(a)
+// {
+//     return a * 5
+// })
+
+// console.log(output)
+
+
+// const data = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// const output = data.filter(function(a)
+// {
+//     if(a > 55)
+//     {
+//         return a
+//     }
+// }).map(function(a)
+// {
+//     return a * 5
+// })
+
+// console.log(output)
+
+
+
+// const data = [ 10, 20, 30, 40, 50, 60, 70, 80 ]
+
+// const output = data.filter((a) =>
+// {
+//     if(a > 55)
+//     {
+//         return a
+//     }
+// }).map((a) =>a * 5)
+
+// console.log(output)
+
+
+
+// const data = [ 10, 20, 30, 40, 50, 60, 70, 80, 90 ]
+// const output = data.filter((a) => a > 55).map((a) => a * 5)
+// console.log(output)
+
+
+
+
+// output = [ 300, 350, 400, 450 ] ==> 1500 ==> reduce()
+// map(5) ==> 5
+// filter(5) ==> <=5
+// reduce(5 OR 50 OR 500) ==> 1
+
+const data = [ 10, 20, 30, 40, 50, 60, 70, 80, 90 ]
+const finalOutput = data.filter((a) => a > 55).map((a) => a * 5).reduce((a, b) => a + b)
+console.log(finalOutput)
