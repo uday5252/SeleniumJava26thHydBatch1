@@ -1,0 +1,49 @@
+// console.log('Welcome to Javascript')
+
+// store the name of a person and age of a person
+
+// var username = "Raju"
+// let age = 40
+// const city = "Mumbai"
+
+// console.log(username, age, city)
+
+// console.log(username)
+// console.log(age)
+// console.log(city)
+
+
+// const age = 40
+// console.log(age)
+// age = 50
+// console.log(age)
+
+
+// var age = 40
+// console.log(age)
+// age = 50
+// console.log(age) 
+
+// let age = 40
+// console.log(age)
+// age = 50
+// console.log(age)
+
+
+// for loop
+// for(let i = 1; i < 11; i++)
+// {
+//     console.log(i)
+// }
+
+// console.log(i)
+
+for(var i = 1; i < 11; i++)
+{
+    console.log(i)
+}
+
+console.log(i)
+
+
+
