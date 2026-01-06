@@ -1,0 +1,30 @@
+let numbers = [ 1, 2, -2, -3, 1, 5 ]
+let k = 4
+
+let windowLeft = 0
+let windowSum = 0 // 1
+let maxSum = 0
+
+// windowSum = -3
+// maxSum = 1
+
+// [ 1, 2, -2, -3, 1, 5 ]
+
+for(let windowRight = 0; windowRight < numbers.length; windowRight++)
+{
+   windowSum = windowSum + numbers[windowRight] 
+
+  // condition
+
+  if(windowRight >= k - 1)
+  {
+     maxSum = Math.max(maxSum, windowSum)
+     windowSum = windowSum - numbers[windowLeft]
+     windowLeft++ 
+  }
+
+}
+
+console.log(maxSum)
+
+
