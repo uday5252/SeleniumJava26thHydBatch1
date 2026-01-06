@@ -1,0 +1,85 @@
+// Regular Expression
+
+// test() ==> true OR false
+
+
+// let details = "Hyderabad is a city!"
+
+// let regEx = /Hyderabad/
+
+// console.log(regEx.test(details))
+
+// -----------
+
+// let details = "Hyderabad is a city!"
+
+// // ^ ==> starts with
+
+// let regEx = /^Hyderabad/
+
+// console.log(regEx.test(details))
+
+// ----------------
+
+// let details = "Hyderabad is a city!"
+
+// // $ ==> ends with
+
+// let regEx = /^Hyderabad$/
+
+// console.log(regEx.test(details))
+
+// --------------------
+
+// /---/flag
+// i ==> case insensitive
+
+// let details = "Hyderabad is a city!"
+
+// let regEx = /hyderabad/i
+
+// console.log(regEx.test(details))
+
+// ---------------------
+
+// g ==> global
+
+// let details = "Hello and again Hello what are you doing? and again hello"
+
+// let regEx = /Hello/ig
+
+// console.log(details.match(regEx).length)
+
+// -----------------
+
+// let details = "hello"
+
+// let regEx = /[aeiou]/g
+
+// console.log(details.match(regEx))
+
+
+// let details = "Hyderabad is a city 17 1 298"
+
+// let regEx = /[0-9]/g
+
+// console.log(details.match(regEx))
+
+// --------
+
+// let details = "Hyderabad is a city 17 1 298"
+
+// let regEx = /[a-zA-Z0-9]/g
+
+// console.log(details.match(regEx))
+
+// ------------------
+
+// Write a Regex to check whether the mobile no is valid OR not
+
+// {0-9} ==> \d
+
+// let mobileNo = "911323906785"
+// let regEx = /^[6-9]\d{9}$/
+
+// console.log(regEx.test(mobileNo))
