@@ -1,29 +1,18 @@
 
-const addBtn = document.getElementById("add")
-const inputBox = document.getElementById("task")
-const htmlBody = document.getElementById("body")
+// create how many img tags ==> 500 img tag
 
+const htmlBODY = document.getElementById("body")
 
-addBtn.addEventListener("click", function()
+for(let i = 1; i < 951; i++)
 {
-    // collect the data from the input box
-    let enteredTask = inputBox.value
-    // create h1 tag
-    const myH1 = document.createElement("h1") // <h1></h1>
-    
-    myH1.textContent = enteredTask
+    const IMG = document.createElement("img")
+    IMG.setAttribute("src", `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`)
 
-    htmlBody.append(myH1)
+    // keep IMG tags inside index.html
+    htmlBODY.append(IMG)
+}
 
-    inputBox.value = ""
-
-})
-
-
-
-
-
-
+// backtick ==> ` OR ""
 
 
 
