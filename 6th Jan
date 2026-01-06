@@ -83,3 +83,49 @@
 // let regEx = /^[6-9]\d{9}$/
 
 // console.log(regEx.test(mobileNo))
+
+==========================================================================
+// . ==> any character
+
+// console.log("cat".match(/c.t/g))
+// console.log("caat".match(/c...+t/g))
+// console.log("mat".match(/c.t/g))
+
+
+
+// console.log("caaat raat sat cat".match(/a.+t/g))
+// ['aaat raat sat cat']
+
+
+// console.log("caaat raat sabt cat".match(/a.+?t/g))
+// ['aaat', 'aat', 'at cat']
+
+// console.log(/\.js/.test("app.js"))
+// console.log(/\.js/.test("app.txt"))
+
+// \. ==> look for . symbol
+// . ==> look for any character
+
+
+// console.log(/[.]/.test("app.js"))
+
+// \. and [.] ==> same
+
+
+// /c.t/ ==> any character
+// /[c.t]/ ==> looks for c, t and .
+// /c\.t/ ==> looks for c.t
+
+
+// Write a regualr expression toc heck whether the
+// website url is correct OR wrong
+
+// https://www.facebook.com ==> V
+// http://www.facebook.com ==> V
+// ://www.facebook.com ==> I
+// https://ww.facebook.com ==> I
+
+let regEx = /^https?:\/\/www\.[a-zA-Z]+\.com$/
+let url = "https://www.facebook.com"
+console.log(regEx.test(url))
+// Regex ==> gmail id valid OR invalid
