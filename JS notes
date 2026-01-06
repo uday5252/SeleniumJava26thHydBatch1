@@ -1,0 +1,263 @@
+
+ 1️⃣ JavaScript Variables
+
+Variables store data values.
+
+ 🔹 Ways to Declare Variables
+
+| Keyword | Scope      | Reassign | Hoisting | Use Case        |
+| - | - | -- | -- |  |
+| `var`   | Function   | ✅        | Yes      | Old JS (avoid)  |
+| `let`   | Block `{}` | ✅        | No       | Changing values |
+| `const` | Block `{}` | ❌        | No       | Fixed values    |
+
+js
+let age = 25
+age = 26
+
+const name = "Uday"
+// name = "Kiran" ❌ error
+
+
+
+
+ 2️⃣ JavaScript Data Types
+
+ 🔹 Primitive Data Types
+
+| Type      | Example         |
+|  |  |
+| Number    | `10`, `3.5`     |
+| String    | `"Hello"`       |
+| Boolean   | `true`, `false` |
+| Undefined | `let x;`        |
+| Null      | `let y = null`  |
+| BigInt    | `123n`          |
+| Symbol    | `Symbol("id")`  |
+
+js
+typeof 10        // "number"
+typeof "Hi"      // "string"
+typeof null      // "object" (JS bug)
+
+
+
+
+ 🔹 Non-Primitive (Reference) Types
+
+| Type     | Example         |
+| -- |  |
+| Object   | `{name:"Uday"}` |
+| Array    | `[1,2,3]`       |
+| Function | `function() {}` |
+
+
+
+ 3️⃣ JavaScript Functions
+
+A function is a block of reusable code.
+
+ 🔹 Normal Function
+
+js
+function add(a, b) {
+  return a + b
+}
+
+
+ 🔹 Function Expression
+
+js
+const add = function(a, b) {
+  return a + b
+}
+
+
+ 🔹 Arrow Function
+
+js
+const add = (a, b) => a + b
+
+
+ 🔹 Callback Function
+
+js
+function greet(name, callback) {
+  callback(name)
+}
+
+greet("Uday", function(n) {
+  console.log("Hello", n)
+})
+
+
+
+
+ 4️⃣ JavaScript Arrays
+
+Arrays store multiple values in a single variable.
+
+js
+let fruits = ["Apple", "Banana", "Orange"]
+
+
+ 🔹 Array Index
+
+js
+fruits[0]   // "Apple"
+
+
+
+
+ 5️⃣ Important Array Functions
+
+ 🔹 forEach()
+
+➡ Executes a function for each element
+➡ Does NOT return a new array
+
+js
+let nums = [1, 2, 3]
+
+nums.forEach(num => {
+  console.log(num * 2)
+})
+
+
+
+
+ 🔹 map()
+
+➡ Transforms array
+➡ Returns new array
+
+js
+let nums = [1, 2, 3]
+
+let doubled = nums.map(num => num * 2)
+// [2, 4, 6]
+
+
+
+
+ 🔹 filter()
+
+➡ Filters values based on condition
+➡ Returns new array
+
+js
+let nums = [10, 20, 30, 40]
+
+let result = nums.filter(n => n > 20)
+// [30, 40]
+
+
+
+
+ 🔹 reduce()
+
+➡ Reduces array to a single value
+
+js
+let nums = [1, 2, 3, 4]
+
+let sum = nums.reduce((total, num) => {
+  return total + num
+}, 0)
+
+// sum = 10
+
+
+🔹 Real Example:
+
+js
+let prices = [100, 200, 300]
+
+let total = prices.reduce((acc, price) => acc + price, 0)
+
+
+
+
+ 6️⃣ DOM (Document Object Model)
+
+DOM allows JavaScript to interact with HTML.
+
+ 🔹 Changing Content
+
+js
+document.getElementById("title").innerText = "Hello JS"
+
+
+ 🔹 Changing Styles
+
+js
+element.style.color = "red"
+
+
+
+
+ 🔹 Events
+
+js
+button.addEventListener("click", function() {
+  alert("Clicked!")
+})
+
+
+
+
+ 7️⃣ Regular Expressions (Regex)
+
+Regex is used for pattern matching.
+
+ 🔹 Syntax
+
+js
+/pattern/flags
+
+
+ 🔹 Common Flags
+
+| Flag | Meaning          |
+| - | - |
+| `g`  | global           |
+| `i`  | case-insensitive |
+| `m`  | multiline        |
+
+
+
+ 🔹 Examples
+
+ Check if string contains "cat"
+
+js
+/cat/.test("my cat")  // true
+
+
+
+
+ Match digits
+
+js
+"abc123".match(/\d+/)
+// ["123"]
+
+
+
+
+ Email Validation (basic)
+
+js
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+emailRegex.test("test@gmail.com")
+
+
+
+
+ Non-Greedy Match (like your earlier doubt)
+
+js
+"a123t a45t".match(/a.+?t/g)
+// ["a123t", "a45t"]
+
+
