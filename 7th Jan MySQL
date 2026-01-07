@@ -1,0 +1,33 @@
+create database employee_db;
+
+use employee_db;
+
+create table employees(id int, 
+name varchar(40), 
+salary int, 
+city varchar(30));
+
+-- insert the data
+ 
+ insert into employees 
+ values(100, "Raju", 40000, "Pune");
+ 
+  insert into employees 
+ values(200, "Cook", 30000, "Bangalore");
+ 
+  insert into employees 
+ values(300, "Rani", 50000, "Pune");
+ 
+ -- read the employees
+ 
+ select * from employees;
+ 
+ update employees set salary=50000 
+ where name='Raju';
+ 
+ delete from employees where name='Cook';
+ 
+ 
+ 
+ 
+ 
