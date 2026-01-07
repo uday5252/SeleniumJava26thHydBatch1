@@ -1,0 +1,148 @@
+CREATE TABLE food (
+    food_id INT,
+    food_name VARCHAR(50),
+    category VARCHAR(50),
+    restaurant VARCHAR(50),
+    price INT,
+    quantity INT
+);
+INSERT INTO food VALUES
+(1, 'Pizza',  'Fast Food', 'Dominos',   300, 5),
+(2, 'Burger', 'Fast Food', 'McD',       150, 8),
+(3, 'Pasta',  'Italian',   'Dominos',   250, 4),
+(4, 'Biryani','Indian',    'Paradise',  350, 6),
+(5, 'Dosa',   'Indian',    'Saravana',  120, 10),
+(6, 'Pizza',  'Fast Food', 'Dominos',   300, 7),
+(7, 'Burger', 'Fast Food', 'McD',       150, 5),
+(8, 'Pasta',  'Italian',   'PizzaHut',  270, 3);
+
+======================================================
+## 🍔 FOOD TABLE (Sample Data)
+
+| food_id | food_name | category  | restaurant | price | quantity |
+| ------- | --------- | --------- | ---------- | ----- | -------- |
+| 1       | Pizza     | Fast Food | Dominos    | 300   | 5        |
+| 2       | Burger    | Fast Food | McD        | 150   | 8        |
+| 3       | Pasta     | Italian   | Dominos    | 250   | 4        |
+| 4       | Biryani   | Indian    | Paradise   | 350   | 6        |
+| 5       | Dosa      | Indian    | Saravana   | 120   | 10       |
+| 6       | Pizza     | Fast Food | Dominos    | 300   | 7        |
+| 7       | Burger    | Fast Food | McD        | 150   | 5        |
+| 8       | Pasta     | Italian   | PizzaHut   | 270   | 3        |
+
+---
+
+ 1️⃣ Total number of food items per category
+
+| category  | total_items |
+| --------- | ----------- |
+| Fast Food | 4           |
+| Indian    | 2           |
+| Italian   | 2           |
+
+---
+
+ 2️⃣ Average price per category
+
+| category  | avg_price |
+| --------- | --------- |
+| Fast Food | 225       |
+| Indian    | 235       |
+| Italian   | 260       |
+
+---
+
+ 3️⃣ Maximum price per category
+
+| category  | max_price |
+| --------- | --------- |
+| Fast Food | 300       |
+| Indian    | 350       |
+| Italian   | 270       |
+
+---
+
+ 4️⃣ Minimum price per category
+
+| category  | min_price |
+| --------- | --------- |
+| Fast Food | 150       |
+| Indian    | 120       |
+| Italian   | 250       |
+
+---
+
+ 5️⃣ Total quantity sold per food item
+
+| food_name | total_quantity |
+| --------- | -------------- |
+| Pizza     | 12             |
+| Burger    | 13             |
+| Pasta     | 7              |
+| Biryani   | 6              |
+| Dosa      | 10             |
+
+---
+
+ 6️⃣ Total revenue per food item (price × quantity)
+
+| food_name | total_revenue |
+| --------- | ------------- |
+| Pizza     | 3600          |
+| Burger    | 1950          |
+| Pasta     | 1810          |
+| Biryani   | 2100          |
+| Dosa      | 1200          |
+
+---
+
+ 7️⃣ Categories having more than 2 food items
+
+| category  | total_items |
+| --------- | ----------- |
+| Fast Food | 4           |
+
+---
+
+ 8️⃣ Food items with total quantity > 10
+
+| food_name | total_quantity |
+| --------- | -------------- |
+| Pizza     | 12             |
+| Burger    | 13             |
+
+---
+
+ 9️⃣ Categories where average price > 250
+
+| category | avg_price |
+| -------- | --------- |
+| Italian  | 260       |
+
+---
+
+ 🔟 Food items appearing more than once
+
+| food_name | count |
+| --------- | ----- |
+| Pizza     | 2     |
+| Burger    | 2     |
+| Pasta     | 2     |
+
+---
+
+ 1️⃣1️⃣ Restaurants having total revenue > 3000
+
+| restaurant | total_revenue |
+| ---------- | ------------- |
+| Dominos    | 4850          |
+
+---
+
+ 1️⃣2️⃣ Categories whose max price > 300
+
+| category | max_price |
+| -------- | --------- |
+| Indian   | 350       |
+
+---
