@@ -105,3 +105,66 @@ IT 165000
 
 5️⃣ Departments having maximum salary > 55000
 IT 60000
+=================================================================================================
+create database school_db;
+
+use school_db;
+
+CREATE TABLE Students (
+    rollno INT primary key,
+    name VARCHAR(50),
+    m_id INT,
+    foreign key(m_id) references Marks(marks_id)
+);
+
+CREATE TABLE Marks (
+    marks_id INT primary key,
+    marks int
+);
+
+INSERT INTO Students VALUES
+(1, 'Raju', 100),
+(2, 'Ramu', 100),
+(3, 'Rani', 300),
+(4, 'Cook', 400);
+
+insert into students(rollno, name) values(5, "Sam");
+
+
+INSERT INTO Marks VALUES
+(100, 54),
+(200, 80),
+(300, 90),
+(400, 100);
+
+
+select * from students;
+select * from marks;
+
+
+-- students and marks 
+-- read the data
+
+-- 1) Display the name of the student along with his marks
+-- 
+
+-- select students.name, marks.marks from students 
+-- inner join marks
+-- on students.m_id = marks.marks_id;
+
+
+select students.name, marks.marks from students 
+left join marks
+on students.m_id = marks.marks_id;
+
+select students.name, marks.marks from students 
+right join marks
+on students.m_id = marks.marks_id;
+
+select students.name, marks.marks from students 
+left join marks
+on students.m_id = marks.marks_id
+union
+select students.name, marks.marks from students 
+right join marks
+on students.m_id = marks.marks_id;
