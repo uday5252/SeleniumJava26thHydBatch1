@@ -34,3 +34,16 @@ Print the name of the top 3 products that has lowest price
 select ProductName from Products order by Price limit 3;
 select ProductName from Products order by price desc limit 1 offset 1;
  
+====================================================
+select * from Products where Price = 10;
+select * from Products where Price > 20;
+select * from Products where Price < 20;
+select * from Products where Price != 20;
+select * from Products where Price between 10 and 50;(ranges)
+select * from Products where Price not between 10 and 50;(ranges)
+SELECT count(ProductName) as products_count FROM Products;
+SELECT count(*) as products_count FROM Products;
+select sum(Price) as total_price from Products;
+select max(Price) from Products;
+select min(Price) from Products;
+select avg(Price) from Products;
