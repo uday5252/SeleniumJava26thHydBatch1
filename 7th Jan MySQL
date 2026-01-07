@@ -29,5 +29,8 @@ city varchar(30));
  
  
  
- 
+=========================================
+Print the name of the top 3 products that has lowest price
+select ProductName from Products order by Price limit 3;
+select ProductName from Products order by price desc limit 1 offset 1;
  
