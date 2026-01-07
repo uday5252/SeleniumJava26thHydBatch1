@@ -47,3 +47,61 @@ select sum(Price) as total_price from Products;
 select max(Price) from Products;
 select min(Price) from Products;
 select avg(Price) from Products;
+
+====================================================
+
+use employee_db;
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO employees (id, name, department, salary) VALUES
+(6, 'Raj', 'ITI', 56000),
+(7, 'May', 'ITI', 48000),
+(8, 'Jon', 'ECE', 61000),
+(9, 'lexa', 'ITI', 54000),
+(10, 'Cookie', 'CSE', 65000);
+
+
+
+1️⃣ Total number of employees in each department
+IT 3
+HR 2
+
+select department, count(*) as department_countfrom employees group by department;
+
+2️⃣ Average salary for each department
+IT 55000
+HR 42500
+
+3️⃣ Maximum salary in each department
+IT 60000
+HR 45000
+
+select department, max(salary) as maximum_salary from employees group by department;
+
+4️⃣ Minimum salary in each department
+IT 50000
+HR 40000
+
+5️⃣ Total salary paid per department
+IT 165000
+HR 85000
+select department, sum(salary) as total_salary from employees group by department;
+
+1️⃣ Departments having more than 2 employees
+IT 3
+select department, count(*) as total_count from employees group by department having total_Count > 2;
+
+2️⃣ Departments where average salary > 50000
+IT 55000
+
+3️⃣ Departments whose total salary exceeds 100000
+IT 165000
+
+5️⃣ Departments having maximum salary > 55000
+IT 60000
