@@ -70,3 +70,50 @@ class Solution {
 
     }
 }
+=====================================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+        
+        int[] nums = { 3, 2, 4 };
+        int target = 6;
+        
+        HashMap<Integer, Integer> dataMap = new HashMap<Integer, Integer>(); // { 3   }
+        
+        for(int i = 0; i < nums.length; i++)
+        {
+            // i = 0 ==>nums[i] ==> num[1] ==> 2
+             int recievedNum = target - nums[i]; // target - num[2] ==> 6 - 4 ==> 2
+             
+             if(!dataMap.containsKey(recievedNum))
+             {
+                 dataMap.put(nums[i], i);    //dataMap.put(2, 1) ==> { 3: 0, 2: 1 }
+             }
+             else
+             {
+                int index1 = dataMap.get(recievedNum); // datMap.get(2) ==> 1
+                int index2 = i;
+                
+                int[] result = new int[2];
+                result[0] = index1;
+                result[1] = index2;
+                
+                return result;
+                
+             }
+             
+        }
+
+      
+	}
+}
