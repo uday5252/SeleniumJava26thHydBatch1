@@ -32,19 +32,35 @@ INSERT INTO Picnic (picnic_id, organizer, location, attendees, budget) VALUES
 ---
 
 1. Find the picnic(s) with the highest budget.
+select * from picnic where budegt = (select max(budget) from picnic);
  
 2. List picnics where attendees are more than the average number of attendees.
- 
-3. Find organizers who planned picnics at locations with a budget higher than the overall average budget.
+select * from picnics where attendes > (select avg(atendees) from pinics);
+
+3. Find organizers who planned picnics at 
+locations with a budget higher than the overall average budget.
+
+select oragnizer from picnics where budeget > 
+(select avg(budget) from picnis);
 
 4. List all picnics that took place at the Beach.
+select * from picnics where location='Beach'
 
 5. Find picnics with a budget between 3000 and 6000.
+select * from picnics where budget betwene 3000 and 6000;
 
-6. List picnics whose attendees are fewer than the picnic with the maximum attendees.
+6. List picnics whose attendees are fewer than 
+the picnic with the maximum attendees.
+
+select * from picnics where atendees < (select max(atenddes) from picnics);
 
 7. Show picnics with a budget greater than the picnic with `picnic_id = 2`.
 
-8. Find organizers whose picnic had a budget less than the maximum budget of all picnics.
+select * from picnics where budegt > (select buddegt from picnics wjere picnic_id = 2)
 
+
+8. Find organizers whose picnic had a budget less 
+than the maximum budget of all picnics.
+
+select oragnsizers from picnis where budget < (select max(budget) from picnics);)
 
