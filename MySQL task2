@@ -1,0 +1,50 @@
+CREATE TABLE Picnic (
+    picnic_id INT PRIMARY KEY,
+    organizer VARCHAR(50),
+    location VARCHAR(50),
+    attendees INT,
+    budget INT
+);
+
+INSERT INTO Picnic (picnic_id, organizer, location, attendees, budget) VALUES
+(1, 'Raju', 'Beach', 15, 5000),
+(2, 'Mary', 'Park', 10, 3000),
+(3, 'John', 'Hills', 20, 7000),
+(4, 'Alex', 'Lake', 8, 2500),
+(5, 'Rani', 'Beach', 12, 4000),
+(6, 'Cook', 'Park', 18, 6000),
+(7, 'Sam', 'Lake', 25, 8000);
+
+=================================
+
+# Table: Picnic
+
+| picnic_id | organizer | location | attendees | budget |
+| --------- | --------- | -------- | --------- | ------ |
+| 1         | Raju      | Beach    | 15        | 5000   |
+| 2         | Mary      | Park     | 10        | 3000   |
+| 3         | John      | Hills    | 20        | 7000   |
+| 4         | Alex      | Lake     | 8         | 2500   |
+| 5         | Rani      | Beach    | 12        | 4000   |
+| 6         | Cook      | Park     | 18        | 6000   |
+| 7         | Sam       | Lake     | 25        | 8000   |
+
+---
+
+1. Find the picnic(s) with the highest budget.
+ 
+2. List picnics where attendees are more than the average number of attendees.
+ 
+3. Find organizers who planned picnics at locations with a budget higher than the overall average budget.
+
+4. List all picnics that took place at the Beach.
+
+5. Find picnics with a budget between 3000 and 6000.
+
+6. List picnics whose attendees are fewer than the picnic with the maximum attendees.
+
+7. Show picnics with a budget greater than the picnic with `picnic_id = 2`.
+
+8. Find organizers whose picnic had a budget less than the maximum budget of all picnics.
+
+
