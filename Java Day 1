@@ -1,0 +1,23 @@
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		 String[] studentNames = { "Raju", "Ramu", "Mark" };
+		 
+// 		 traditional for loop
+		 for(int i = 0; i < studentNames.length; i++)
+		 {
+		     System.out.println(studentNames[i]);
+		 }
+		 
+// 		 for each loop
+        for( String i : studentNames )
+        {
+            System.out.println(i);
+        }
+		 
+		 
+	}
+}
