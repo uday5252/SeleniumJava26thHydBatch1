@@ -21,3 +21,26 @@ public class Main
 		 
 	}
 }
+
+===============
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+// 		create an array to store 5 marks of a student
+        int[] studentMarks = new int[5];
+        studentMarks[0] = 45;
+        studentMarks[1] = 88;
+        studentMarks[2] = 45;
+        studentMarks[3] = 88;
+        studentMarks[4] = 45;
+        
+
+        for(int i : studentMarks)
+        {
+            System.out.println(i);
+        }
+		 
+	}
+}
