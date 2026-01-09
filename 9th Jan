@@ -87,3 +87,45 @@ public class Main
       
 	}
 }
+=============================================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    String[] str = { "eat","tea","tan","ate","nat","bat" };
+        
+        HashMap<String, ArrayList<String>> dataMap = new HashMap<String, ArrayList<String>>();
+        
+        for( String s : str )
+        {
+            // s = "eat"
+            char[] charArr = s.toCharArray(); // [ 'e', 'a', 't' ]
+            Arrays.sort(charArr); // [ 'a', 'e', 't' ]
+            String dataStr = new String(charArr);   //"aet"
+            
+            // s = "eat"
+            // dataStr = "aet"
+            if(!dataMap.containsKey(dataStr))
+            {
+                dataMap.put(dataStr, new ArrayList());
+            }
+           
+            dataMap.get(dataStr).add(s);
+            
+
+        }
+        System.out.println(dataMap.values());
+     
+    }
+}
+      
