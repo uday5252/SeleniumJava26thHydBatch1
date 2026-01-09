@@ -128,4 +128,56 @@ public class Main
      
     }
 }
+      ============================================================================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	   String str = "ababbb";
+	   int windowLeft = 0;
+	   int windowLength = 0;
+	   int windowRight;
+	   int maxLength = 0;// 3
+	   
+	   HashSet<Character> dataSet = new HashSet<Character>();
+	   
+	   for(windowRight = 0; windowRight < str.length(); windowRight++)
+	   {
+	       char recievedChar = str.charAt(windowRight);
+	       
+	       if(!dataSet.contains(recievedChar))
+	       {
+	           dataSet.add(recievedChar);
+	       }
+	       else
+	       {
+	           // it the character is in set, i.e it means duplicate
+	           //character is avaiable in the window
+	           dataSet.remove(str.charAt(windowLeft));
+	           windowLeft++;
+	           dataSet.add(recievedChar);
+	       }
+	       
+	       windowLength = windowRight - windowLeft + 1 ;
+	       
+	       maxLength = Math.max(maxLength, windowLength);
+	       
+	   }
+	   
+	  System.out.println(maxLength);
+	   
+     
+    }
+}
       
+
