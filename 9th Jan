@@ -1,0 +1,27 @@
+
+
+public class Main
+{
+	public static void main(String[] args) {
+        
+      int[] nums  = {0, 10, 0, 3, 12 };
+      
+      int trackingIndex = 0;
+      
+      for(int i = 0; i < nums.length; i++)
+      {
+          if(nums[i] != 0)
+          {
+              nums[trackingIndex] = nums[i];
+              trackingIndex++;
+          }
+      }
+      
+      for(int j = trackingIndex; j < nums.length; j++)
+        {
+            nums[j] = 0;
+        }
+      
+    return nums;
+	}
+}
