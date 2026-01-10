@@ -1,0 +1,419 @@
+
+
+## 🎬 Movie Ratings Battle – Question Explanation
+
+Two movies **MovieX** and **MovieY** are released on an OTT platform.
+
+* Every day, both movies receive a **rating score**.
+* Ratings are stored in two integer arrays:
+
+  * `movieX[]`
+  * `movieY[]`
+* Each index represents the **same day** for both movies.
+
+---
+
+## 📌 Rules of the Comparison
+
+1. Only **specific days** are considered:
+
+   * `"Even"` → Day `0, 2, 4, ...`
+   * `"Odd"` → Day `1, 3, 5, ...`
+
+2. For each selected day:
+
+   * Compare ratings of both movies.
+   * Calculate the **absolute difference** between ratings.
+
+3. Scoring:
+
+   * Movie with **higher rating** gains points equal to the difference.
+   * Movie with **lower rating** loses the same points.
+   * If both ratings are equal → no points change.
+
+4. After all selected days:
+
+   * Movie with **higher total score wins**
+   * If both scores are equal → **Tie**
+
+---
+
+## 🧪 Test Case 1 – Even Days
+
+**Input**
+
+```text
+movieX = [4, 5, 3, 2]
+movieY = [2, 6, 1, 4]
+s = "Even"
+```
+
+**Compared days:** `0, 2`
+
+| Day | MovieX | MovieY | Difference | Points Given |
+| --- | ------ | ------ | ---------- | ------------ |
+| 0   | 4      | 2      | 2          | MovieX +2    |
+| 2   | 3      | 1      | 2          | MovieX +2    |
+
+**Final Score**
+
+```text
+MovieX = +4
+MovieY = -4
+```
+
+✅ **Winner:** `MovieX`
+
+---
+
+## 🧪 Test Case 2 – Odd Days
+
+**Input**
+
+```text
+movieX = [3, 4, 5, 6]
+movieY = [5, 2, 6, 8]
+s = "Odd"
+```
+
+**Compared days:** `1, 3`
+
+| Day | MovieX | MovieY | Difference | Points Given |
+| --- | ------ | ------ | ---------- | ------------ |
+| 1   | 4      | 2      | 2          | MovieX +2    |
+| 3   | 6      | 8      | 2          | MovieY +2    |
+
+**Final Score**
+
+```text
+MovieX = 0
+MovieY = 0
+```
+
+✅ **Result:** `Tie`
+
+---
+
+## 🧪 Test Case 3 – MovieY Wins
+
+**Input**
+
+```text
+movieX = [2, 1, 3]
+movieY = [5, 4, 6]
+s = "Even"
+```
+
+**Compared days:** `0, 2`
+
+| Day | MovieX | MovieY | Difference | Points Given |
+| --- | ------ | ------ | ---------- | ------------ |
+| 0   | 2      | 5      | 3          | MovieY +3    |
+| 2   | 3      | 6      | 3          | MovieY +3    |
+
+**Final Score**
+
+```text
+MovieX = -6
+MovieY = +6
+```
+
+✅ **Winner:** `MovieY`
+
+---
+
+## 🧪 Test Case 4 – Same Ratings (No Change)
+
+**Input**
+
+```text
+movieX = [5, 4]
+movieY = [5, 4]
+s = "Even"
+```
+
+**Compared days:** `0`
+
+| Day | MovieX | MovieY | Result    |
+| --- | ------ | ------ | --------- |
+| 0   | 5      | 5      | No change |
+
+**Final Score**
+
+```text
+MovieX = 0
+MovieY = 0
+```
+
+✅ **Result:** `Tie`
+
+---
+
+## 🧪 Test Case 5 – Single Day
+
+**Input**
+
+```text
+movieX = [7]
+movieY = [3]
+s = "Even"
+```
+
+**Compared days:** `0`
+
+| Day | MovieX | MovieY | Difference |
+| --- | ------ | ------ | ---------- |
+| 0   | 7      | 3      | 4          |
+
+**Final Score**
+
+```text
+MovieX = +4
+MovieY = -4
+```
+
+✅ **Winner:** `MovieX`
+
+---
+
+≠====================
+
+---
+
+## 1️⃣ First Repeating Element
+
+### Question Explanation
+
+You are given an integer array.
+Your task is to find the **first element that appears more than once** in the array.
+“First” means the element whose **second occurrence comes earliest** in the array order.
+
+### Test Cases
+
+```text
+Input:  [4, 5, 1, 2, 5, 1]
+Output: 5
+```
+
+```text
+Input:  [10, 20, 30, 40]
+Output: -1
+```
+
+---
+
+## 2️⃣ Elements Greater Than Left and Smaller Than Right
+
+### Question Explanation
+
+Given an array of integers, count the elements that are:
+
+* Greater than **all elements to their left**
+* Smaller than **all elements to their right**
+
+The first and last elements are not considered.
+
+### Test Cases
+
+```text
+Input:  [5, 1, 4, 3, 6, 8, 10, 7, 9]
+Output: 2
+```
+
+```text
+Input:  [1, 2, 3, 4, 5]
+Output: 3
+```
+
+---
+
+## 3️⃣ Longest Subarray with Equal 0s and 1s
+
+### Question Explanation
+
+You are given a binary array containing only `0`s and `1`s.
+Find the length of the **longest continuous subarray** that has an equal number of `0`s and `1`s.
+
+### Test Cases
+
+```text
+Input:  [0, 1, 0, 1, 1, 1, 0]
+Output: 6
+```
+
+```text
+Input:  [1, 1, 1, 1]
+Output: 0
+```
+
+---
+
+## 4️⃣ Rearrange Array by Index Parity
+
+### Question Explanation
+
+Rearrange the array so that:
+
+* Even indices contain **even numbers**
+* Odd indices contain **odd numbers**
+
+The order of elements does not matter.
+
+### Test Cases
+
+```text
+Input:  [3, 6, 12, 1, 5, 8]
+Output: [6, 3, 12, 1, 8, 5]   (one valid arrangement)
+```
+
+---
+
+## 5️⃣ Find Missing and Repeating Number
+
+### Question Explanation
+
+An array of size `n` contains numbers from `1` to `n`.
+One number is **missing** and one number is **repeated**.
+Identify both numbers.
+
+### Test Cases
+
+```text
+Input:  [4, 3, 6, 2, 1, 1]
+Output: Repeating = 1, Missing = 5
+```
+
+---
+
+---
+
+## 6️⃣ First Non-Repeating Character
+
+### Question Explanation
+
+Given a string, find the **first character** that appears **only once** in the string.
+
+### Test Cases
+
+```text
+Input:  "swiss"
+Output: w
+```
+
+```text
+Input:  "aabbcc"
+Output: -1
+```
+
+---
+
+## 7️⃣ Check String Rotation
+
+### Question Explanation
+
+Given two strings, check whether the second string is a **rotation** of the first string.
+
+### Test Cases
+
+```text
+Input:  s1 = "abcd", s2 = "cdab"
+Output: true
+```
+
+```text
+Input:  s1 = "abcd", s2 = "acbd"
+Output: false
+```
+
+---
+
+## 8️⃣ Longest Palindromic Substring
+
+### Question Explanation
+
+Given a string, find the **longest substring** that reads the same forwards and backwards.
+
+### Test Cases
+
+```text
+Input:  "babad"
+Output: "bab"  (or "aba")
+```
+
+```text
+Input:  "cbbd"
+Output: "bb"
+```
+
+---
+
+## 9️⃣ Count Words Containing Only Vowels
+
+### Question Explanation
+
+Given a sentence, count how many words contain **only vowels** (`a, e, i, o, u`).
+
+### Test Cases
+
+```text
+Input:  "aei book io use"
+Output: 2
+```
+
+```text
+Input:  "hello world"
+Output: 0
+```
+
+---
+
+## 🔟 Group Anagrams
+
+### Question Explanation
+
+Given a list of strings, group together strings that are **anagrams** of each other.
+
+### Test Cases
+
+```text
+Input:  ["eat","tea","tan","ate","nat","bat"]
+Output: [["eat","tea","ate"], ["tan","nat"], ["bat"]]
+```
+
+---
+
+## 1️⃣1️⃣ Equilibrium Index
+
+### Question Explanation
+
+Find an index such that the **sum of elements on the left** is equal to the **sum of elements on the right**.
+
+### Test Cases
+
+```text
+Input:  [1, 3, 5, 2, 2]
+Output: 2
+```
+
+```text
+Input:  [1, 2, 3]
+Output: -1
+```
+
+---
+
+## 1️⃣2️⃣ Remove Characters of One String from Another
+
+### Question Explanation
+
+Given two strings, remove from the first string all characters that appear in the second string.
+
+### Test Cases
+
+```text
+Input:  s1 = "hello world"
+        s2 = "od"
+Output: "hell wrl"
+```
+
+---
