@@ -89,3 +89,50 @@ public class Main
 	
 	}
 }
+==================================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+
+        HashSet<Character> dataSet = new HashSet<Character>();
+        dataSet.add('a');
+        dataSet.add('e');
+        dataSet.add('i');
+        dataSet.add('o');
+        dataSet.add('u');
+        
+        
+        // dataSet = [ 'a', 'e', 'i', 'o', 'u'];
+
+       String str = "aei book io use";
+       String[] data = str.split(" ");
+      
+    //   data = { "aei", "book", "io", "use" }.toCharArray()
+    //   "aei".toCharArray() ==> { 'a', 'e', 'i' }
+      
+      for( String i : data)
+      {
+        //   i ==> 'aei'
+        for(char j : i.toCharArray()) //==> { 'b', 'o', 'o', 'k' }
+        {
+            if(!dataSet.contains(j))
+            {
+                
+            }
+            
+        }
+      }
+   
+    
+    
+    }
+}
