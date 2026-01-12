@@ -1,0 +1,91 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int[] andriaData = { 10, 5, 5, 9 };
+	    int[] mariaData = { 5, 6, 4, 3 };
+	    
+	    int index = 0;
+	    int diff;
+	    int mariaScore = 0; // -5
+	    int andriaScore = 0; // +5
+	    
+	   // 4 and 5 ==> mariaScore = +1, andriaScore = -1
+	   
+	   
+	    
+	    
+	    
+	   // "even" OR "odd"
+	   String status = "ODD";
+	   
+	   //Ternary Operator ==> short cut to if - else condition
+	   //result = conditon ? output1 : output2
+	   index = status.equalsIgnoreCase("even") ? 0 : 1;
+	   
+	   //if(status.equalsIgnoreCase("even"))
+	   //{
+	   //    // compare even index numbers
+	   //    index = 0;
+	   //}
+	   
+	   //else
+	   //{
+	   //    // compare odd index
+	   //    index = 1;
+	   //}
+	   
+	   
+	   for(int i = index; i < andriaData.length; i = i + 2)
+	   {
+	       // i = 0
+	       //5 > 4
+	        if(andriaData[i] > mariaData[i])
+	        {
+	           // andria has the highest value
+	           diff = andriaData[i] - mariaData[i];
+	           //diff = 1 ==> +1 ==> andria, maria = -1
+	           mariaScore = mariaScore - diff;//-1
+	           andriaScore = andriaScore + diff; // +1
+	           
+	        }
+	        else if(andriaData[i] < mariaData[i])
+	        {
+	           // maria has the highest value
+	           diff = mariaData[i] - andriaData[i];
+	           //diff = 5 - 4 ==> 1
+	           mariaScore = mariaScore + diff;
+	           andriaScore = andriaScore - diff;
+	           
+	        }
+	        
+	        if(mariaScore > andriaScore)
+	        {
+	            System.out.println("Maria Wins");
+	            mariaScore = 0;
+	            andriaScore = 0;
+	        }
+	        else if(andriaScore > mariaScore)
+	        {
+	            System.out.println("Andria wins");
+	            andriaScore = 0;
+	            mariaScore = 0;
+	        }
+	        else
+	        {
+	            System.out.println("Tie");
+	            mariaScore = 0;
+	            andriaScore = 0;
+	        }
+	   }
+	
+	}
+}
