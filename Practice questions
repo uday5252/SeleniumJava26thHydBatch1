@@ -417,3 +417,36 @@ Output: "hell wrl"
 ```
 
 ---
+=========================================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+
+       String s1 = "Hello";
+       String s2 = "olleH";
+       
+    //   String reversed = ""; "olleH"
+       
+       for(int i = 0; i < s1.length(); i++)
+       {
+           reversed = s1.charAt(i) + reversed;
+       }
+
+
+    if(reversed.equals(s2))
+    {
+        System.out.println("true");
+    }
+    }
+}
+
+
