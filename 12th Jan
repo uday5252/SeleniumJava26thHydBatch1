@@ -136,3 +136,48 @@ public class Main
     
     }
 }
+======================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+
+        String[] sentences = {  "Raju is good boy", "He eats good food" };
+        String[] words = { "good", "boy", "food" };
+        
+        for(String i : sentences)
+        {
+            // i = "Raju is good boy"
+            int wordCount = 0;
+            for(String j : words)
+            {
+                // j = "good"
+                if(i.contains(j))
+                {
+                    wordCount++;
+                }
+            }
+            
+            if(wordCount > 1)
+            {
+                System.out.println("spam");
+            }
+            else
+            {
+                System.out.println("Not Spam");
+            }
+        }
+        
+        
+    }
+}
+
+
