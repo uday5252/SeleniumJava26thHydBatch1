@@ -1,0 +1,160 @@
+Perfect 👍
+Below is **ONLY the question**, explained **very clearly**, with **test cases**.
+❌ No solution
+❌ No code
+❌ No explanation of implementation
+
+---
+
+# 🎬 Scenario-Based Question: Movie Ticket Booking (Encapsulation)
+
+## 📌 Problem Description (Clear & Simple)
+
+You are designing a **movie theatre booking system**.
+
+The system must **protect seat information** so that:
+
+* Seat counts cannot be changed directly
+* Seats can be booked only by following defined rules
+
+This question tests your understanding of **encapsulation in Java**.
+
+---
+
+## 🧱 Class to Design
+
+### Class Name:
+
+`MovieTheatre`
+
+---
+
+## 🔒 Private Data Members
+
+| Variable         | Description                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| `totalSeats`     | Total number of seats in the theatre (fixed after creation) |
+| `availableSeats` | Number of seats currently available                         |
+
+### Important Rules:
+
+* Both variables **must be private**
+* No setters should be provided
+* External classes must not be able to modify these values directly
+
+---
+
+## 🛠 Public Methods
+
+### 1️⃣ `bookSeats(int count)`
+
+This method is used to book seats.
+
+#### Booking Rules:
+
+* `count` must be **greater than 0**
+* `count` must be **less than or equal to available seats**
+* If booking is valid:
+
+  * Seats are booked
+  * Available seat count is reduced
+* If booking is invalid:
+
+  * Booking must be rejected with a proper message
+
+---
+
+### 2️⃣ `getAvailableSeats()`
+
+* Returns the current number of available seats
+* Must not allow modification of seat data
+
+---
+
+## 🚫 Restrictions (Very Important)
+
+* Seat count must **not** be modified directly
+* No method should allow resetting or overwriting seat values
+* All seat changes must go through `bookSeats()`
+
+---
+
+## 🧪 Test Cases (Expected Behavior)
+
+### ✅ Test Case 1: Valid Booking
+
+**Action:** Book 10 seats when 100 are available
+**Expected Result:**
+
+* Booking succeeds
+* Available seats become 90
+
+---
+
+### ❌ Test Case 2: Booking More Than Available
+
+**Action:** Book 50 seats when only 30 are available
+**Expected Result:**
+
+* Booking fails
+* Available seats remain 30
+
+---
+
+### ❌ Test Case 3: Booking Zero Seats
+
+**Action:** Book 0 seats
+**Expected Result:**
+
+* Booking rejected
+
+---
+
+### ❌ Test Case 4: Booking Negative Seats
+
+**Action:** Book -5 seats
+**Expected Result:**
+
+* Booking rejected
+
+---
+
+### ❌ Test Case 5: Direct Seat Modification Attempt
+
+**Action:** Try to directly change `availableSeats`
+**Expected Result:**
+
+* Compilation error (variable is private)
+
+---
+
+### ✅ Test Case 6: Multiple Valid Bookings
+
+**Action:**
+
+* Book 20 seats
+* Book 30 seats
+
+**Expected Result:**
+
+* Both bookings succeed if seats are available
+* Available seats reduce correctly
+
+---
+
+## 🎯 What This Question Tests
+
+* Understanding of **encapsulation**
+* Proper use of `private` variables
+* Controlled access using public methods
+* Real-world problem modeling
+
+---
+
+If you want next:
+
+* Another **scenario-based encapsulation question**
+* A **trickier version with cancellation**
+* **Interview follow-up questions only**
+
+Just tell me 👍
