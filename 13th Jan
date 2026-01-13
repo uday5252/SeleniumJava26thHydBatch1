@@ -1,0 +1,194 @@
+package com.abc.abc;
+
+public class First {
+
+	public static void main(String[] args) {
+		
+//		String s1 = "Raju";
+//		System.out.println(s1);
+//		
+//		String s2 = new String("Ramu");
+//		System.out.println(s2);
+		
+//		String s1 = "Raju";
+//		String s2 = "Ramu";
+//		String s3 = "Raju";
+//		
+//
+////		address
+//		System.out.println(s1 == s2);
+//		System.out.println(s1 == s3);
+//		System.out.println(s2 == s3);
+
+//		System.out.println(s1.compareTo(s2));
+//		System.out.println(s1.compareTo(s3));
+//		System.out.println(s2.compareTo(s3));
+		
+		
+//		System.out.println(s1.equals(s2));
+//		System.out.println(s1.equals(s3));
+//		System.out.println(s2.equals(s3));
+		
+//		String s1 = new String("Raju");
+//		String s2 = new String("Ramu");
+//		String s3 = new String("Raju");
+//		
+//		System.out.println(s1.equals(s2));
+//		System.out.println(s1.equals(s3));
+//		System.out.println(s2.equals(s3));
+		
+//		String s1 = "Raju";
+//		String s2 = "Ramu";
+//		String s3 = "Raju";
+//		
+//
+////		address
+//		System.out.println(s1 == s2);
+//		System.out.println(s1 == s3);
+//		System.out.println(s2 == s3);
+		
+//		String s1 = new String("Raju");
+//		String s2 = new String("Ramu");
+//		String s3 = new String("Raju");
+//		
+//		System.out.println(s1 == s2);
+//		System.out.println(s1 == s3);
+//		System.out.println(s2 == s3);
+		
+		
+		
+		
+		
+		
+//		String s1 = "Raju";
+//		s1.concat(" Ramu");
+//		s1.concat(" Cook");
+//		System.out.println(s1);
+		
+//		String output = "";
+//		
+//		for(int i = 1; i < 1000; i++)
+//		{
+//			output = output.concat(String.valueOf(i)); 
+//		}
+//		
+//		System.out.println(output);
+		
+//		String output = "";
+//		
+//		for(int i = 1; i < 1000; i++)
+//		{
+//			output = output.concat(String.valueOf(i)); 
+//		}
+//		
+//		System.out.println(output);
+		
+		
+//		StringBuilder sb = new StringBuilder("Raju");
+//		sb.append(" Ramu");
+//		sb.append(" Cook");
+//		System.out.println(sb);
+		
+		
+
+		
+		StringBuilder output = new StringBuilder("");
+//		output = ""
+//		
+//		for(int i = 1; i < 11; i++)
+//		{
+//			output = output.append(String.valueOf(i)); 
+//		}
+		
+//		String result = output.toString();
+//		result ==> 1 to 10
+//		result.concat("Cook");
+		
+		
+		
+		
+		
+		
+		
+//	methods of String Class
+	
+//	String(entire) and Sub String(part)
+		
+//	String s = "Hyderabad is a city!";
+//	System.out.println(s.length());
+//	System.out.println(s.charAt(1));
+//	System.out.println(s.substring(0,9));
+//	System.out.println(s.substring(9));
+//	System.out.println(s.toLowerCase());
+//	System.out.println(s.toUpperCase());
+		
+//	String s1 = "Raju";
+//	String s2 = "Ramu";
+//	
+//	System.out.println(s1.equals(s2));
+		
+//	String s1 = "Raju";
+//	String s2 = "raju";
+//		
+//	System.out.println(s1.equalsIgnoreCase(s2));
+	
+//	String s = "Pune is a city!";
+//	String[] info = s.split(" ");
+		
+//	String s = "Pune is a city!";
+//	String[] info = s.split("")
+//	[ 'P', u', 'n', 'e', ' ',  .... ]
+	
+//	String s = "Pune is a city!";
+//	System.out.println(s.contains("city"));
+	
+//	EXAMPLE
+		
+//	String s = "Pune";
+//	System.out.println(s.indexOf('n')); // 2
+//	System.out.println(s.indexOf('z')); // -1
+	
+//	EXAMPLE
+		
+//	String s = "Hyderabad is a city!";
+//	System.out.println(s.startsWith("Hyderabad"));
+	
+//	String s = "Hyderabad is a city!";
+//	System.out.println(s.endsWith("city!"));
+	
+//	String s = " Raju is a boy  ";
+//	System.out.println(s.trim());
+
+//	String s = " Raju is a boy  ";
+//	s.toCharArray(); // [ 'R', 'a', 'j', .... ]
+	
+//	concat()
+	
+		
+//	StringBuilder class
+	
+//	StringBuilder sb = new StringBuilder("Raju");
+//	System.out.println(sb.reverse());
+	
+//	StringBuilder sb = new StringBuilder("Raju");
+//	sb.deleteCharAt(1);	
+//	System.out.println(sb);
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
