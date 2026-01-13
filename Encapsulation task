@@ -135,4 +135,79 @@ Expected Result:
  Available seats reduce correctly
 
 ---
+========================
+
+
+```java
+class MovieTheatre {
+
+    // 🔒 Private data members
+    private int totalSeats;
+    private int availableSeats;
+
+    // 🧱 Simple constructor (NO logic)
+    public MovieTheatre(int seats) {
+        totalSeats = seats;
+        availableSeats = seats;
+    }
+
+    // 🛠 Book seats method (ALL logic here)
+    public void bookSeats(int count) {
+
+        if (count <= 0) {
+            System.out.println("Booking rejected: Seat count must be greater than 0");
+            return;
+        }
+
+        if (count > availableSeats) {
+            System.out.println("Booking rejected: Not enough seats available");
+            return;
+        }
+
+        availableSeats = availableSeats - count;
+        System.out.println("Booking successful: " + count + " seats booked");
+    }
+
+    // 📤 Read-only access
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+}
+```
+
+---
+
+## 🧪 Test Class
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        MovieTheatre theatre = new MovieTheatre(100);
+
+        // ✅ Valid booking
+        theatre.bookSeats(10);
+        System.out.println("Available Seats: " + theatre.getAvailableSeats());
+
+        // ❌ Zero seats
+        theatre.bookSeats(0);
+
+        // ❌ Negative seats
+        theatre.bookSeats(-5);
+
+        // ✅ Multiple bookings
+        theatre.bookSeats(20);
+        theatre.bookSeats(30);
+        System.out.println("Available Seats: " + theatre.getAvailableSeats());
+
+        // ❌ More than available
+        theatre.bookSeats(50);
+
+        // ❌ Direct modification (Compilation Error)
+        // theatre.availableSeats = 200;
+    }
+}
+```
+
+---
 
