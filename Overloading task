@@ -1,30 +1,27 @@
+Create a class named FoodItem with the following data members:
 
-### Question:
+ `calories` – represents base calories of the food item
+ `price` – represents price value treated as calorie impact
 
-Write a Java program to demonstrate **method overloading**.
+ 🔹 Method to Overload
 
-The program should contain a class **FoodItem** with two data members:
-
-* `calories`
-* `price`
-
-Overload a method named **finalCalories()** in the following three forms:
+Overload a method named `finalCalories()` in three different ways:
 
 ---
 
-### 1️⃣ `finalCalories()` — without parameters
+ 1️⃣ `finalCalories()` — without parameters
 
-This method should return:
+This method should return the sum of:
 
 ```
 calories + price
 ```
 
-(Assume price is added as extra calories impact)
+(Assume price adds extra calorie impact)
 
 ---
 
-### 2️⃣ `finalCalories(int extraCalories)` — with one integer parameter
+ 2️⃣ `finalCalories(int extraCalories)` — with one integer parameter
 
 This method should return:
 
@@ -36,14 +33,75 @@ calories + price + extraCalories
 
 ---
 
-### 3️⃣ `finalCalories(String extraCalories)` — with one String parameter
+ 3️⃣ `finalCalories(String extraCalories)` — with one String parameter
 
-* Convert the string argument into an integer
-* Return:
+ Convert the string value into an integer
+ Return:
 
 ```
 calories + price + extraCalories
 ```
 
 ---
+NOTE: 
+Method Used for Conversion
+Integer.parseInt(String)
+
+📌 Explanation (Simple)
+
+extraCalories is a String
+
+To perform addition, it must be converted to int
+
+Integer.parseInt() converts a numeric String into an integer
+
+ 🧪 Test Cases
+
+ Test Case 1
+
+Input:
+
+ calories = 200
+ price = 50
+ Method called: `finalCalories()`
+
+Expected Output:
+
+```
+250
+```
+
+---
+
+ Test Case 2
+
+Input:
+
+ calories = 200
+ price = 50
+ extraCalories = 30
+ Method called: `finalCalories(30)`
+
+Expected Output:
+
+```
+280
+```
+
+---
+
+ Test Case 3
+
+Input:
+
+ calories = 200
+ price = 50
+ extraCalories = "40"
+ Method called: `finalCalories("40")`
+
+Expected Output:
+
+```
+290
+```
 
