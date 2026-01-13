@@ -1,0 +1,36 @@
+
+### **Problem Statement (Explained in Simple Words)**
+
+You are given **two strings**:
+
+1. `full` – a complete sentence or sequence of words.
+2. `partial` – a sentence that is missing some words from `full`.
+
+Your task is to **find which words are missing in `partial` compared to `full`**, **in order**.
+
+Think of it like checking what words someone forgot when copying a sentence.
+
+---
+
+### **Example**
+
+```java
+full = "I like to eat pizza"
+partial = "I eat pizza"
+```
+
+**Step 1:** Compare the words in order:
+
+* `I` → exists in partial → skip
+* `like` → missing → add to result
+* `to` → missing → add to result
+* `eat` → exists → skip
+* `pizza` → exists → skip
+
+**Output:**
+
+```java
+["like", "to"]
+```
+
+---
