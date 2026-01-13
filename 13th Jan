@@ -192,3 +192,56 @@ public class First {
 	}
 
 }
+
+=========================
+package com.abc.abc;
+
+class Employee
+{
+//	variables
+	int id;
+	String name;
+	int age;
+	float salary;
+	static String company = "ABC Company";
+	
+//	constructor ==> method(variables ==> assign the value)
+//	IV === LV
+	public Employee(int id, String name, int age, float salary)
+	{
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
+	
+	
+	
+	
+	
+//	methods
+	public void displayDetails()
+	{
+		System.out.println("The id of the employee is: "+this.id);
+		System.out.println("The name of the employee is: "+this.name);
+		System.out.println("The age of the employee is: "+this.age);
+		System.out.println("The salary of the employee is: "+this.salary);
+		System.out.println("The salary of the employee is: "+this.company);
+	}
+}
+
+
+public class Second {
+	public static void main(String[] args) {
+		
+//		() ==> call constructor
+	Employee emp1 = new Employee(100, "Raju", 34, 4560.00f);
+	System.out.println(emp1.id);
+	System.out.println(emp1.name);
+	System.out.println(emp1.salary);
+	System.out.println(emp1.age);
+	System.out.println(emp1.company);
+
+	}
+}
+
