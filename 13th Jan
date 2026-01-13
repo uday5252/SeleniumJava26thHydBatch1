@@ -245,3 +245,50 @@ public class Second {
 	}
 }
 
+========================================
+package com.abc.abc;
+
+class BankAccount
+{
+	String accHolderName;
+	long accNo;
+	private float accBalance;
+	
+	public BankAccount(String accHolderName, long accNo, float accBalance) {
+		this.accHolderName = accHolderName;
+		this.accNo = accNo;
+		this.accBalance = accBalance;
+	}
+	
+	public void setBalance(int recievedBalance)
+	{
+		if(recievedBalance > 0)
+		{
+			this.accBalance = recievedBalance;
+		}
+		else
+		{
+			System.out.println("Invalid amount!");
+		}
+		
+	}
+	
+	public float getBalance()
+	{
+		return this.accBalance;
+	}
+	
+	
+}
+
+public class EncapsulationEx {
+
+	public static void main(String[] args) {
+
+		BankAccount account = new BankAccount("Raju", 1234, 1000.00f);
+		account.setBalance(200);
+		float output = account.getBalance();
+		System.out.println("The balance is: "+output);
+		
+	}
+}
