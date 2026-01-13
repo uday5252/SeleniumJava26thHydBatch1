@@ -1,0 +1,49 @@
+
+### Question:
+
+Write a Java program to demonstrate **method overloading**.
+
+The program should contain a class **FoodItem** with two data members:
+
+* `calories`
+* `price`
+
+Overload a method named **finalCalories()** in the following three forms:
+
+---
+
+### 1️⃣ `finalCalories()` — without parameters
+
+This method should return:
+
+```
+calories + price
+```
+
+(Assume price is added as extra calories impact)
+
+---
+
+### 2️⃣ `finalCalories(int extraCalories)` — with one integer parameter
+
+This method should return:
+
+```
+calories + price + extraCalories
+```
+
+(Extra calories added from toppings)
+
+---
+
+### 3️⃣ `finalCalories(String extraCalories)` — with one String parameter
+
+* Convert the string argument into an integer
+* Return:
+
+```
+calories + price + extraCalories
+```
+
+---
+
