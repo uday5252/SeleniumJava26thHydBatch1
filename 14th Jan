@@ -20,6 +20,134 @@ class Person
 	}
 	
 }
+=================================================
+package com.abc.abc;
+
+//class Login
+//{
+//	String username = "Raju";
+//	final String password = "Welcome";//const
+//}
+//
+//public class Tenth {
+//
+//	public static void main(String[] args) {
+//		
+//		Login l = new Login();
+//		l.password = "Hello";
+//		System.out.println(l.password);
+//
+//	}
+//}
+
+//=========================
+//
+//class Bank
+//{
+//	final public void login()
+//	{
+////		---------------------
+////		---------------------
+//	}
+//	
+//	public double interest()
+//	{
+//		return 6.0;
+//	}
+//}
+//
+//class SBI extends Bank
+//{
+//	public void login()
+//	{
+////		fdkljlksjl
+//		System.out.println("Hello");
+//	}
+//}
+//
+//class Kotak extends Bank
+//{
+//	public double interest()
+//	{
+//		return 6.5;
+//	}
+//}
+//
+//class HDFC extends Bank
+//{
+//	public double interest()
+//	{
+//		return 7.3;
+//	}
+//}
+//
+//public class Tenth {
+//
+//	public static void main(String[] args) {
+//		
+//		Bank b = new SBI();
+//		b.interest();
+//		b.login();
+//
+//	}
+//}
+
+//========================
+
+//
+//final class AuthenticationManager
+//{
+//	public void login()
+//	{
+//		
+//	}
+//	
+//	public void createUser()
+//	{
+//		
+//	}
+//}
+//
+//final class Bank
+//{
+//		public double interest()
+//	{
+//		return 6.0;
+//	}
+//}
+//
+//class SBI extends Bank
+//{
+//	
+//}
+//
+//class Kotak extends Bank
+//{
+//	public double interest()
+//	{
+//		return 6.5;
+//	}
+//}
+//
+//class HDFC extends Bank
+//{
+//	public double interest()
+//	{
+//		return 7.3;
+//	}
+//}
+//
+//public class Tenth {
+//
+//	public static void main(String[] args) {
+//		
+//		Bank b = new SBI();
+//		b.interest();
+//		b.login();
+//
+//	}
+//}
+
 
 //CHILD extends PARENT
 
