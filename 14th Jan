@@ -164,3 +164,231 @@ public class Seventh {
 	}
 
 }
+====================================
+package com.abc.abc;
+
+// Concrete class
+abstract class Vehicle
+{
+//	Concrete Method(complete)
+	public void hasEngine()
+	{
+		System.out.println("Every vehicle has a engine!");
+	}
+	
+//	Abstarct method
+	abstract public void noOfWheels();// 
+}
+
+class Bike extends Vehicle
+{
+
+	public void noOfWheels() {
+		System.out.println("Bike has 2 wheels!");
+	}
+	
+}
+
+class Car extends Vehicle
+{
+
+	public void noOfWheels() {
+		System.out.println("Car has 4 wheels!");
+	}
+	
+}
+
+public class Eight {
+
+	public static void main(String[] args) {
+
+	}
+}
+===============================
+package com.abc.abc;
+
+
+//interface AA
+//{
+//	public void first();
+//	public void second();
+//}
+//
+//interface BB
+//{
+//	public void third();
+//	public void fourth();
+//}
+//
+//interface CC extends AA,BB
+//{
+//	
+//}
+//
+//class ABC implements CC
+//{
+//
+//	@Override
+//	public void first() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void second() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void third() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void fourth() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	
+//}
+
+
+
+//===========================
+
+//
+//interface AA
+//{
+//	public void first();
+//	public void second();
+//}
+//
+//interface BB
+//{
+//	public void third();
+//	public void fourth();
+//}
+//
+////Multiple Inheritance is possible using interfacses
+//class CC implements AA, BB
+//{
+//
+//	@Override
+//	public void third() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void fourth() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void first() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void second() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	
+//}
+
+
+//===============
+
+
+
+
+
+
+
+//
+//interface Database
+//{
+//	public void connect();
+//	public void insertOne();
+//	public void insertMany();
+//	public void readOne();
+//}
+//
+//class Oracle implements Database
+//{
+//
+//	@Override
+//	public void connect() {
+////		jjkljlkjl
+//		
+//	}
+//
+//	@Override
+//	public void insertOne() {
+//		// TODO Auto-generated method stub
+////		hkjhkjhkj
+//		
+//	}
+//
+//	@Override
+//	public void insertMany() {
+//		// TODO Auto-generated method stub
+////		jhjkh
+//		
+//	}
+//
+//	@Override
+//	public void readOne() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	
+//}
+//
+//class Sybase implements Database
+//{
+//
+//	@Override
+//	public void connect() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void insertOne() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void insertMany() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void readOne() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//	
+//}
+//
+//class Db2
+//{
+//	
+//}
+//public class Ninth {
+//
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//}
+
