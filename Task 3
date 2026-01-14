@@ -1,0 +1,57 @@
+
+
+ Question 1:
+
+A transport management system handles different types of vehicles such as Car and Bike.
+Both vehicles share common properties like `vehicleNumber` and `fuelType`, and a common method `displayDetails()`.
+
+Design the system using only inheritance so that common data and behavior are reused.
+
+Test Case:
+Input:
+Car → vehicleNumber = "KA01AB1234", fuelType = "Petrol"
+Bike → vehicleNumber = "KA02XY5678", fuelType = "Electric"
+
+Output:
+Vehicle Number: KA01AB1234, Fuel Type: Petrol
+Vehicle Number: KA02XY5678, Fuel Type: Electric
+
+---
+
+ Question 2
+
+A university payroll system manages TeachingStaff and NonTeachingStaff.
+All staff members have `name` and `id`, but salary calculation differs for each type.
+
+Design this system using an abstract class where salary calculation is declared but implemented by subclasses.
+
+Test Case:
+Input:
+TeachingStaff → name = "Anita", id = 101, basicPay = 40000
+NonTeachingStaff → name = "Ravi", id = 102, dailyWage = 800, daysWorked = 25
+
+Output:
+Anita Salary: 50000
+Ravi Salary: 20000
+
+---
+
+ Question 3
+
+A drawing application supports shapes that must calculate both area and perimeter.
+The shapes supported are Circle and Rectangle.
+
+Design this system using an interface that enforces area and perimeter calculation.
+
+Test Case:
+Input:
+Circle → radius = 7
+Rectangle → length = 10, width = 5
+
+Output:
+Circle Area: 154
+Circle Perimeter: 44
+Rectangle Area: 50
+Rectangle Perimeter: 30
+
+---
