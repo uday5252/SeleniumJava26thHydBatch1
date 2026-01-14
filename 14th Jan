@@ -1,0 +1,166 @@
+package com.abc.abc;
+
+class Person
+{
+	String name;
+	int age;
+	String city;
+	
+	public Person(String name, int age, String city) {
+		this.name = name;
+		this.age = age;
+		this.city = city;
+	}
+	
+	public void displayDetails()
+	{
+		System.out.println(this.name);
+		System.out.println(this.age);
+		System.out.println(this.city);
+	}
+	
+}
+
+//CHILD extends PARENT
+
+class Manager extends Person
+{
+	
+	String company;
+	int salary;
+	
+	public Manager(String name, int age, String city, String company, int salary) {
+//		access those 3 lines present in person class construcotr
+//		child class has to connect to parent class ==> super
+		super(name,age,city);//super("John")
+		this.company = company;
+		this.salary = salary;
+	}
+	
+	public void displayManagerDetails()
+	{
+		super.displayDetails();
+		System.out.println(this.company); 
+		System.out.println(this.salary);
+	}
+	
+	
+}
+
+public class Fifth {
+	public static void main(String[] args) {
+		
+		Person p = new Person("Mark", 40, "Mumbai");
+		p.displayDetails();
+		
+		System.out.println("-----------------------");
+		
+		Manager m = new Manager("John", 35, "Pune", "ABC Company", 40000);
+		m.displayManagerDetails();
+
+	}
+}
+
+============================================================================
+package com.abc.abc;
+
+
+
+class Bank
+{
+	public double interest()
+	{
+		return 6.0;
+	}
+}
+
+class SBI extends Bank
+{
+	public double interest()
+	{
+		return 6.2;
+	}
+}
+
+class Kotak extends Bank
+{
+	public double interest()
+	{
+		return 6.5;
+	}
+}
+
+class HDFC extends Bank
+{
+	public double interest()
+	{
+		return 7.3;
+	}
+}
+
+
+public class Sixth {
+	
+	public static void main(String[] args) {
+		
+//		SBI sbi = new SBI();
+//		System.out.println(sbi.interest());
+//		
+//		Kotak k = new Kotak();
+//		System.out.println(k.interest());
+//		
+//		HDFC hdfc = new HDFC();
+//		System.out.println(hdfc.interest());
+		
+//		=====================================
+		
+		Bank b;
+
+		b = new SBI();
+		System.out.println(b.interest());
+		
+		b = new Kotak();
+		System.out.println(b.interest());
+		
+		b = new HDFC();
+		System.out.println(b.interest());
+	}
+
+}
+==============================================
+package com.abc.abc;
+
+class A
+{
+	public void print()
+	{
+		System.out.println("Hello");
+	}
+}
+
+class B
+{
+	public void print()
+	{
+		System.out.println("Welcome");
+	}
+}
+
+// Multiple Inheritance(one child and multiple parents)
+// Multiple Inheritance is not possible in java using classes
+class C extends A,B
+{
+	
+}
+
+
+public class Seventh {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		C c = new C();
+		c.print();
+	}
+
+}
