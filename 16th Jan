@@ -1,0 +1,14 @@
+//		int[] marks = new int[4];
+//		
+//		marks[0] = 80;
+//		marks[1] = 85;
+//		marks[2] = 43;
+//		marks[3] = 78;
+//		marks[4] = 65;
+		
+//		======================
+		
+//		String s = null;
+//		System.out.println(s.length());
+		
+//		=======================
