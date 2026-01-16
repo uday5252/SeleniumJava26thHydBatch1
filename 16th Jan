@@ -12,3 +12,59 @@
 //		System.out.println(s.length());
 		
 //		=======================
+package com.abc.exceptionHandling;
+
+class AmountInvalidException extends Exception
+{
+	public AmountInvalidException(String customMessage)
+	{
+		super(customMessage);
+	}
+}
+
+class BankAccount
+{
+	private int balance;
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	
+	public int withdrawAmount(int withdrawAmount) throws Exception
+	{
+		if(withdrawAmount < 0)
+		{
+			throw new AmountInvalidException("Invalid Amount!");
+		}
+		else
+		{
+			this.balance = this.balance - withdrawAmount;
+			return this.balance;
+		}
+		
+	}
+
+	
+}
+
+public class Second {
+	public static void main(String[] args) {
+		
+		BankAccount account = new BankAccount();
+		account.setBalance(1000);
+		
+		try
+		{
+			System.out.println(account.withdrawAmount(-500));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}
