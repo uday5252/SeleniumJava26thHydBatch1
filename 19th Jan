@@ -210,3 +210,72 @@ public class Sixth {
 }
 
 //10
+====================================================================
+import java.util.Stack;
+
+class Node
+{
+	int data; // integer
+	Node addr; // next node info
+	
+	public Node(int data) {
+		this.data = data;
+	}
+	
+
+}
+
+public class Sixth {
+
+	public static void main(String[] args) {
+		
+		Node head = new Node(10);
+		Node secondNode = new Node(20);
+		Node thirdNode = new Node(30);
+		Node fourthNode = new Node(40);
+		
+		head.addr = secondNode;
+		secondNode.addr = thirdNode;
+		thirdNode.addr = fourthNode;
+		
+		Node anotherHead = head;
+		
+		Stack<Integer> s = new Stack<Integer>();
+		
+		System.out.println("ORIGINAL ORDER:");
+		while(anotherHead != null)
+		{
+			s.push(anotherHead.data);
+//			push the data inside the stack
+			System.out.print(anotherHead.data+ " => ");
+			anotherHead = anotherHead.addr; // anotherHead = 300
+		}
+		
+//		stack ==> 40, 30, 20 and 10 ==> pop()
+		
+		System.out.println("REVERSED ORDER:");
+		
+		
+		Node reversedNode = new Node(0);
+		Node anotherReversedNode = reversedNode;
+		
+		
+		while(!s.isEmpty())
+		{
+			Node newNode = new Node(s.pop());
+			anotherReversedNode.addr = newNode;
+			anotherReversedNode = newNode;
+		}
+		
+		Node node = reversedNode.addr;
+		
+		while(node != null)
+		{
+			System.out.print(node.data+ " => ");
+			node = node.addr; // anotherHead = 300
+		}
+	}
+}
+
+//10
+
