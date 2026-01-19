@@ -1,0 +1,171 @@
+import java.util.ArrayList;
+
+public class First {
+
+	public static void main(String[] args) {
+		
+//		ArrayList al = new ArrayList();
+//		
+//		al.add(10);
+//		al.add(20);
+//		al.add(30);
+//		al.add(40);
+//		al.add(50);
+//		al.add("Raju");
+//		al.add(true);
+		
+//		al.set(5, "Ramu");
+//		System.out.println(al);
+		
+//		System.out.println(al.size());
+		
+//		System.out.println(al.removeFirst());
+//		System.out.println(al.removeLast());		
+//		al.remove(50);
+//		System.out.println(al);
+		
+//		al.remove("Raju");
+//		al.remove(true);
+//		System.out.println(al);
+		
+//		System.out.println(al.remove(3));
+//		System.out.println(al);
+//		al.clear();
+//		System.out.println(al.isEmpty());
+//		System.out.println(al.indexOf(50));
+//		System.out.println(al.getLast());
+//		System.out.println(al.getFirst());
+//		System.out.println(al.get(2));
+//		System.out.println(al.contains(50));
+//		System.out.println(al);
+
+//		===============================
+		
+//		ArrayList al1 = new ArrayList();
+//		ArrayList al2 = new ArrayList();
+//		
+//		al1.add(10);
+//		al1.add(20);
+//		al1.add(30);
+//		
+//		al2.add(20);
+//		al2.add(30);
+//		al2.add(40);
+//		al2.add(50);
+		
+//		al1.retainAll(al2);
+		
+//		System.out.println(al1);
+//		System.out.println(al2);
+		
+//		System.out.println(al1);
+//		System.out.println(al2);
+//		add elements of al2 in al1
+		
+//		al1.addAll(al2);
+//		System.out.println(al1);
+	}
+
+}
+
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Third {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		al.add(10);
+		al.add(3);
+		al.add(34);
+		al.add(-4);
+		al.add(50);
+//		ascending order
+		Collections.sort(al, Collections.reverseOrder());
+		
+		System.out.println(al);
+		
+//		sort() ==> compareTo() ==> 2 numbers OR 2 strings
+	}
+
+	
+
+	
+}
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+===========================================================
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Student implements Comparable<Student>
+{
+	int rollno;
+	String name;
+	int totalMarks;
+	
+	public Student(int rollno, String name, int totalMarks) {
+		this.rollno = rollno;
+		this.name = name;
+		this.totalMarks = totalMarks;
+	}
+
+	@Override
+	public int compareTo(Student b) {
+		return b.totalMarks - this.totalMarks;
+
+	}
+//	
+////	45, 23, 78, 89
+//	23, 45
+	
+}
+
+public class Fourth {
+	public static void main(String[] args) {
+
+		Student s1 = new Student(100, "Raju", 78);
+		Student s2 = new Student(200, "Ramu", 45);
+		Student s3 = new Student(300, "Sam", 23);
+		Student s4 = new Student(400, "John", 89);
+		
+		ArrayList<Student> al = new ArrayList<Student>();
+		al.add(s1);
+		al.add(s2);
+		al.add(s3);
+		al.add(s4);
+		
+		Collections.sort(al);
+//		sort(al) ==> compareTo()
+		
+//		al ==> 4
+		for(Student i : al)
+		{
+			System.out.println(i.name + " " + i.totalMarks);
+		}
+				
+		
+//		[Student@372f7a8d(s1), Student@2f92e0f4(s2), Student@28a418fc(s3), 
+//		Student@5305068a(s4)]
+		
+//		display the students based on the ascending order of the
+//		marks
+//		s3,s2,s1,s4 ==> we want
+		
+	}
+
+}
