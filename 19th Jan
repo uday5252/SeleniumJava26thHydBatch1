@@ -169,3 +169,44 @@ public class Fourth {
 	}
 
 }
+===========================================
+
+class Node
+{
+	int data; // integer
+	Node addr; // next node info
+	
+	public Node(int data) {
+		this.data = data;
+	}
+	
+
+}
+
+public class Sixth {
+
+	public static void main(String[] args) {
+		
+		Node head = new Node(10);
+		
+		Node secondNode = new Node(20);
+		Node thirdNode = new Node(30);
+		Node fourthNode = new Node(40);
+		
+		head.addr = thirdNode;
+		secondNode.addr = fourthNode;
+		thirdNode.addr = secondNode;
+		
+		Node anotherHead = head;
+		
+		while(anotherHead != null)
+		{
+			System.out.println(anotherHead.data);
+			anotherHead = anotherHead.addr; // anotherHead = 300
+		}
+
+	}
+
+}
+
+//10
