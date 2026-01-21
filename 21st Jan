@@ -1,0 +1,106 @@
+import java.util.LinkedList;
+
+
+
+public class First {
+
+	public static void main(String[] args) {
+		
+//		LinkedList l = new LinkedList();
+//		
+//		l.add(30);
+//		l.add(40);
+//		l.add(50);
+//		
+//		System.out.println(l.contains(60));
+		
+//		ArrayList al = new ArrayList();
+//		List al1 = new ArrayList();
+//		
+//		al.add(10);
+//		al.contains(40);
+//		al.ensureCapacity(50);
+		
+//		List al = new ArrayList();
+//		
+//		al.add(10);
+//		al.contains(40);
+//		al.ensureCapacity(50);
+	
+		
+//		ArrayList al1 = new ArrayList();
+		
+//		List al2 = new ArrayList();
+		
+//		LinkedList l1 = new LinkedList();
+//		List l2 = new LinkedList();
+				
+		
+	}
+
+}
+
+================================
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.TreeSet;
+
+
+class sortByDescendingOrder implements Comparator<Integer>
+{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		return o1 - o2;
+	}
+
+	
+	
+}
+
+public class Second {
+
+	public static void main(String[] args) {
+		
+		
+//		HashSet hs = new HashSet();
+//		
+//		hs.add(10);
+//		hs.add(23);
+//		hs.add(45);
+//		hs.add("Raju");
+//		
+//		System.out.println(hs);
+		
+//		LinkedHashSet hs = new LinkedHashSet();
+//		
+//		hs.add(10);
+//		hs.add(23);
+//		hs.add(45);
+
+	
+//		hs.contains(45);
+//		hs.remove(1);
+	
+//		System.out.println(hs);
+		
+		
+		
+		TreeSet<Integer> ts = 
+				new TreeSet<Integer>(new sortByDescendingOrder());
+		
+		ts.add(20);
+		ts.add(47);
+		ts.add(52);
+		ts.add(15);
+		
+		
+		System.out.println(ts);
+	
+		
+		
+	}
+
+}
+
