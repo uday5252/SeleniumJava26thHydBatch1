@@ -1,0 +1,217 @@
+
+
+ 📘 QUESTION
+
+You are given a binary string `target` (only `0` and `1`).
+
+ Starting point:
+
+ You start with a string of the same length
+ All characters are `0`
+
+Example:
+If `target = "1011"`
+You start with:
+
+```
+0000
+```
+
+---
+
+ 🔁 ALLOWED OPERATION (VERY IMPORTANT)
+
+You can do only one type of operation:
+
+👉 Choose an index `i`
+👉 Flip all characters from index `i` to the end
+
+ Flip means:
+
+ `0 → 1`
+ `1 → 0`
+
+---
+
+ 🎯 GOAL
+
+Convert the initial all-zero string into the target string
+using the minimum number of flips.
+
+---
+
+ 🧠 KEY IDEA (WHY THE ANSWER COMES LIKE THIS)
+
+You don’t need to actually flip the string.
+
+ Think like this:
+
+ At the beginning, everything is `0`
+ A flip changes the state of all future characters
+ Once you flip, everything after that point becomes the opposite
+
+So:
+
+ Every time the target value changes, you must flip
+
+---
+
+ 🧪 HOW ANSWER IS ARRIVED (STEP BY STEP)
+
+ Example 1
+
+```
+target = "101"
+```
+
+Start:
+
+```
+000
+```
+
+ Step-by-step thinking:
+
+| Position | Target | Current State | Do we need flip? | Why                        |
+| -------- | ------ | ------------- | ---------------- | -------------------------- |
+| 0        | 1      | 0             | YES              | We want 1 but have 0       |
+| 1        | 0      | 1             | YES              | After flip, state became 1 |
+| 2        | 1      | 0             | YES              | State again mismatches     |
+
+ Total flips:
+
+```
+3
+```
+
+✅ Answer = 3
+
+---
+
+ Example 2
+
+```
+target = "001011"
+```
+
+Start:
+
+```
+000000
+```
+
+| Position | Target | Current | Flip? | Reason          |
+| -------- | ------ | ------- | ----- | --------------- |
+| 0        | 0      | 0       | No    | Already correct |
+| 1        | 0      | 0       | No    | Already correct |
+| 2        | 1      | 0       | Yes   | Need 1          |
+| 3        | 0      | 1       | Yes   | State changed   |
+| 4        | 1      | 0       | Yes   | State changed   |
+| 5        | 1      | 1       | No    | Already correct |
+
+ Total flips:
+
+```
+3
+```
+
+✅ Answer = 3
+
+---
+
+
+
+SOLUTION:
+
+class Solution {
+    public int minFlips(String target) {
+        int flips = 0;
+
+        for (char ch : target.toCharArray()) {
+            // current state after all previous flips
+            int currentState = flips & 1;   // 0 if even flips, 1 if odd flips
+
+            // target bit at this position
+            int targetBit = ch - '0';
+
+            // if current state does not match target bit, flip is needed
+            if (currentState != targetBit) {
+                flips++;
+            }
+        }
+
+        return flips;
+    }
+}
+
+TRACING:
+
+ 🧪 Trace Example 1
+
+ Input
+
+```
+target = "001011"
+```
+
+ Initial values
+
+```
+flips = 0
+```
+
+---
+
+ Step-by-step Trace
+
+| Step | Character | flips | currentState (`flips & 1`) | targetBit | Flip? | flips after |
+| ---- | --------- | ----- | -------------------------- | --------- | ----- | ----------- |
+| 1    | '0'       | 0     | 0                          | 0         | No    | 0           |
+| 2    | '0'       | 0     | 0                          | 0         | No    | 0           |
+| 3    | '1'       | 0     | 0                          | 1         | Yes   | 1           |
+| 4    | '0'       | 1     | 1                          | 0         | Yes   | 2           |
+| 5    | '1'       | 2     | 0                          | 1         | Yes   | 3           |
+| 6    | '1'       | 3     | 1                          | 1         | No    | 3           |
+
+---
+
+ ✅ Final Answer
+
+```
+3
+```
+
+---
+
+ 🧪 Trace Example 2
+
+ Input
+
+```
+target = "101"
+```
+
+| Step | Character | flips | currentState | targetBit | Flip? | flips after |
+| ---- | --------- | ----- | ------------ | --------- | ----- | ----------- |
+| 1    | '1'       | 0     | 0            | 1         | Yes   | 1           |
+| 2    | '0'       | 1     | 1            | 0         | Yes   | 2           |
+| 3    | '1'       | 2     | 0            | 1         | Yes   | 3           |
+
+---
+
+ ✅ Final Answer
+
+```
+3
+```
+
+---
+
+=================================================================================
+=================================================================================
+=================================================================================
+=================================================================================
+=================================================================================
+=================================================================================
+=================================================================================
+=================================================================================
