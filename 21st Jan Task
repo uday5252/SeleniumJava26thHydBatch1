@@ -1,0 +1,87 @@
+Problem Statement:
+
+You are given a string `s`.
+Remove all duplicate characters from the string while preserving the original order of characters.
+Return the resulting string.
+
+---
+
+ 🧪 Test Case 1
+
+Input:
+
+```
+s = "programming"
+```
+
+Output:
+
+```
+progamin
+```
+
+---
+
+ 🧪 Test Case 2
+
+Input:
+
+```
+s = "banana"
+```
+
+Output:
+
+```
+ban
+```
+==================================================================
+
+“Special Stones Collector”
+
+ Problem Statement:
+
+You are a collector of special stones.
+
+ You have a list of stone types that are special, given as a string `special`.
+ You also have a bag containing many stones, represented as a string `bag`.
+
+Each character in `bag` is a stone you own.
+
+Task:
+Count how many stones in your bag are special stones.
+
+---
+
+ Example 1
+
+```
+Input:
+special = "xY"
+bag = "xxYyyYx"
+
+Output:
+4
+```
+
+Explanation:
+The stones that are special are `'x', 'x', 'Y', 'x'` → total 4.
+
+---
+
+ Example 2
+
+```
+Input:
+special = "a"
+bag = "bbb"
+
+Output:
+0
+```
+
+Explanation:
+No stone in the bag is special.
+
+---
+
