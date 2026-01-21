@@ -230,3 +230,18 @@ class Solution {
  
         return flips; 
     }
+
+target = "10111"
+🔹 Initial State
+Variable	Value
+flips	0
+current	'0'
+i	0
+
+| i | target[i] | current | target[i] != current? | Action  | flips after action | current after action |
+| - | --------- | ------- | --------------------- | ------- | ------------------ | -------------------- |
+| 0 | 1         | 0       | YES                   | flips++ | 1                  | 1                    |
+| 1 | 0         | 1       | YES                   | flips++ | 2                  | 0                    |
+| 2 | 1         | 0       | YES                   | flips++ | 3                  | 1                    |
+| 3 | 1         | 1       | NO                    | none    | 3                  | 1                    |
+| 4 | 1         | 1       | NO                    | none    | 3                  | 1                    |
