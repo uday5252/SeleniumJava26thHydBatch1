@@ -103,4 +103,49 @@ public class Second {
 	}
 
 }
+==============================
+class Solution {
+    public boolean isValid(String s) {
+        
+        // s = "["
 
+        Stack<Character> stack = new Stack<Character>();
+
+        // stack ==> )
+
+        for(char i : s.toCharArray()) //[ '(', '[', '{', '}', ']', ')']
+        {
+            if(i == '(')
+            {
+                stack.push(')');
+            }
+            else if(i == '{')
+            {
+                stack.push('}');
+            }
+            else if(i == '[')
+            {
+                stack.push(']');
+            }
+            // stack = ']'
+            else
+            {
+                if(!stack.isEmpty())
+                {
+                    // closing bracket i have encountered
+                    if(stack.pop() != i)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+               
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
