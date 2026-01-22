@@ -160,4 +160,90 @@ class Solution {
 
     }
 }
+===========================
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+import java.util.*;
+
+public class Codec {
+
+    public String serialize(TreeNode root)
+    {
+
+    if(root == null)
+    {
+        return "";   
+    }
+
+        StringBuilder sb = new StringBuilder(""); //"10"
+        Queue<TreeNode> dataQueue = new LinkedList<TreeNode>();
+
+        dataQueue.add(root);
+
+        while(!dataQueue.isEmpty())
+        {
+            int count = dataQueue.size();
+            // for(int i = 0; i < count; i++)
+            // {
+                
+                 TreeNode readNode = dataQueue.poll();
+                  if(readNode == null)
+                 {
+                    sb.append("null,");
+                 }
+                 else
+                 {
+                     sb.append(readNode.val);
+                     sb.append(",");
+                 
+                 
+                if(readNode.left != null)
+            {
+                 dataQueue.add(readNode.left);
+            }
+            else
+            {
+                dataQueue.add(null);
+                // sb.append("null, ");
+            }
+           
+            if(readNode.right != null)
+            {
+                dataQueue.add(readNode.right);
+
+            }
+             else
+            {
+                dataQueue.add(null);
+                // sb.append("null, ");
+            }
+            
+                 }
+            
+        // }
+       
+     }
+ System.out.println(sb.toString());
+        
+        return "hello";
+    }
+
+
+    public TreeNode deserialize(String data)
+    {
+
+       return new TreeNode();
+     
+    }
+    
+    
+}
 
