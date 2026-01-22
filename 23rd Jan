@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class TreeNode
+{
+	int val;
+	TreeNode left;
+	TreeNode right;
+	
+	public TreeNode(int val)
+	{
+		this.val = val;
+	}
+	
+	public static void levelOrderTraversal(TreeNode root)
+	{
+		
+		ArrayList result = new ArrayList();
+		
+		Queue<TreeNode> dataQueue = new LinkedList<TreeNode>();
+		dataQueue.add(root); // [N(4), N(5), N(6)]
+		
+//		[1], [2, 4]
+		
+		while(!dataQueue.isEmpty())
+		{
+			int queueCount = dataQueue.size();
+//			queueCount => 2
+			
+			ArrayList al = new ArrayList();
+			
+			for(int i = 0; i < queueCount; i++)
+			{
+					
+					
+					TreeNode readData = dataQueue.poll(); //read + removes
+					al.add(readData.val); //
+					
+//					
+					
+					
+					if(readData.left != null)
+					{
+						dataQueue.add(readData.left);
+					}
+					if(readData.right != null)
+					{
+						dataQueue.add(readData.right);
+					}
+					
+					
+			}
+			result.add(al);
+			
+		}
+		
+		System.out.println(result);
+		
+	}
+}
+
+public class Fourth {
+	public static void main(String[] args) {
+		
+		TreeNode rootNode = new TreeNode(1);
+		TreeNode leftNode1 = new TreeNode(2);
+		TreeNode rightNode1 = new TreeNode(4);
+		
+		rootNode.left = leftNode1;
+		rootNode.right = rightNode1;
+		
+		TreeNode leftNode2 = new TreeNode(5);
+		TreeNode rightNode2 = new TreeNode(6);
+		
+		leftNode1.left = leftNode2;
+		leftNode1.right = rightNode2;
+		
+		
+		TreeNode leftNode3 = new TreeNode(7);
+		rightNode1.left = leftNode3;
+		
+		TreeNode.levelOrderTraversal(rootNode);
+	
+		
+	}
+}
+
+
+
