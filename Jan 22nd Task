@@ -1,0 +1,251 @@
+ QUESTION: Count Binary Substrings
+
+You are given a binary string s
+👉 It contains only '0' and '1'
+
+Your task is to count how many substrings satisfy ALL these rules:
+
+---
+
+ ✅ Rules for a VALID substring
+
+A substring is valid if:
+
+1. It has equal number of 0s and 1s
+2. All 0s are grouped together
+3. All 1s are grouped together
+4. Order can be:
+
+    0s followed by 1s → "0011"
+    1s followed by 0s → "1100"
+
+---
+
+ ❌ What is NOT allowed
+
+ Mixing like "0101"
+ Unequal count like "001"
+ Scattered characters
+
+---
+
+ 🟢 Test Case 1
+
+ Input
+
+text
+s = "00110011"
+
+
+ Valid substrings:
+
+text
+"0011"
+"01"
+"1100"
+"10"
+"0011"
+"01"
+
+
+ Output
+
+text
+6
+
+
+---
+
+ 🟢 Test Case 2
+
+ Input
+
+text
+s = "10101"
+
+
+ Valid substrings:
+
+text
+"10"
+"01"
+"10"
+"01"
+
+
+ Output
+
+text
+4
+
+
+---
+
+ 🟢 Test Case 3
+
+ Input
+
+text
+s = "000111"
+
+
+ Valid substrings:
+
+text
+"01"
+"0011"
+"000111"
+
+
+ Output
+
+text
+3
+
+
+---
+
+ 🟢 Test Case 4
+
+ Input
+
+text
+s = "010"
+
+
+ Valid substrings:
+
+text
+"01"
+"10"
+
+
+ Output
+
+text
+2
+
+
+---
+
+ 🟢 Test Case 5 (Edge Case)
+
+ Input
+
+text
+s = "0000"
+
+
+ Valid substrings:
+
+text
+None
+
+
+ Output
+
+text
+0
+
+ ✅ Java Code (Optimized)
+
+java
+class Solution {
+    public int countBinarySubstrings(String s) {
+
+        int prev = 0;     // length of previous group
+        int curr = 1;     // length of current group
+        int result = 0;
+
+        for (int i = 1; i < s.length(); i++) {
+
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                curr++;   // same group continues
+            } else {
+                result += Math.min(prev, curr);
+                prev = curr;   // shift groups
+                curr = 1;
+            }
+        }
+
+        // last group comparison
+        result += Math.min(prev, curr);
+
+        return result;
+    }
+}
+
+
+---
+
+# 🔍 FULL TRACE (Very Important)
+
+ 🟢 Example
+
+text
+s = "00110011"
+
+
+---
+
+# Initial values
+
+text
+prev = 0
+curr = 1
+result = 0
+
+
+---
+
+# Loop execution
+
+| i | s[i] | s[i-1] | Action                | prev | curr | result |
+| - | ---- | ------ | --------------------- | ---- | ---- | ------ |
+| 1 | 0    | 0      | same → curr++         | 0    | 2    | 0      |
+| 2 | 1    | 0      | change → add min(0,2) | 2    | 1    | 0      |
+| 3 | 1    | 1      | same → curr++         | 2    | 2    | 0      |
+| 4 | 0    | 1      | change → add min(2,2) | 2    | 1    | 2      |
+| 5 | 0    | 0      | same → curr++         | 2    | 2    | 2      |
+| 6 | 1    | 0      | change → add min(2,2) | 2    | 1    | 4      |
+| 7 | 1    | 1      | same → curr++         | 2    | 2    | 4      |
+
+---
+
+# After loop (IMPORTANT)
+
+text
+result += min(prev, curr)
+result += min(2, 2) = 2
+
+
+---
+
+ ✅ Final Answer
+
+text
+result = 6
+
+
+---
+
+# 🧠 WHY min(prev, curr) ?
+
+Example:
+
+text
+000111
+prev = 3
+curr = 3
+
+
+Valid substrings:
+
+text
+"01"
+"0011"
+"000111"
+
+
+👉 Only min(3,3) = 3 substrings possible
+
