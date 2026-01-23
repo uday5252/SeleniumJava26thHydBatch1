@@ -1,0 +1,364 @@
+
+ 🧩 Problem: Decrypt a String
+
+You are given:
+
+1. A string text
+
+    Contains uppercase English letters (A–Z)
+    May also contain non-letter characters (spaces, symbols, numbers)
+
+2. An integer k
+
+    Represents how many positions each letter was shifted during encryption
+
+---
+
+ 🎯 Goal
+
+Decrypt the string by shifting each uppercase letter backward by k positions in the English alphabet.
+
+This is a classic Caesar Cipher (decryption) problem.
+
+---
+
+ 🔐 How encryption works (background)
+
+During encryption:
+
+ Each letter is shifted forward by k
+ Example with k = 3:
+
+  
+  A → D
+  B → E
+  Z → C
+  
+
+Now your task is the reverse ⬅️
+
+---
+
+ 🔓 Decryption rules (this question)
+
+1. Shift each uppercase letter backward by k
+2. If shifting goes before A, wrap around to the end of the alphabet
+3. Non-uppercase characters remain unchanged
+4. Handle:
+
+    Empty string
+    Large or negative values of k
+
+---
+
+ 📌 Example 1
+
+Input
+
+
+text = "DEF"
+k = 3
+
+
+Decryption
+
+
+D → A
+E → B
+F → C
+
+
+Output
+
+
+"ABC"
+
+
+---
+
+ 📌 Example 2 (wrap-around case)
+
+Input
+
+
+text = "ABC"
+k = 2
+
+
+Decryption
+
+
+A → Y
+B → Z
+C → A
+
+
+Output
+
+
+"YZA"
+
+
+---
+
+ 📌 Example 3 (non-letters stay same)
+
+Input
+
+
+text = "HELLO WORLD!"
+k = 3
+
+
+Output
+
+
+"EBIIL WORLD!"
+
+
+👉 Space and ! are unchanged.
+
+---
+
+
+
+SOLUTION:-
+
+ ✅ FINAL EFFICIENT CODE (BEST VERSION)
+
+java
+public class DecryptString {
+
+    public static String decrypt(String text, int k) {
+
+        if (text == null || text.isEmpty()) {
+            return "";
+        }
+
+        // 🔑 MOST IMPORTANT FORMULA
+        k = ((k % 26) + 26) % 26;
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (c >= 'A' && c <= 'Z') {
+
+                // Shift backward
+                char decrypted = (char) (c - k);
+
+                // Wrap-around if needed
+                if (decrypted < 'A') {
+                    decrypted = (char) (decrypted + 26);
+                }
+
+                result.append(decrypted);
+            } else {
+                result.append(c);
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(decrypt("ABC", 3));
+        System.out.println(decrypt("HELLO WORLD!", 3));
+        System.out.println(decrypt("ABC", 29));
+        System.out.println(decrypt("ABC", -3));
+    }
+}
+
+
+---
+
+ 🔍 FULL TRACE (LINE BY LINE)
+
+---
+
+ ▶ Example 1
+
+ Input
+
+
+text = "ABC"
+k = 3
+
+
+ Step 1: Normalize k
+
+
+k = ((3 % 26) + 26) % 26
+k = (3 + 26) % 26
+k = 3
+
+
+---
+
+ Step 2: Loop execution
+
+| i | char | ASCII | c - k | < 'A'? | +26 | Final |
+| - | ---- | ----- | ----- | ------ | --- | ----- |
+| 0 | A    | 65    | 62    | Yes    | 88  | X     |
+| 1 | B    | 66    | 63    | Yes    | 89  | Y     |
+| 2 | C    | 67    | 64    | Yes    | 90  | Z     |
+
+---
+
+ Output
+
+
+"XYZ"
+
+
+---
+
+ ▶ Example 2 (with space & symbol)
+
+ Input
+
+
+text = "HELLO WORLD!"
+k = 3
+
+
+| Char    | ASCII | Result |
+| ------- | ----- | ------ |
+| H       | 72    | E      |
+| E       | 69    | B      |
+| L       | 76    | I      |
+| L       | 76    | I      |
+| O       | 79    | L      |
+| (space) | —     | space  |
+| W       | 87    | T      |
+| O       | 79    | L      |
+| R       | 82    | O      |
+| L       | 76    | I      |
+| D       | 68    | A      |
+| !       | —     | !      |
+
+---
+
+ Output
+
+
+EBIIL TLOIA!
+
+
+---
+
+ ⭐ MOST IMPORTANT PART → k % 26 FORMULA (DEEP EXPLANATION)
+
+This is the heart of the solution 🔥
+
+---
+
+ ❓ Why do we need modulo?
+
+Alphabet has 26 letters
+
+
+A B C ... Z
+0 1 2 ... 25
+
+
+Shifting by:
+
+ 26 → same letter
+ 52 → same letter
+ 78 → same letter
+
+So:
+
+
+k % 26 gives effective shift
+
+
+---
+
+ ❌ Problem with only k % 26
+
+ Case 1: Large k
+
+
+k = 29
+29 % 26 = 3  ✅ OK
+
+
+---
+
+ Case 2: Negative k
+
+
+k = -3
+-3 % 26 = -3  ❌ WRONG in Java
+
+
+Java keeps sign of dividend.
+
+---
+
+ ✅ Correct Universal Formula
+
+java
+k = ((k % 26) + 26) % 26;
+
+
+---
+
+ 🧠 WHY THIS WORKS (STEP-BY-STEP)
+
+ Case 1: k = 29
+
+
+29 % 26 = 3
+(3 + 26) % 26 = 3
+
+
+---
+
+ Case 2: k = -3
+
+
+-3 % 26 = -3
+(-3 + 26) = 23
+23 % 26 = 23
+
+
+➡ Meaning:
+
+
+Decrypting by -3 = decrypting by 23
+
+
+Which is correct in alphabet rotation.
+
+---
+
+ Case 3: k = 52
+
+
+52 % 26 = 0
+
+
+---
+
+ Case 4: k = -52
+
+
+-52 % 26 = 0
+
+
+---
+
+ 🧪 Truth Table (Interview Gold)
+
+| k input | k % 26 | final k |
+| ------- | ------ | ------- |
+| 3       | 3      | 3       |
+| 29      | 3      | 3       |
+| -3      | -3     | 23      |
+| 52      | 0      | 0       |
+| -52     | 0      | 0       |
+
