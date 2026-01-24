@@ -1,0 +1,481 @@
+
+## 🧩 Problem: Find Missing Words
+
+You are given **two sentences**:
+
+1. **`full` sentence**
+   → This is the original sentence.
+   → It contains **all words** in correct order.
+
+2. **`partial` sentence**
+   → This sentence is created by **removing some words** from the `full` sentence.
+   → **Order of remaining words is the same** as in `full`.
+
+---
+
+## 🎯 Your Task
+
+Find **which words are missing** from `partial` when compared to `full`.
+
+👉 Return **only the missing words**,
+👉 Keep them in the **same order** as they appear in `full`.
+
+---
+
+## ⚠️ Important Rules
+
+1. **Case does NOT matter**
+
+   * `"Java"` and `"java"` are the same
+
+2. **Ignore punctuation**
+
+   * Commas, dots, exclamation marks, etc. should be ignored
+
+3. **Order matters**
+
+   * `partial` is always a **subsequence** of `full`
+   * Words appear in the same order, just with some missing
+
+---
+
+## 🧠 Think of it Like This
+
+Imagine:
+
+* `full` = **complete story**
+* `partial` = **story with some words erased**
+
+You must **tell which words were erased**.
+
+---
+
+## 📘 Simple Example
+
+```
+full    = "I love programming very much"
+partial = "I programming"
+```
+
+### Step-by-step thinking:
+
+* `"I"` → present ✔
+* `"love"` → missing ❌
+* `"programming"` → present ✔
+* `"very"` → missing ❌
+* `"much"` → missing ❌
+
+### ✅ Output:
+
+```
+["love", "very", "much"]
+```
+
+---
+
+## 🪜 Another Example
+
+```
+full    = "Java is very powerful language"
+partial = "java powerful"
+```
+
+### What happened?
+
+* `"Java"` → present
+* `"is"` → missing
+* `"very"` → missing
+* `"powerful"` → present
+* `"language"` → missing
+
+### ✅ Output:
+
+```
+["is", "very", "language"]
+```
+
+---
+
+
+SOLUTION 
+
+import java.util.*;
+
+class Solution {
+    public List<String> findMissingWords(String full, String partial) {
+
+        // 1. Normalize input (lowercase + remove punctuation)
+        full = full.toLowerCase().replaceAll("[^a-z0-9 ]", "");
+        partial = partial.toLowerCase().replaceAll("[^a-z0-9 ]", "");
+
+        // 2. Split sentences into words
+        String[] fullWords = full.split("\\s+");
+        String[] partialWords = partial.split("\\s+");
+
+        // 3. Result list
+        List<String> missing = new ArrayList<>();
+
+        // 4. Two pointers
+        int i = 0; // pointer for fullWords
+        int j = 0; // pointer for partialWords
+
+        // 5. Compare words in order
+        while (i < fullWords.length && j < partialWords.length) {
+
+            if (fullWords[i].equals(partialWords[j])) {
+                // word found in partial → move partial pointer
+                j++;
+            } else {
+                // word missing → add to result
+                missing.add(fullWords[i]);
+            }
+
+            // always move full pointer
+            i++;
+        }
+
+        // 6. Add remaining words (if partial finished early)
+        while (i < fullWords.length) {
+            missing.add(fullWords[i]);
+            i++;
+        }
+
+        return missing;
+    }
+}
+====================================================
+
+## 🧩 Problem: Caesar Cipher – Decode a String
+
+You are given:
+
+1. A **string `s`**
+   → It contains letters (uppercase & lowercase) and may also contain spaces or symbols.
+
+2. An **integer `shift`**
+   → This tells how many positions each letter was shifted **forward** during encryption.
+
+Your task is to **decode** the string by shifting every letter **backward** by `shift` positions.
+
+---
+
+## 🔐 What Is Caesar Cipher? (Simple Explanation)
+
+* The English alphabet has **26 letters**
+* In Caesar cipher:
+
+  * Each letter is shifted by a fixed number
+
+### Example (shift = 3)
+
+```
+A → D
+B → E
+C → F
+```
+
+So decoding means:
+
+```
+D → A
+E → B
+F → C
+```
+
+👉 **Decode = shift backward**
+
+---
+
+## 🎯 Rules You Must Follow
+
+1. **Uppercase stays uppercase**
+
+   * `A–Z` remains `A–Z`
+
+2. **Lowercase stays lowercase**
+
+   * `a–z` remains `a–z`
+
+3. **Non-letter characters stay unchanged**
+
+   * spaces, numbers, symbols (`! @ #`) stay same
+
+4. Alphabet wraps around
+
+   * `A` decoded with shift `1` → `Z`
+   * `a` decoded with shift `2` → `y`
+
+---
+
+✔ Output:
+
+```
+"Hello"
+```
+
+---
+
+### ✅ Test Case 4: Wrap-around case
+
+```
+Input:
+s = "abc"
+shift = 2
+```
+
+```
+a → y
+b → z
+c → a
+```
+
+✔ Output:
+
+```
+"yza"
+```
+
+---
+
+### ✅ Test Case 5: Non-letter characters
+
+```
+Input:
+s = "Hello, World!"
+shift = 3
+```
+
+
+SOLUTION 
+
+class Solution {
+
+    public String caesarDecode(String s, int shift) {
+        StringBuilder result = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            result.append(decodeChar(c, shift));
+        }
+
+        return result.toString();
+    }
+
+    private char decodeChar(char c, int shift) {
+
+        // Handle uppercase letters
+        if (c >= 'A' && c <= 'Z') {
+            return (char) ((c - 'A' - shift + 26) % 26 + 'A');
+        }
+
+        // Handle lowercase letters
+        if (c >= 'a' && c <= 'z') {
+            return (char) ((c - 'a' - shift + 26) % 26 + 'a');
+        }
+
+        // Non-alphabet characters remain unchanged
+        return c;
+    }
+}
+
+---
+
+## 🔢 Example We Will Trace
+
+```java
+s = "Khoor"
+shift = 3
+```
+
+Expected output:
+
+```
+"Hello"
+```
+
+---
+
+## 🧠 High-Level Flow
+
+1. `caesarDecode()` loops through **each character**
+2. For every character → calls `decodeChar(c, shift)`
+3. Decoded character is appended to `StringBuilder`
+
+---
+
+## 🪜 Step-by-Step Trace
+
+### Initial State
+
+```
+result = ""
+```
+
+---
+
+### 🔹 Iteration 1
+
+```
+c = 'K'
+```
+
+Inside `decodeChar('K', 3)`:
+
+* `'K'` is uppercase (`A–Z`)
+* ASCII value of `'K'` = 75
+* `'A'` = 65
+
+Calculation:
+
+```
+('K' - 'A') = 10
+10 - 3 = 7
+(7 + 26) % 26 = 7
+7 + 'A' = 'H'
+```
+
+Return:
+
+```
+'H'
+```
+
+result now:
+
+```
+"H"
+```
+
+---
+
+### 🔹 Iteration 2
+
+```
+c = 'h'
+```
+
+Inside `decodeChar('h', 3)`:
+
+* lowercase letter
+* `'h' - 'a' = 7`
+* `7 - 3 = 4`
+* `(4 + 26) % 26 = 4`
+* `4 + 'a' = 'e'`
+
+Return:
+
+```
+'e'
+```
+
+result:
+
+```
+"He"
+```
+
+---
+
+### 🔹 Iteration 3
+
+```
+c = 'o'
+```
+
+Calculation:
+
+```
+'o' - 'a' = 14
+14 - 3 = 11
+11 + 'a' = 'l'
+```
+
+result:
+
+```
+"Hel"
+```
+
+---
+
+### 🔹 Iteration 4
+
+```
+c = 'o'
+```
+
+Same as above → `'l'`
+
+result:
+
+```
+"Hell"
+```
+
+---
+
+### 🔹 Iteration 5
+
+```
+c = 'r'
+```
+
+Calculation:
+
+```
+'r' - 'a' = 17
+17 - 3 = 14
+14 + 'a' = 'o'
+```
+
+result:
+
+```
+"Hello"
+```
+
+---
+
+## ✅ Final Output
+
+```java
+"Hello"
+```
+
+---
+
+## 🔁 Wrap-Around Case Trace
+
+### Input
+
+```java
+s = "abc"
+shift = 2
+```
+
+### Trace
+
+| Char | Calculation            | Output |
+| ---- | ---------------------- | ------ |
+| a    | (0 - 2 + 26) % 26 = 24 | y      |
+| b    | (1 - 2 + 26) % 26 = 25 | z      |
+| c    | (2 - 2 + 26) % 26 = 0  | a      |
+
+✔ Output:
+
+```
+"yza"
+```
+
+---
+
+
+---
+
+If you want next:
+
+* **Visual alphabet circle**
+* **Encode vs Decode trace**
+* **Single character deep dive**
+* **Common mistakes explanation**
+
+Just tell me 👍
