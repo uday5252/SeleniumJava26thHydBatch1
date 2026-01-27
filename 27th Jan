@@ -244,3 +244,56 @@ public class Tenth {
 	}
 
 }
+
+==================================================================
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class LoginData implements Serializable
+{
+	String email;
+	String password;
+	
+	public LoginData(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+	
+	
+}
+
+
+public class Eleven {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+		
+//		LoginData loginData = new LoginData("abc@gmail.com", "welcome");
+//		
+//		ObjectOutputStream oos = 
+//				new ObjectOutputStream(new FileOutputStream("data.ser"));
+//		
+//		oos.writeObject(loginData);
+
+	
+		ObjectInputStream oos = 
+				new ObjectInputStream(new FileInputStream("data.ser"));
+		
+		LoginData recievedObject = (LoginData)oos.readObject();
+		
+		System.out.println(recievedObject.email);
+		System.out.println(recievedObject.password);
+	}
+
+}
+
+
+
+
+
+
+
