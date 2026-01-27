@@ -141,6 +141,29 @@ public class Ninth {
 		
 	}
 }
+===============================
+
+		String[] words = { "flower", "raju", "john" };
+		
+		String prefix = words[0];
+//		prefix = "flower";
+		
+		for(int i = 1; i < words.length; i++)
+		{
+//			i = 2 ==> "flight"
+			
+			while(!words[i].startsWith(prefix))
+			{
+//				flight.sw("fl")
+				prefix = prefix.substring(0, prefix.length() - 1);
+				
+			}
+			
+			
+		}
+		
+		System.out.println(prefix);
+		
 
 ==============================
 import java.io.BufferedReader;
