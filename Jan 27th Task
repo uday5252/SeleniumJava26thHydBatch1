@@ -1,0 +1,118 @@
+
+ 🎼 Music Band 
+
+ What is given?
+
+Imagine:
+
+ There are many singers
+ Each singer sings at a certain pitch level
+ All pitch levels are written in an array
+
+Example:
+
+```text
+pitches = [10, 12, 13, 9, 14]
+```
+
+---
+
+ What does the organizer want?
+
+The music band organizer wants to form a band with the maximum number of singers, but with one harmony rule.
+
+---
+
+ The rule
+
+1. Take the selected singers’ pitch levels
+2. Sort them
+3. The difference between two neighboring pitches must be:
+
+    ✅ `0` → same pitch (perfect harmony)
+    ✅ `1` → slightly higher pitch (still sounds good)
+    ❌ `2 or more` → sounds bad, not allowed
+
+---
+
+ Meaning in simple words
+
+👉 The band can only include:
+
+ Singers with exactly the same pitch, OR
+ Singers whose pitches differ by only 1
+
+You cannot mix singers with large pitch gaps.
+
+---
+
+ Understanding with example
+
+ Given pitches:
+
+```text
+[10, 12, 13, 9, 14]
+```
+
+---
+
+ 🎶 Valid band 1
+
+```text
+{9, 10}
+```
+
+Sorted → `[9, 10]`
+Difference → `1` ✅
+Band size → `2`
+
+---
+
+ 🎶 Valid band 2
+
+```text
+{12, 13, 14}
+```
+
+Sorted → `[12, 13, 14]`
+Differences:
+
+ `13 - 12 = 1` ✅
+ `14 - 13 = 1` ✅
+
+Band size → `3`
+
+---
+
+ 🚫 Invalid band
+
+```text
+{10, 12}
+```
+
+Sorted → `[10, 12]`
+Difference → `2` ❌
+The band sounds bad → not allowed
+
+---
+
+ Final goal (same as original problem)
+
+From all possible harmonious bands:
+
+> Find the band with the maximum number of singers
+
+Here:
+
+ Band `{9, 10}` → size `2`
+ Band `{12, 13, 14}` → size `3`
+
+👉 Maximum size = 3
+
+---
+
+ 🧠 One-line takeaway
+
+> Pick the largest group where everyone is on the same pitch or just one pitch apart.
+
+---
