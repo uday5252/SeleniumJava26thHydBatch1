@@ -141,3 +141,83 @@ public class Ninth {
 		
 	}
 }
+
+==============================
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Tenth {
+
+	public static void main(String[] args) throws IOException {
+		
+//		File f = new File("demo.txt");
+//		f.createNewFile();
+		
+//		FileWriter writer = new FileWriter("demo.txt");
+//		writer.write("Raju\n");
+//		writer.write("Ramu\n");
+//		writer.write("John\n");
+//		
+//		writer.flush();
+		
+//		FileReader reader = new FileReader("demo.txt");
+//		
+//		int asciiNo = reader.read();
+//		
+//		while(asciiNo != -1)
+//		{
+//			System.out.print((char)asciiNo);
+//			asciiNo = reader.read();
+//		}
+
+		
+//		BufferedWriter bw = new BufferedWriter(new FileWriter("demo.txt"));
+//		bw.write("Raju");
+//		bw.newLine();
+//		bw.write("Ramu");
+//		bw.newLine();
+//		bw.write("John");
+//		bw.newLine();
+//		bw.write('R');
+//		bw.newLine();
+//		bw.write(97);
+//		
+//		bw.flush();
+		
+		
+		
+		
+//		PrintWriter pw = new PrintWriter("demo.txt");
+//		pw.println("Raju");
+//		pw.println("Ramu");
+//		pw.println('R');
+//		pw.println(97); //==> a ==> 97
+//		pw.println(true);
+//		pw.println(17.89f);
+//		
+//		pw.flush();
+		
+		
+		
+	 	BufferedReader br = 
+				new BufferedReader(new FileReader("demo.txt"));
+		
+		String data = br.readLine();
+		while(data != null)
+		{
+			System.out.println(data);
+			data = br.readLine();
+		}
+		
+		
+		
+		
+
+		
+	}
+
+}
