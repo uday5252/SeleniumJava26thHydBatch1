@@ -1,0 +1,185 @@
+
+
+ ✅ Question 1: Remove Specific Character
+
+(already no regex)
+
+java
+static String removeChar(String str, char ch) {
+    StringBuilder sb = new StringBuilder();
+    for (char c : str.toCharArray()) {
+        if (c != ch) sb.append(c);
+    }
+    return sb.toString();
+}
+
+
+---
+
+ ✅ Question 2: Capitalize First Letter of Each Word
+
+Uses split(" ") only
+
+java
+static String capitalizeWords(String str) {
+    String[] words = str.trim().split(" ");
+    StringBuilder sb = new StringBuilder();
+
+    for (String w : words) {
+        if (w.length() > 0) {
+            sb.append(Character.toUpperCase(w.charAt(0)))
+              .append(w.substring(1))
+              .append(" ");
+        }
+    }
+    return sb.toString().trim();
+}
+
+
+---
+
+ ✅ Question 3: String Rotation Checker
+
+(no regex here anyway)
+
+java
+static boolean isRotation(String s1, String s2) {
+    if (s1.length() != s2.length()) return false;
+    return (s1 + s1).contains(s2);
+}
+
+
+---
+
+ ✅ Question 4: Count Words Ending with Specific Letter
+
+Uses split(" ")
+
+java
+static int countEndingWords(String sentence, char ch) {
+    String[] words = sentence.split(" ");
+    int count = 0;
+
+    for (String w : words) {
+        if (w.length() > 0 && w.charAt(w.length() - 1) == ch) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+---
+
+ ✅ Question 5: Replace Substring
+
+Uses replace() (not regex)
+
+java
+static String replaceSubstring(String str, String target, String repl) {
+    return str.replace(target, repl);
+}
+
+
+---
+
+ ✅ Question 6: Count Occurrences of a Word
+
+Uses split(" ") only
+
+java
+static int countOccurrence(String[] arr, String word) {
+    int count = 0;
+    word = word.toLowerCase();
+
+    for (String line : arr) {
+        String[] words = line.toLowerCase().split(" ");
+        for (String w : words) {
+            // remove punctuation manually
+            String clean = "";
+            for (char c : w.toCharArray()) {
+                if (Character.isLetter(c)) clean += c;
+            }
+            if (clean.equals(word)) count++;
+        }
+    }
+    return count;
+}
+
+
+---
+
+ ✅ Question 7: Alternating Vowels and Consonants
+
+java
+static boolean isVowel(char c) {
+    return c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
+}
+
+static List<String> alternatingVC(String[] arr) {
+    List<String> result = new ArrayList<>();
+
+    for (String s : arr) {
+        s = s.toLowerCase();
+        if (!isVowel(s.charAt(0))) continue;
+
+        boolean valid = true;
+        for (int i = 1; i < s.length(); i++) {
+            if (isVowel(s.charAt(i)) == isVowel(s.charAt(i - 1))) {
+                valid = false;
+                break;
+            }
+        }
+        if (valid) result.add(s);
+    }
+    return result;
+}
+
+
+---
+
+ ✅ Question 8: Exactly Two Vowels and Three Consonants
+
+java
+static List<String> twoVowelsThreeConsonants(String[] arr) {
+    List<String> result = new ArrayList<>();
+
+    for (String s : arr) {
+        int v = 0, c = 0;
+        for (char ch : s.toLowerCase().toCharArray()) {
+            if (isVowel(ch)) v++;
+            else if (Character.isLetter(ch)) c++;
+        }
+        if (v == 2 && c == 3) result.add(s);
+    }
+    return result;
+}
+
+
+---
+
+ ✅ Question 9: Count Palindromes
+
+Removes spaces using " "
+
+java
+static boolean isPalindrome(String s) {
+    s = s.toLowerCase().replace(" ", "");
+    int i = 0, j = s.length() - 1;
+
+    while (i < j) {
+        if (s.charAt(i++) != s.charAt(j--)) return false;
+    }
+    return true;
+}
+
+static int countPalindromes(String[] arr) {
+    int count = 0;
+    for (String s : arr) {
+        if (isPalindrome(s)) count++;
+    }
+    return count;
+}
+
+
+---
