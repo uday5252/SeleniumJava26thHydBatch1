@@ -74,6 +74,17 @@ public class Fifteen {
 
 }
 
+=========================
+use employee_db;
+
+create table employees(
+id int primary key,
+name varchar(30),
+age int,
+profilePic blob);
+
+
+
 ======================
 import java.io.File;
 import java.io.FileInputStream;
