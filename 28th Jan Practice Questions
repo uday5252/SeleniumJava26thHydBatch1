@@ -1,0 +1,224 @@
+
+ Question 1: Remove Specific Character
+
+ 📘 Scenario
+
+You are developing a chat message filter.
+Before sending a message, the system must remove all occurrences of a blocked character from the text.
+
+---
+
+ 🧪 Test Cases
+
+| Input String  | Character | Output      |
+| ------------- | --------- | ----------- |
+| hello world | o       | hell wrld |
+| banana      | a       | bnn       |
+| aaaa        | a       |           |
+| java        | z       | java      |
+
+---
+
+ 🛠 Java Methods
+
+ toCharArray()
+ StringBuilder.append()
+ replace(char, char)
+
+---
+
+ Question 2: Capitalize First Letter of Each Word
+
+ 📘 Scenario
+
+You are building a blog title formatter.
+Whenever a user enters a title, the system should capitalize the first letter of every word.
+
+---
+
+ 🧪 Test Cases
+
+| Input                   | Output                  |
+| ----------------------- | ----------------------- |
+| hello world from java | Hello World From Java |
+| java programming      | Java Programming      |
+| single                | Single                |
+
+---
+
+ 🛠 Java Methods
+
+ split("\\s+")
+ substring()
+ Character.toUpperCase()
+ StringBuilder.append()
+
+---
+
+ Question 3: String Rotation Checker
+
+ 📘 Scenario
+
+You are implementing a password validation system.
+The system must check whether a given password is a rotation of the original password.
+
+---
+
+ 🧪 Test Cases
+
+| String 1      | String 2      | Output  |
+| ------------- | ------------- | ------- |
+| waterbottle | erbottlewat | True  |
+| abcde       | cdeab       | True  |
+| abc         | acb         | False |
+
+---
+
+ 🛠 Java Methods
+
+ length()
+ contains()
+ concat() or +
+
+---
+
+ Question 4: Count Words Ending with Specific Letter
+
+ 📘 Scenario
+
+You are creating a text analytics feature for writers.
+The system must count how many words in a sentence end with a given character.
+
+---
+
+ 🧪 Test Cases
+
+| Sentence                    | Character | Output |
+| --------------------------- | --------- | ------ |
+| The quick brown fox jumps | s       | 1    |
+| cats dogs birds           | s       | 3    |
+
+---
+
+ 🛠 Java Methods
+
+ split("\\s+")
+ endsWith()
+ charAt()
+
+---
+
+ Question 5: Replace Substring
+
+ 📘 Scenario
+
+You are developing a find-and-replace feature in a text editor.
+The system must replace all occurrences of a given substring with another substring.
+
+---
+
+ 🧪 Test Cases
+
+| Input String | Target | Replacement | Output   |
+| ------------ | ------ | ----------- | -------- |
+| banana     | na   | xy        | baxyxy |
+| abcabc     | abc  | x         | xx     |
+
+---
+
+ 🛠 Java Methods
+
+ replace()
+ replaceAll()
+ contains()
+
+---
+
+ 🔹 Method Syntax
+
+java
+String replace(char oldChar, char newChar);
+String replace(CharSequence target, CharSequence replacement);
+
+
+---
+
+ Question 6: Count Occurrences of a Word in an Array of Strings
+
+ 📘 Scenario
+
+You are developing a search feature for a document analyzer.
+The system receives multiple sentences and must count how many times a given word appears, regardless of case, across all sentences.
+
+---
+
+ 🧪 Test Cases
+
+| Input Sentences                                                                                                                                           | Search Word | Output |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------ |
+| ["The fox is going into the jungle.", "The lion is the king.", "Fox has jumped over the wall.", "Fox has two friends Gary the fox and Matt the turtle"] | fox       | 4    |
+| ["Java is fun", "I love java", "JAVA is powerful"]                                                                                                      | java      | 3    |
+| ["hello world"]                                                                                                                                         | java      | 0    |
+| []                                                                                                                                                      | fox       | 0    |
+
+---
+
+ Question 7: Check Alternating Vowels and Consonants
+
+ 📘 Scenario
+
+You are building a username validation system.
+Only usernames that start with a vowel and follow a strict alternating vowel–consonant pattern are allowed.
+
+---
+
+ 🧪 Test Cases
+
+| Input Strings                                        | Valid Output                     |
+| ---------------------------------------------------- | -------------------------------- |
+| ["apetuk", "detrwp", "aweyip", "grtypq", "ezovuj"] | ["apetuk", "aweyip", "ezovuj"] |
+| ["apple", "orange"]                                | []                             |
+| ["a", "e", "i"]                                    | ["a", "e", "i"]                |
+| ["bat", "cat"]                                     | []                             |
+
+---
+
+ Question 8: Strings with Exactly Two Vowels and Three Consonants
+
+ 📘 Scenario
+
+You are working on a linguistic pattern recognition tool.
+The system must identify words that contain exactly two vowels and three consonants.
+
+---
+
+ 🧪 Test Cases
+
+| Input Strings                                   | Output                                 |
+| ----------------------------------------------- | -------------------------------------- |
+| ["train", "horse", "apple", "brisk", "flute"] | ["train", "horse", "apple", "flute"] |
+| ["aeiou", "bcdfg"]                            | []                                   |
+| ["notes", "bread"]                            | ["notes", "bread"]                   |
+| ["java"]                                      | []                                   |
+
+---
+
+ Question 9: Count Palindromes in an Array of Strings
+
+ 📘 Scenario
+
+You are developing a text processing system that detects palindromic words.
+The system must ignore spaces and case sensitivity while checking and then count how many palindromes exist in the input list.
+
+---
+
+ 🧪 Test Cases
+
+| Input Strings                                   | Output |
+| ----------------------------------------------- | ------ |
+| ["level", "Madam", "civic", "World", "rotor"] | 4    |
+| ["Racecar", "hello", "noon"]                  | 2    |
+| ["A man a plan a canal Panama"]               | 1    |
+| ["java", "python"]                            | 0    |
+
+---
