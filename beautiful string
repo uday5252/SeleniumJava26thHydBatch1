@@ -1,0 +1,32 @@
+
+public class Main
+{
+    public static void main(String[] args) {
+
+        String s = "abdde";
+        char[] arr = s.toCharArray();
+        int operations = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+
+            // Check if current character violates rules with previous
+            if (arr[i] == arr[i - 1] || arr[i] == arr[i - 1] + 1 || arr[i] == arr[i - 1] - 1) {
+
+                // Try replacing arr[i] with a safe letter
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+
+                    if ((ch != arr[i - 1] && ch != arr[i - 1] + 1 && ch != arr[i - 1] - 1) &&
+                        (i + 1 >= arr.length || (ch != arr[i + 1] && ch != arr[i + 1] + 1 && ch != arr[i + 1] - 1))) {
+
+                        arr[i] = ch;
+                        operations++;
+                        break; // stop checking once we pick a safe character
+                    }
+                }
+            }
+        }
+
+        System.out.println("Beautiful string: " + new String(arr));
+        System.out.println("Minimum operations: " + operations);
+    }
+}
