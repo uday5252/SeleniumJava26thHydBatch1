@@ -1,0 +1,70 @@
+
+Consider every subsequence of an array of integers. 
+• Sort the subsequence in increasing order. 
+• Determine the sum of differences of elements in the subsequence. 
+• Return the length of the longest subsequence where this sum is even. 
+Example 
+Given n = 4 elements and arr = [2, 4, 1, 7], these are some of the subsequences. 
+Subsequence 
+Sum of diff of 
+Sorted Subsequence 
+[2, 4, 1] 
+[1, 2, 4] 
+Adjacent elements  
+1 + 2 = 3 (Odd) 
+[2, 1, 7] 
+[1, 2, 7] 
+1 + 5 = 6 (Even) 
+[2, 4, 1, 7] 
+[1, 2, 4, 7] 
+1 + 2 + 3 = 6 (Even) 
+[2, 1] 
+[1, 2] 
+1 (Odd) 
+We can see that the maximum possible length of a valid subsequence is 4. 
+Function Description 
+Complete the function findLongestSubsequence in the editor below. 
+f
+indLongestSubsequence has the following parameter(s): 
+int arr[n]:  an array of integers 
+Returns 
+int: the length of the longest subsequence as described 
+Constraints 
+• 3 ≤ n ≤ 105 
+• 0 ≤ arr[i] ≤ 109 
+Input Format For Custom Testing 
+The first line contains an integer, n, the number of elements in arr. 
+Each line i of the n subsequent lines (where 0 ≤ i < n) contains an integer, arr[i]. 
+Sample Case 0 
+Sample Input For Custom Testing 
+STDIN     FUNCTION -----     ---------- 
+7     →   arr size [] n = 7 
+7     →   arr = [7, 5, 6, 2, 3, 2, 4] 
+5 
+6 
+2 
+3 
+2 
+4 
+Sample Output 
+6 
+Explanation 
+Consider the subsequence [5, 6, 2, 3, 2, 4]. 
+• arrange the subsequence in ascending order, 2, 2, 3, 4, 5, 6 
+• the differences are 0,1,1,1,1 
+• 0+1+1+1+1 = 4 
+Sample Case 1 
+Sample Input For Custom Testing 
+STDIN     FUNCTION  -----     ---------- 
+4     →   arr size[] n = 4 
+1     →   arr = [1, 3, 5, 7] 
+3 
+5 
+7 
+Sample Output 
+4 
+Explanation 
+The entire array can be used. 
+• arrange the subsequence in ascending order, 1,3,5,7 
+• the adjacent differences are 2, 2, 2 
+• 2+2+2 = 6
