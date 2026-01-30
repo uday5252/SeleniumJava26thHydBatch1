@@ -74,4 +74,41 @@ public static String compressedString(String message) { mess = “aaa”
     return compressed.toString();
 }
  
+=========================
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		int[] data =  {1,1,2,2,3};
+		
+		Arrays.sort(data);
+		
+		int min = data[0];
+		int max = data[data.length - 1];
+		
+		for(int x : data)
+		{
+		    if((max-min) %2 == 0)
+		    {
+		        System.out.println(data.length);
+		    }
+		    else
+		    {
+		        System.out.println(data.length - 1);
+		    }
+		}
+	}
+}
+
+
+
+
 
