@@ -1,0 +1,77 @@
+Topic: String Compression
+The question is about compressing a string based on consecutive repeated characters.
+________________________________________
+What the question wants
+You are given a string (like "abaabbbc"), and you need to compress it by counting consecutive characters.
+The rules are:
+1.	Look at each character in the string in order.
+2.	Count how many times it occurs consecutively.
+3.	If a character occurs once, just write the character as is.
+4.	If a character occurs more than once consecutively, write the character followed by the count.
+________________________________________
+Examples
+Example 1:
+Input: "abc"
+•	Step through each character:
+o	'a' → occurs 1 time → write 'a'
+o	'b' → occurs 1 time → write 'b'
+o	'c' → occurs 1 time → write 'c'
+•	Compressed string: "abc"
+No character repeats consecutively, so the string stays the same.
+________________________________________
+Example 2:
+Input: "abaabbbc"
+•	Step through each character:
+1.	'a' → occurs 1 time → 'a'
+2.	'b' → occurs 1 time → 'b'
+3.	'a' → occurs 2 times consecutively → 'a2'
+4.	'b' → occurs 3 times consecutively → 'b3'
+5.	'c' → occurs 1 time → 'c'
+•	Compressed string: "aba2b3c"
+________________________________________
+Key Points
+•	Only consecutive repeats are counted.
+•	Single characters are not followed by 1.
+•	The compressed string should be as short as possible, using the rule above.
+________________________________________
+How to think about it in code
+1.	Start with an empty result string.
+2.	Keep a count for consecutive characters.
+3.	Loop through the string:
+o	If the next character is the same → increase the count.
+o	If the next character is different → append the character and count (only if count > 1) to result, then reset count.
+4.	Continue until the string ends.
+________________________________________
+public static String compressedString(String message) { mess = “aaa”
+	
+
+    if (message == null || message.length() == 0) return "";
+
+    StringBuilder compressed = new StringBuilder(“”);
+    int count = 1;
+
+	message = “aaa”
+	i = 3
+	count = 2
+	com = “aba2”
+    for (int i = 0; i < message.length(); i++) {
+        
+        if (message.charAt(i) != message.charAt(i + 1)) {
+            compressed.append(message.charAt(i));
+            if (count > 1) {
+                compressed.append(count);
+            }
+            count = 1; // reset for next block
+        } else {
+            count++; // same char as next, increase count
+        }
+    }
+
+	I(compressed.length() == 0)
+{		
+		Compressed.appemd(Message.charAt(0)).append(message.length()))
+}	
+    return compressed.toString();
+}
+ 
+
