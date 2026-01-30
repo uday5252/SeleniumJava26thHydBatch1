@@ -1,0 +1,879 @@
+
+
+Maximum Occurring Character
+
+---
+
+ 1️⃣ What is given?
+
+You are given one string:
+
+ Contains only:
+
+   lowercase letters (`a–z`)
+   uppercase letters (`A–Z`)
+   digits (`0–9`)
+ Case matters
+
+   `'a'` and `'A'` are different
+ Length is between 10 and 10⁴
+
+Example:
+
+```
+"abbbaacc"
+```
+
+---
+
+ 2️⃣ What do you need to find?
+
+👉 Find the character that appears the MOST times in the string.
+
+---
+
+ 3️⃣ What if two or more characters appear the same number of times?
+
+👉 Return the character that appears FIRST in the string
+
+⚠️ This rule is very important.
+
+---
+
+ 4️⃣ Example explained (from question)
+
+ Input
+
+```
+text = "abbbaacc"
+```
+
+ Count characters
+
+```
+a → 3 times
+b → 3 times
+c → 2 times
+```
+
+There is a tie between `'a'` and `'b'`.
+
+ Which comes first in the string?
+
+```
+"abbbaacc"
+ ↑
+ a appears before b
+```
+
+✅ Answer = 'a'
+
+---
+
+ 5️⃣ Sample Case 0 (given)
+
+ Input
+
+```
+"helloworld"
+```
+
+ Count
+
+```
+h → 1
+e → 1
+l → 3
+o → 2
+w → 1
+r → 1
+d → 1
+```
+
+👉 `'l'` appears the most (3 times)
+
+✅ Answer = 'l'
+
+---
+
+ 6️⃣ Sample Case 1 (given)
+
+ Input
+
+```
+"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+```
+
+Each character appears exactly twice.
+
+👉 All tied
+👉 Pick the one that appears first
+
+```
+a b c d ...
+↑
+```
+
+✅ Answer = 'a'
+
+---
+
+ 7️⃣ Extra simple test cases
+
+ Test Case 1
+
+```
+Input: "AAaa11"
+Counts:
+A → 2
+a → 2
+1 → 2
+
+First character = 'A'
+Answer = 'A'
+```
+
+---
+
+ Test Case 2
+
+```
+Input: "999888777"
+Answer = '9'
+```
+
+---
+
+ One-line meaning (Question 14)
+
+> Find the most frequent character.
+> If there is a tie, return the one that appears earliest in the string.
+
+---
+
+---
+
+ 🔹 QUESTION 15.1: Maximum Score
+
+This one is a greedy + priority type problem, but let’s just understand it first.
+
+---
+
+ 1️⃣ What is given?
+
+ An integer array `arr` of size `n`
+ An integer `k` → number of operations
+ Start with:
+
+```
+score = 0
+```
+
+---
+
+ 2️⃣ What happens in ONE operation?
+
+You can choose ANY ONE element from the array.
+
+Then:
+
+1. Add its value to `score`
+2. Replace that element with:
+
+```
+ceil(value / 3)
+```
+
+👉 Ceiling means round UP
+
+---
+
+ 🔹 Ceiling examples
+
+```
+ceil(10 / 3) = 4
+ceil(9 / 3)  = 3
+ceil(1 / 3)  = 1
+```
+
+---
+
+ 3️⃣ Goal
+
+👉 Perform exactly k operations
+👉 Get the MAXIMUM possible score
+
+You are free to choose any element in every operation, even the same one again.
+
+---
+
+ 4️⃣ Key idea (important intuition)
+
+To get maximum score:
+
+ Always pick the largest number available
+ Because:
+
+   It adds more to the score
+   After replacement, it becomes smaller anyway
+
+---
+
+ 5️⃣ Main example explained (from question)
+
+ Input
+
+```
+arr = [20, 4, 3, 1, 9]
+k = 4
+```
+
+---
+
+ Operation 1
+
+Pick 20
+
+```
+score = 20
+20 → ceil(20/3) = 7
+arr = [7, 4, 3, 1, 9]
+```
+
+---
+
+ Operation 2
+
+Pick 7
+
+```
+score = 27
+7 → ceil(7/3) = 3
+arr = [3, 4, 3, 1, 9]
+```
+
+---
+
+ Operation 3
+
+Pick 4
+
+```
+score = 31
+4 → ceil(4/3) = 2
+arr = [3, 2, 3, 1, 9]
+```
+
+---
+
+ Operation 4
+
+Pick 9
+
+```
+score = 40
+9 → ceil(9/3) = 3
+arr = [3, 4, 3, 1, 3]
+```
+
+✅ Final Answer = 40
+
+---
+
+ 6️⃣ Sample Case 0 (given)
+
+ Input
+
+```
+arr = [4, 5, 18, 1]
+k = 3
+```
+
+ Best choices
+
+1. Pick 5 → score = 5 → becomes 2
+2. Pick 18 → score = 23 → becomes 6
+3. Pick 6 → score = 29 → becomes 2
+
+✅ Answer = 29
+
+---
+
+ 7️⃣ Sample Case 1 (given)
+
+ Input
+
+```
+arr = [1, 1, 1]
+k = 2
+```
+
+Each time:
+
+```
+1 → ceil(1/3) = 1
+```
+
+So values never change.
+
+Score:
+
+```
+1 + 1 = 2
+```
+
+✅ Answer = 2
+
+---
+
+ 8️⃣ Extra test cases
+
+ Test Case 1
+
+```
+arr = [10]
+k = 3
+
+Ops:
+10 → 4 → 2
+Score = 10 + 4 + 2 = 16
+```
+
+---
+
+ Test Case 2
+
+```
+arr = [5, 5]
+k = 2
+
+Pick 5 twice:
+Score = 5 + 5 = 10
+```
+
+---
+
+
+ 🧠Memory Test
+
+---
+
+ 1️⃣ What is given?
+
+ `n` children standing in a row
+ Children are numbered by position:
+
+```
+0, 1, 2, ..., n-1
+```
+
+ The teacher conducts `m` rounds
+ In each round, the teacher chooses one position `pos[i]`
+
+---
+
+ 2️⃣ What happens in ONE round?
+
+Suppose the teacher selects position `p`.
+
+ Rules for numbering:
+
+ Child at position `p` gets 0
+ Children to the right:
+
+   Each child gets 1 more than the child to their left
+ Children to the left:
+
+   Each child gets 1 more than the child to their right
+
+📌 This means:
+
+> Every child gets a number equal to
+> distance from position `p`
+
+---
+
+ 🔹 Formula (just for understanding)
+
+For child at position `i`:
+
+```
+number = |i - p|
+```
+
+---
+
+ 3️⃣ Example to understand ONE round
+
+ Example
+
+```
+n = 6
+p = 3
+```
+
+Positions:
+
+```
+0  1  2  3  4  5
+```
+
+Numbers assigned:
+
+```
+3  2  1  0  1  2
+```
+
+Because:
+
+ Distance from 3 is increasing as you move away
+
+---
+
+ 4️⃣ What happens after ALL rounds?
+
+Each child will have received m different numbers
+(one number in each round)
+
+👉 The teacher asks each child:
+
+> What is the MAXIMUM number you ever received?
+
+Your task:
+
+ For every child (0 to n−1)
+ Find the maximum value assigned to them across all rounds
+
+---
+
+ 5️⃣ Main Example (from question)
+
+ Input
+
+```
+n = 5
+m = 4
+pos = [3, 0, 1, 4]
+```
+
+---
+
+ Round 1 (pos = 3)
+
+```
+[3, 2, 1, 0, 1]
+```
+
+---
+
+ Round 2 (pos = 0)
+
+```
+[0, 1, 2, 3, 4]
+```
+
+---
+
+ Round 3 (pos = 1)
+
+```
+[1, 0, 1, 2, 3]
+```
+
+---
+
+ Round 4 (pos = 4)
+
+```
+[4, 3, 2, 1, 0]
+```
+
+---
+
+ Now take MAX for each child
+
+| Child index | Values across rounds | Maximum |
+| ----------- | -------------------- | ------- |
+| 0           | 3, 0, 1, 4           | 4   |
+| 1           | 2, 1, 0, 3           | 3   |
+| 2           | 1, 2, 1, 2           | 2   |
+| 3           | 0, 3, 2, 1           | 3   |
+| 4           | 1, 4, 3, 0           | 4   |
+
+✅ Answer
+
+```
+[4, 3, 2, 3, 4]
+```
+
+---
+
+ 6️⃣ Sample Case 0 (given)
+
+ Input
+
+```
+n = 5
+pos = [2, 0, 3]
+```
+
+---
+
+ Round 1 (pos = 2)
+
+```
+[2, 1, 0, 1, 2]
+```
+
+ Round 2 (pos = 0)
+
+```
+[0, 1, 2, 3, 4]
+```
+
+ Round 3 (pos = 3)
+
+```
+[3, 2, 1, 0, 1]
+```
+
+---
+
+ Take maximum for each child
+
+| Child | Max                |
+| ----- | ------------------ |
+| 0     | max(2,0,3) = 3 |
+| 1     | max(1,1,2) = 2 |
+| 2     | max(0,2,1) = 2 |
+| 3     | max(1,3,0) = 3 |
+| 4     | max(2,4,1) = 4 |
+
+✅ Output
+
+```
+3
+2
+2
+3
+4
+```
+
+---
+
+ 7️⃣ Sample Case 1 (given)
+
+ Input
+
+```
+n = 4
+pos = [0, 1, 2, 3]
+```
+
+---
+
+ Round assignments
+
+```
+pos = 0 → [0, 1, 2, 3]
+pos = 1 → [1, 0, 1, 2]
+pos = 2 → [2, 1, 0, 1]
+pos = 3 → [3, 2, 1, 0]
+```
+
+---
+
+ Maximum per child
+
+| Child | Max |
+| ----- | --- |
+| 0     | 3   |
+| 1     | 2   |
+| 2     | 2   |
+| 3     | 3   |
+
+✅ Output
+
+```
+[3, 2, 2, 3]
+```
+
+
+ 🔹Optimal Selection
+
+---
+
+ 1️⃣ What is given?
+
+You are given:
+
+ An integer array `arr` of length `n`
+
+Example:
+
+```
+[1, 1, 3, 2]
+```
+
+---
+
+ 2️⃣ What operation are you allowed to do?
+
+You are allowed to perform AT MOST ONE operation.
+
+That operation has two parts:
+
+ ✅ Part A: Choose some elements
+
+ You may choose any subset of indices
+ Important rule:
+  👉 No two chosen elements can be adjacent
+
+So these are valid:
+
+```
+[0, 2, 4]
+[1, 3]
+[3]
+```
+
+These are NOT valid:
+
+```
+[1, 2]   ❌ adjacent
+[0, 1]   ❌ adjacent
+```
+
+---
+
+ ✅ Part B: Choose a number `x`
+
+ `x` must be non-negative (`x ≥ 0`)
+ Add `x` to all selected elements
+
+📌 You must use the same `x` for every selected element.
+
+---
+
+ 3️⃣ What is the goal?
+
+After doing at most one such operation:
+
+👉 The array must become non-decreasing
+
+ What does non-decreasing mean?
+
+```
+arr[i] ≤ arr[i+1]   for all i
+```
+
+Valid:
+
+```
+[1, 2, 2, 5]
+```
+
+Invalid:
+
+```
+[3, 1, 4]
+```
+
+---
+
+ 4️⃣ What do you need to return?
+
+ Return the minimum non-negative value of `x`
+ If it is impossible, return `-1`
+
+---
+
+ 5️⃣ Example given in the question
+
+ Input
+
+```
+arr = [1, 1, 3, 2]
+```
+
+---
+
+ Problem spot
+
+```
+3 > 2   ❌ (index 2 → 3)
+```
+
+We must fix this using one operation only.
+
+---
+
+ Option 1
+
+Select index `3` only
+Add `x = 1`
+
+```
+[1, 1, 3, 3]   ✅
+```
+
+Array is now non-decreasing.
+
+---
+
+ Option 2
+
+Select indices `[1, 3]`
+Add `x = 2`
+
+```
+[1, 3, 3, 4]   ✅
+```
+
+---
+
+ Minimum `x` among all valid options?
+
+```
+x = 1
+```
+
+✅ Answer = 1
+
+---
+
+ 6️⃣ Sample Case 0 (given)
+
+ Input
+
+```
+arr = [3, 1, 3, 2, 4]
+```
+
+---
+
+ Check where array decreases
+
+```
+3 > 1   ❌
+3 > 2   ❌
+```
+
+Indices causing problems:
+
+ index 1
+ index 3
+
+---
+
+ Can we select both?
+
+Indices `[1, 3]`
+They are not adjacent, so allowed ✅
+
+---
+
+ How much increment needed?
+
+```
+1 + x ≥ 3  → x ≥ 2
+2 + x ≥ 3  → x ≥ 1
+```
+
+So minimum `x = 2`
+
+---
+
+ After operation
+
+```
+[3, 3, 3, 4, 4]   ✅
+```
+
+✅ Answer = 2
+
+---
+
+ 7️⃣ Sample Case 1 (given)
+
+ Input
+
+```
+arr = [4, 1, 3, 5, 6, 5]
+```
+
+---
+
+ Where does it decrease?
+
+```
+4 > 1   ❌ (index 1)
+6 > 5   ❌ (index 5)
+```
+
+Indices needing increase:
+
+```
+1 and 5
+```
+
+---
+
+ Problem
+
+To fix:
+
+ index 1 needs to increase
+ index 5 needs to increase
+
+But:
+
+ Fixing index 1 affects future comparisons
+ Fixing index 5 does not fix earlier violations
+ Some violations require adjacent elements to be increased together
+ But adjacent selection is NOT allowed
+
+👉 No single `x` and valid subset can fix all problems
+
+❌ Impossible
+
+✅ Answer = -1
+
+---
+
+ 8️⃣ Important edge cases
+
+ Case 1: Already sorted
+
+```
+arr = [1, 2, 3, 4]
+```
+
+No operation needed
+Minimum `x = 0`
+
+---
+
+ Case 2: Single element
+
+```
+arr = [5]
+```
+
+Always non-decreasing
+Answer = `0`
+
+---
+
+ Case 3: Adjacent violations
+
+```
+arr = [3, 2, 1]
+```
+
+Indices 1 and 2 both need fixing
+But they are adjacent ❌
+
+Answer = `-1`
+
+---
