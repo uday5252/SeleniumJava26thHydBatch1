@@ -1,0 +1,150 @@
+package com.abc.demo;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+
+
+public class First {
+	public static void main(String[] args) {
+		
+//		LocalDate date = LocalDate.now();
+//		System.out.println(date);
+//		System.out.println(date.getDayOfMonth());
+//		System.out.println(date.getDayOfYear());
+//		System.out.println(date.getDayOfWeek());
+//		
+		
+//		LocalDate customDate = LocalDate.of(2025, 12, 26);
+//		System.out.println(customDate);
+		
+//		LocalTime currentTime = LocalTime.now();
+//		System.out.println(currentTime);
+		
+//		LocalTime customTime = LocalTime.of(10, 30);
+//		System.out.println(customTime);
+		
+//		LocalDateTime dateAndTime = LocalDateTime.now();
+//		System.out.println(dateAndTime);
+		
+//		26th Dec 2025 === 9:30 AM
+		
+//		LocalDate date = LocalDate.of(2025, 12, 26);
+//		LocalTime time = LocalTime.of(9, 30);
+//		
+//		LocalDateTime dateAndTime = LocalDateTime.of(date, time);
+//		System.out.println(dateAndTime);
+		
+//		LocalDateTime dateAndTime = LocalDateTime.of(2025, 12, 26, 9, 30);
+//		System.out.println(dateAndTime);
+		
+//		String date = "2026-11-31";
+//		
+//		DateTimeFormatter datePattern = 
+//				DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		
+//		LocalDate properDate = 
+//				LocalDate.parse(date,datePattern);
+//		System.out.println(properDate);
+	}
+
+	
+	
+
+}
+======================
+package com.abc.demo;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class DateComparator implements Comparator<String[]>
+{
+
+	@Override
+	public int compare(String[] a, String[] b) {
+//		a = {01-01-2023 14:00 ERROR failed},
+//		b = {26-12-2024 23:15 ERROR failed},
+		
+		DateTimeFormatter datePattern = 
+				DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		
+		String date1 = a[0];
+		String date2 = b[0];
+		
+		LocalDate javaDate1 = LocalDate.parse(date1, datePattern);
+//		01-01-2023
+		LocalDate javaDate2 = LocalDate.parse(date2, datePattern);
+//		26-12-2024
+		
+		return javaDate1.compareTo(javaDate2);
+	}
+	
+}
+
+public class Second {
+
+	public static void main(String[] args) {
+		
+	String[][] info = { 
+			{"01-01-2023", "14:00", "ERROR", "failed"}, 
+			{"01-12-2023", "15:00", "INFO", "established"}, 
+			{"26-12-2024", "23:15", "ERROR", "failed"},
+			{"22-05-2021", "12:00", "ERROR", "failed"} 	
+		};
+	
+	ArrayList<String[]> al = new ArrayList<String[]>();
+	
+	for(int i = 0; i < info.length; i++)
+	{
+		if(info[i][2].equals("ERROR"))
+				{
+					al.add(info[i]);
+				}
+	}
+	
+	System.out.println("Before Sorting: "+al);
+	for(String[] i : al)
+	{
+		System.out.println(i[0] + " " + i[1] + " " + i[2] + i[3]);
+	}
+	
+
+	Collections.sort(al, new DateComparator());
+	
+	System.out.println("After Sorting: "+al);
+	
+	for(String[] i : al)
+	{
+		System.out.println(i[0] + " " + i[1] + " " + i[2] + i[3]);
+	}
+	
+	
+
+//	[ 
+//	 {01-01-2023 14:00 ERROR failed},
+//	 {26-12-2024 23:15 ERROR failed},
+//	 {22-05-2021 12:00 ERROR failed},
+//	]
+	
+//	[ 
+//	 {22-05-2021 12:00 ERROR failed},
+//	 {01-01-2023 14:00 ERROR failed},
+//	 {26-12-2024 23:15 ERROR failed},
+//	]
+	
+	
+//	[ 
+//		{"01-01-2023", "14:00", "ERROR", "failed"}, 
+//		{"26-12-2024", "23:15", "ERROR", "failed"},
+//		{"22-05-2021", "12:00", "ERROR", "failed"} 	
+//	]
+	
+	}
+
+}
