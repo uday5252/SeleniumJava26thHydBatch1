@@ -1,0 +1,122 @@
+
+MOVIE BOOKING APPLICATION
+
+ 📌 Problem Statement
+
+Design a Movie Booking Application using Object-Oriented Programming (OOP) concepts.
+
+The application should allow users to:
+
+1. Book movie tickets
+2. Calculate total ticket price based on movie type
+3. Validate seat booking
+4. Support multiple movie categories with different pricing logic
+
+
+ 🧱 Functional Requirements
+
+ 1️⃣ Movie Details
+
+Each movie should have:
+
+ Movie name
+ Base ticket price
+
+---
+
+ 2️⃣ Movie Types
+
+The system should support at least:
+
+ Regular Movie
+ Premium Movie
+
+Each movie type should calculate ticket price differently.
+
+---
+
+ 3️⃣ Ticket Price Calculation Rules
+
+ Regular Movie:
+  `Total Price = Base Price × Number of Seats`
+
+ Premium Movie:
+  `Total Price = (Base Price × Number of Seats) + 20% extra charge`
+
+---
+
+ 4️⃣ Seat Validation
+
+ Number of seats must be greater than 0
+ Invalid bookings should be rejected
+
+---
+
+ 5️⃣ Booking
+
+ A booking should be associated with one movie
+ Total price should be calculated using the movie’s pricing logic
+
+---
+
+ 🧪 TEST CASES
+
+---
+
+ ✅ Test Case 1 – Regular Movie Booking
+
+Input:
+
+```
+Movie Type: Regular
+Movie Name: Interstellar
+Base Price: 150
+Number of Seats: 2
+```
+
+Expected Output:
+
+```
+Total Ticket Price: 300
+```
+
+---
+
+ ✅ Test Case 2 – Premium Movie Booking
+
+Input:
+
+```
+Movie Type: Premium
+Movie Name: Avengers
+Base Price: 200
+Number of Seats: 3
+```
+
+Expected Output:
+
+```
+Total Ticket Price: 720
+```
+
+---
+
+ ❌ Test Case 3 – Invalid Seat Count
+
+Input:
+
+```
+Movie Type: Regular
+Movie Name: Inception
+Base Price: 180
+Number of Seats: 0
+```
+
+Expected Output:
+
+```
+Invalid booking: Number of seats must be greater than zero
+```
+
+---
+
