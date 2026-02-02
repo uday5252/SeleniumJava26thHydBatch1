@@ -148,3 +148,18 @@ public class Second {
 	}
 
 }
+====================
+ArrayList al = new ArrayList();
+		
+		String s = "Please123 please123learn learn learn coding!";
+		
+		Pattern p = 
+				Pattern.compile("(\\w+)\\s+\\1\\b", Pattern.CASE_INSENSITIVE);
+
+		Matcher m = p.matcher(s);
+		while(m.find())
+		{
+			al.add(m.group(1));
+		}
+
+		System.out.println(al);
