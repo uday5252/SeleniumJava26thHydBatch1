@@ -1,0 +1,66 @@
+package com.abc.demo;
+
+import java.util.Scanner;
+
+public class Fourth {
+
+	public static void main(String[] args) {
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		System.out.println("Enter your rollno:");
+//		int rollNo = scan.nextInt();
+//		
+//		System.out.println("Enter your salary:");
+//		float salary = scan.nextFloat();
+//		
+//		System.out.println("Enter your driving license status:");
+//		boolean status = scan.nextBoolean();
+//		
+//		System.out.println("Enter your class section name:");
+//		String sectionName = scan.next();// collect a string
+//		
+//		System.out.println(rollNo);
+//		System.out.println(salary);
+//		System.out.println(status);
+//		System.out.println(sectionName);
+
+//		========================================
+		
+		
+		
+		
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter the employee id:");
+		int empId = scan.nextInt();
+		
+		System.out.println("Enter the employee age:");
+		int empAge = scan.nextInt();
+		
+		System.out.println("Enter the employee name:");
+		scan.nextLine();
+		String empName = scan.nextLine();
+		
+		System.out.println(empId);
+		System.out.println(empAge);
+		System.out.println(empName);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
