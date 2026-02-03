@@ -1,0 +1,213 @@
+
+
+ 🧮 Problem: PRODUCT
+
+ Problem Statement
+
+Create a Java class named Product that calculates the product of integers using constructor overloading.
+
+The class should support different numbers of integer inputs through multiple constructors. Based on the number of arguments passed during object creation, the corresponding constructor should be invoked to calculate the product of the values.
+
+The calculated product must be stored in an instance variable and returned using a method.
+
+---
+
+ Requirements
+
+ Implement constructor overloading
+ Support 1 to 5 integer parameters
+ Store the calculated product in an instance variable
+ Implement a method getResult() to return the product
+
+---
+
+ Input
+
+Integers passed as arguments while creating the Product object
+(Number of integers ranges from 1 to 5)
+
+---
+
+ Output
+
+Return or print the product of the given integers
+
+---
+
+ Constraints
+
+ All inputs are integers
+ Number of parameters ≤ 5
+
+---
+
+ Example
+
+Input
+
+java
+Product p = new Product(1, 2, 3);
+System.out.println(p.getResult());
+
+
+Output
+
+
+6
+
+
+---
+
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================
+
+Design a Java class named Library that represents a library system.
+
+The class should store:
+
+ The name of the library
+ The total number of books
+ A genre-wise count of books using a map
+
+The class must follow encapsulation principles by keeping all data members private and providing public getter and setter methods.
+
+---
+
+ Class Requirements
+
+ Private Data Members
+
+ int number_of_books
+ String name
+ Map<String, Integer> bookGenres
+
+ Public Methods
+
+ getNumber_of_books()
+ getName()
+ getBookGenres()
+ setNumber_of_books(int number_of_books)
+ setName(String name)
+ setBookGenres(Map<String, Integer> bookGenres)
+
+---
+
+ Task
+
+1. Create the Library class as specified.
+2. Allow setting and retrieving library details using getter and setter methods.
+3. Store and retrieve genre-wise book counts using a Map.
+
+---
+
+ Input Format
+
+ Library name (String)
+ Total number of books (Integer)
+ Number of genres (Integer)
+ Genre name (String) and book count (Integer) for each genre
+
+---
+
+ Output Format
+
+ Library name
+ Total number of books
+ Each genre and its corresponding book count
+
+---
+
+ ✅ Test Cases
+
+ 🔹 Test Case 1
+
+Input
+
+
+Name: Central Library
+Number of Books: 3000
+Genres:
+Fiction -> 1200
+Science -> 800
+History -> 1000
+
+
+Expected Output
+
+
+Central Library
+3000
+Fiction : 1200
+Science : 800
+History : 1000
+
+
+---
+
+ 🔹 Test Case 2
+
+Input
+
+
+Name: Community Library
+Number of Books: 0
+Genres:
+
+
+Expected Output
+
+
+Community Library
+0
+
+
+---
+
+ 🔹 Test Case 3 (Single Genre)
+
+Input
+
+
+Name: Kids Library
+Number of Books: 500
+Genres:
+Comics -> 500
+
+
+Expected Output
+
+
+Kids Library
+500
+Comics : 500
+
+
+---
+
+ 🔹 Test Case 4 (Edge Case)
+
+Input
+
+
+Name: Digital Library
+Number of Books: 100
+Genres:
+Ebooks -> 0
+Audiobooks -> 100
+
+
+Expected Output
+
+
+Digital Library
+100
+Ebooks : 0
+Audiobooks : 100
+
+
+---
+
