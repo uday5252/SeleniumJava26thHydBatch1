@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    stages{
+        stage("cloning the project"){
+            steps
+            {
+                git "https://github.com/uday5252/CalculatorRepository.git"
+            }
+        }
+        stage("compiling the project"){
+            steps
+            {
+                bat 'javac -d build src\\com\\abc\\demo\\CalculatorApp.java'
+            }
+        }
+        stage("creating the jar file"){
+            steps
+            {
+                bat 'jar cfe calc.jar com.abc.demo.CalculatorApp -C build .'
+            }
+        }
+        stage("execute the jar file"){
+            steps
+            {
+                bat 'java -jar calc.jar'
+            }
+        }
+    }
+}
