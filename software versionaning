@@ -1,0 +1,179 @@
+ 🧠 1️⃣ Introduction to Software Versioning
+
+ 👉 Simple meaning
+
+Software versioning = giving numbers to software when it changes.
+
+Whenever developers:
+
+ add feature
+ fix bug
+ improve speed
+
+→ version number changes.
+
+This helps everyone know which software is latest and what changed.
+
+---
+
+ 🏠 Easy analogy (School notebook)
+
+You write notes in notebook.
+
+Day 1 → first notes → Version 1
+Day 2 → add more → Version 2
+Day 3 → correct mistakes → Version 3
+
+Notebook same, but improving.
+
+Software also improves like this → version changes.
+
+---
+
+ 💻 Real-time example (company)
+
+In company:
+
+```
+Bank app created → Version 1.0
+Add payment option → Version 2.0
+Fix login bug → Version 2.1
+```
+
+Without version → nobody knows what changed.
+With version → easy tracking.
+
+---
+
+ 🚀 2️⃣ Major Release (Big change)
+
+ 👉 Meaning
+
+Major release = very big change in software.
+
+ New design
+ Many new features
+ Technology change
+ Full upgrade
+
+---
+
+ 🏠 House analogy
+
+Old house removed
+New modern house built
+
+Big change = major release.
+
+---
+
+ 📱 Real-time examples
+
+Windows 10 → Windows 11
+Android 13 → Android 14
+Instagram old UI → new UI
+
+Completely new experience.
+
+---
+
+ 💻 Version example
+
+```
+1.0 → 2.0 → 3.0
+```
+
+First number changes.
+
+---
+
+ ✨ 3️⃣ Minor Release (Small feature added)
+
+ 👉 Meaning
+
+Small new features added
+But software same.
+
+Not a big change.
+
+---
+
+ 🏠 House analogy
+
+Same house
+Add:
+
+ new TV
+ new sofa
+ painting
+
+House same but improved.
+
+---
+
+ 📱 Real-time examples
+
+WhatsApp adds:
+
+ edit message
+ new emoji
+ new theme
+
+App same, features added.
+
+---
+
+ 💻 Version example
+
+```
+2.0 → 2.1 → 2.2
+```
+
+Second number changes.
+
+---
+
+ 🔧 4️⃣ Revision Release (Bug fix)
+
+ 👉 Meaning
+
+Only bug fixing.
+No new features.
+Just correction.
+
+---
+
+ 🏠 House analogy
+
+Fan not working
+Electrician fixes fan
+
+House same.
+Just repair.
+
+---
+
+ 📱 Real-time examples
+
+Mobile update message:
+
+```
+Bug fixes and performance improvement
+```
+
+App crashing → fixed.
+
+Bank app login error → fixed.
+
+---
+
+ 💻 Version example
+
+```
+2.1.0 → 2.1.1
+```
+
+Last number changes.
+
+---
+
