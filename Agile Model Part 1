@@ -1,0 +1,880 @@
+
+ 🟦 1. Introduction to SCRUM
+
+ What is Scrum?
+
+Scrum means doing work in small small parts, not full work at once.
+
+You work in short cycles called sprints (2 weeks usually).
+After each sprint → show work → take feedback → improve.
+
+---
+
+ 🏠 Husband–Wife Example (Best one)
+
+Husband decides:
+
+> I will secretly build full dream house and surprise my wife after 1 year.
+
+After 1 year…
+
+Wife sees:
+
+ Kitchen wrong direction
+ Bedroom small
+ No dressing room
+
+She says:
+
+> Who asked you to build like this? 😑
+
+All work wasted.
+
+---
+
+ Smart husband uses Scrum
+
+Week 1:
+Build bedroom → show wife
+Wife: “Make wardrobe bigger”
+
+Week 2:
+Fix wardrobe + build kitchen
+Wife: “Add modular kitchen”
+
+Week 3:
+Build hall
+
+Finally house perfect.
+
+👉 This is Scrum
+Build small → take feedback → improve.
+
+---
+
+ 🏢 Real IT Example
+
+Swiggy doesn’t build full app for 1 year.
+
+They release:
+
+ Coupons feature
+ Then ratings
+ Then voice search
+ Then UI changes
+
+Small updates → feedback → improvement.
+
+---
+
+ 🟦 2. Scrum Roles
+
+Scrum has 3 roles:
+
+ Product Owner
+ Scrum Master
+ Team
+
+Let’s understand with husband–wife life.
+
+---
+
+ 🟨 Product Owner (PO)
+
+ Who is PO?
+
+Person who decides:
+
+ What to build
+ What first
+ What later
+
+---
+
+ 👩 Wife Example
+
+In most homes:
+Wife decides:
+
+ Which sofa
+ Which color
+ Which TV
+ Which curtains
+
+Husband only pays and works 😄
+
+So wife = Product Owner.
+
+---
+
+ 🏢 IT Example
+
+Product Owner says:
+
+> Add payment feature first
+> Add dark mode later
+
+Team follows.
+
+---
+
+ 🟨 Scrum Master
+
+ Who is Scrum Master?
+
+Problem solver for team.
+
+Removes obstacles.
+
+---
+
+ 👩‍🦰 Example
+
+Husband working from home.
+
+Problems:
+
+ Internet not working
+ Power cut
+ Noise outside
+
+Wife:
+
+ Calls electrician
+ Fixes WiFi
+ Manages disturbance
+
+Husband continues work peacefully.
+
+Wife = Scrum Master here.
+
+---
+
+ 🏢 IT Example
+
+Developer stuck:
+Server down.
+
+Scrum master:
+
+ Calls infra team
+ Fixes server
+ Work continues
+
+---
+
+ 🟨 Development Team
+
+Team builds product.
+
+---
+
+ 🍳 Example
+
+At home dinner:
+Wife cooking
+Husband cutting vegetables
+Child setting table
+
+Food ready.
+
+Everyone contributed.
+
+---
+
+ 🏢 IT Example
+
+Team:
+
+ Developers code
+ Testers test
+ Designer designs
+
+Feature delivered.
+
+---
+
+ 🟦 3. User Story
+
+ What is user story?
+
+Requirement from user side.
+
+Format:
+
+> As a user I want ___ so that ___
+
+---
+
+ 👩 Wife Example
+
+Wife says:
+
+> As a wife I want bigger wardrobe
+> so that I can keep my dresses
+
+Clear requirement.
+
+---
+
+ 🏢 IT Example
+
+> As a user I want login
+> so that I can access account
+
+---
+
+ 🟦 4. Sprint
+
+ What is Sprint?
+
+Fixed time to complete work (2 weeks).
+
+---
+
+ 🧹 Example
+
+Wife says:
+
+> Within 2 days clean full house.
+
+Husband plans:
+
+ Day 1 → Hall + kitchen
+ Day 2 → Bedroom
+
+Completes in 2 days.
+
+That 2-day cycle = Sprint.
+
+---
+
+ 🏢 IT Example
+
+Sprint 1:
+Login
+
+Sprint 2:
+Cart
+
+Sprint 3:
+Payment
+
+---
+
+ 🟦 5. Scrum Meetings
+
+ 🟨 Sprint Planning
+
+Decide what to do in sprint.
+
+ 🛒 Example
+
+Wife:
+
+> Guests coming Sunday
+> Clean house + buy groceries
+
+Plan created.
+
+---
+
+ 🟨 Daily Standup
+
+Daily update.
+
+ Example
+
+Morning discussion:
+
+Husband:
+
+> Yesterday cleaned hall
+> Today kitchen
+> Problem: broom missing
+
+Wife resolves.
+
+---
+
+ 🟨 Sprint Review
+
+Show work at end.
+
+ Example
+
+House cleaned.
+
+Wife inspects:
+
+> Good… but balcony not cleaned.
+
+Feedback given.
+
+---
+
+ 🟨 Retrospective
+
+Discuss improvement.
+
+ Example
+
+After guests leave:
+
+> Next time start cleaning earlier
+> Don’t postpone work
+
+---
+
+ 🟦 6. Story Points
+
+Measure difficulty.
+
+---
+
+ 🍲 Example
+
+Cooking difficulty:
+
+Tea → easy
+Lunch → medium
+Wedding cooking → very difficult
+
+Same story points.
+
+---
+
+ 🏢 IT Example
+
+Login → 3
+Cart → 5
+Payment → 13
+
+---
+
+ 🟦 7. Planning Poker
+
+Team estimates work.
+
+---
+
+ 💰 Example
+
+Wife asks:
+
+> How much will sofa cost?
+
+Husband: 20k
+Wife: 30k
+Shopkeeper: 40k
+
+Discussion → final 30k.
+
+Same planning poker.
+
+---
+
+ 🟦 8. Velocity
+
+Team speed.
+
+---
+
+ 🧹 Example
+
+Husband cleans:
+2 rooms per day.
+
+So speed known.
+
+Next time planning easy.
+
+---
+
+ 🏢 IT Example
+
+Team completes:
+25 story points per sprint.
+
+Next sprint planned accordingly.
+
+---
+
+ 🟦 9. Definition of Done (DoD)
+
+When work fully complete.
+
+---
+
+ 🍽 Example
+
+Wife says:
+Dish washed only when:
+
+ Soap used
+ Rinsed
+ Kept in place
+
+Not just water touch.
+
+---
+
+ 🏢 IT Example
+
+Feature done only when:
+
+ Code complete
+ Tested
+ No bugs
+ Approved
+
+---
+
+Perfect 👍
+Now I’ll explain technically + husband-wife example together
+so you understand concept + real IT usage clearly.
+
+This is exactly how interviewers expect answer.
+
+---
+
+ 🟥 PROBLEMS WITH SCRUM (Technical + Simple example)
+
+Scrum is good for planned development
+but not good for unplanned or urgent work
+
+---
+
+ 🔴 Problem 1: Sprint cannot change (technical)
+
+ 📘 Technical explanation
+
+In Scrum:
+
+ Sprint duration fixed (2 weeks)
+ Sprint backlog locked
+ New tasks cannot be added
+
+Reason:
+Team focus should not change during sprint.
+
+But real IT world:
+
+ Production bugs come
+ Client urgent change
+ Server down
+
+You cannot wait till next sprint.
+
+---
+
+ 👩‍❤️‍👨 Husband-wife example
+
+Wife gives list:
+
+ Buy vegetables
+ Clean house
+ Pay bill
+
+Husband plans full day.
+
+Suddenly guests coming.
+
+Wife:
+
+> Go bring sweets also
+
+Husband:
+
+> Already planned tasks 😑
+
+But real life:
+He must go immediately.
+
+Scrum fails here.
+
+---
+
+ 🏢 Real IT example
+
+Sprint started Monday.
+
+Wednesday:
+Production payment failure.
+
+Client losing money.
+
+Can team say:
+
+> We will fix next sprint?
+
+No.
+
+So Scrum rigid structure becomes problem.
+
+---
+
+ 🔴 Problem 2: Too many meetings
+
+ 📘 Technical explanation
+
+Scrum has many ceremonies:
+
+ Sprint planning
+ Daily standup
+ Sprint review
+ Retrospective
+
+If team small → fine
+If project heavy → time-consuming
+
+Sometimes more meeting, less work.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Husband working from home.
+
+Wife calls every hour:
+
+ What doing?
+ What completed?
+ What next?
+
+Husband:
+
+> Let me work also 😭
+
+Same feeling developers get.
+
+---
+
+ 🏢 Real IT example
+
+Team spends:
+
+ 2 hrs planning
+ 30 min daily standup
+ 2 hrs review
+ 1 hr retrospective
+
+Less coding time.
+
+---
+
+ 🔴 Problem 3: Sprint commitment pressure
+
+ 📘 Technical explanation
+
+Team commits story points at sprint start.
+
+Example:
+Commit = 40 points
+Completed = 25
+
+Management questions:
+
+> Why not completed?
+
+Even if complexity high.
+
+Creates stress.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Wife gives husband 10 tasks:
+
+ Clean house
+ Buy groceries
+ Fix bulb
+ Wash car
+
+He finishes 7.
+
+Wife:
+
+> Why not all 10?
+
+Husband stressed 😐
+
+---
+
+ 🏢 Real IT example
+
+Unexpected issues:
+
+ Server down
+ Requirement change
+ Complex bug
+
+Still team judged by commitment.
+
+---
+
+ 🔴 Problem 4: Not good for support/DevOps teams
+
+ 📘 Technical explanation
+
+Scrum best for:
+👉 New feature development
+
+Not good for:
+👉 Production support
+👉 DevOps
+👉 Maintenance team
+
+Because work comes anytime.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Daily home work:
+
+ Doorbell anytime
+ Delivery anytime
+ Phone calls anytime
+
+Cannot plan everything in morning only.
+
+---
+
+ 🏢 Real IT example
+
+Support team day:
+10 AM → bug
+12 PM → server issue
+3 PM → client call
+5 PM → DB error
+
+Cannot wait for next sprint.
+
+---
+
+ 🟩 So companies introduced KANBAN
+
+ 🟩 What is Kanban? (technical)
+
+Kanban = Continuous workflow system.
+
+No sprint.
+No fixed commitment.
+Work taken as it comes.
+
+Board:
+
+```
+To Do → In Progress → Done
+```
+
+Work flows continuously.
+
+---
+
+ 📘 Technical features of Kanban
+
+1. No sprint
+2. Continuous delivery
+3. Work in progress (WIP) limit
+4. Visual board tracking
+5. Flexible priorities
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Daily home tasks board:
+
+To do:
+
+ Buy milk
+ Wash clothes
+
+In progress:
+
+ Cooking
+
+Done:
+
+ Cleaning
+
+Pick task anytime.
+Finish anytime.
+
+No 2-week planning.
+
+---
+
+ 🏢 Real IT example
+
+Production support team:
+Bug comes → fix
+Next bug → fix
+Urgent issue → handle
+
+No sprint wait.
+
+---
+
+ 🟥 EXTREME PROGRAMMING (XP)
+
+ 📘 Technical meaning
+
+XP focuses on:
+👉 High-quality coding
+👉 Continuous testing
+👉 Frequent releases
+👉 Developer collaboration
+
+Used in critical systems.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Guests coming home.
+
+Wife cooking carefully:
+
+ Tastes salt
+ Checks spice
+ Rechecks
+
+Because guests important.
+
+Same XP ensures perfect code.
+
+---
+
+ XP PRACTICES (Technical + Example)
+
+ 🟦 1. Pair Programming
+
+ Technical
+
+Two developers work on one system.
+
+ One writes code
+ One reviews
+
+Reduces bugs.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Husband cooking.
+Wife watching:
+
+> Add salt carefully.
+
+Mistakes avoided.
+
+---
+
+ 🏢 IT example
+
+Banking payment module.
+Two developers code together to avoid errors.
+
+---
+
+ 🟦 2. Test Driven Development (TDD)
+
+ Technical
+
+Write test case first.
+Then write code.
+
+Ensures correct logic.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Wife reads recipe fully
+then starts cooking.
+
+Not random cooking.
+
+---
+
+ 🏢 IT example
+
+Before login code:
+Write test:
+
+> Login should work with valid credentials
+
+Then write code.
+
+---
+
+ 🟦 3. Continuous Integration
+
+ Technical
+
+Developers push code daily.
+Automated testing runs.
+
+Bugs detected early.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Taste food while cooking.
+Not after burning.
+
+---
+
+ 🏢 IT example
+
+Developer pushes code → Jenkins runs tests → errors found immediately.
+
+---
+
+ 🟦 4. Small releases
+
+ Technical
+
+Release small features frequently.
+
+Instead of 6-month big release.
+
+---
+
+ 👩‍❤️‍👨 Example
+
+Instead of cooking 10 dishes at once,
+serve hot chapati one by one.
+
+Better quality.
+
+---
+
+ 🟪 FINAL TECHNICAL DIFFERENCE
+
+| Method | Best for            | Why               |
+| ------ | ------------------- | ----------------- |
+| Scrum  | Feature development | Planned work      |
+| Kanban | Support/maintenance | Continuous work   |
+| XP     | Critical systems    | High quality code |
+
+---
+
+ 🎯 Interview Question (must know)
+
+ Q: Why Kanban when Scrum exists?
+
+Technical Answer:
+Scrum is suitable for planned sprint-based development.
+However, it is not flexible for continuous and urgent work like production support.
+Kanban provides continuous workflow, flexible priorities, and no sprint restriction, making it suitable for support and DevOps teams.
+
+---
+
+
