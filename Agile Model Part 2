@@ -1,0 +1,754 @@
+ 🔵 Introduction to Agile Testing
+
+ 1️⃣ What is Agile Testing?
+
+ 👉 Simple meaning
+
+Agile testing = Testing happens along with development, not after development.
+
+Old method:
+Build full house → then check problems
+Agile:
+Build room by room → check each room immediately
+
+ 👉 Real-time example
+
+Swiggy app team:
+
+ Developer builds login feature today
+ Tester tests login same day
+ Bug fixed immediately
+
+Not wait for 3 months.
+
+EXAMPLE
+
+Wife cooking biryani 🍗
+Husband waits till end → says salt less 😡
+Wife: “Why didn’t you tell while cooking?”
+
+Agile testing =
+Husband tasting while cooking 😎
+
+---
+
+ 2️⃣ Agile Team – Roles and Activities
+
+ 👨‍💻 Roles in Agile team
+
+ Product Owner → tells what to build
+ Scrum Master → manages process
+ Developer → writes code
+ Tester → tests
+ DevOps → deployment
+
+ 👉 Activity flow
+
+Plan → Develop → Test → Fix → Deploy → Repeat
+
+All work together daily.
+
+EXAMPLE
+
+Family trip planning:
+
+ Wife = Product owner (decides Goa)
+ Husband = Developer (drives car)
+ Kid = Tester (keeps complaining)
+ Google Maps = Scrum master 🤣
+
+---
+
+ 3️⃣ Where does Tester fit in Agile Team?
+
+👉 Tester is NOT last person
+Tester is involved from day 1
+
+Before coding → tester reads requirement
+During coding → tester discusses with dev
+After coding → tester tests immediately
+
+Tester = part of development team
+
+EXAMPLE
+
+Before buying sofa:
+
+ Wife selects
+ Husband pays
+ Tester friend sits & checks comfort 😆
+
+Tester must sit before buying!
+
+---
+
+ 4️⃣ Tester Role & Responsibilities in Agile
+
+ 🧪 Tester work
+
+ Understand requirement
+ Write test cases
+ Test daily builds
+ Report bugs in JIRA
+ Attend standup meeting
+ Do regression testing
+ Automation testing
+
+ 👉 Real-time example
+
+Amazon cart feature release:
+Tester checks:
+
+ Add to cart
+ Remove
+ Payment
+ Offers
+ Performance
+
+EXAMPLE
+
+Wife buys mixer grinder
+Tester husband checks:
+
+ Speed
+ Noise
+ Jar quality
+ Warranty
+ Price
+
+He is doing full testingEXAMPLE
+
+---
+ 6️⃣ How Agile Testing is Different?
+
+ Agile Testing
+
+ Continuous testing
+ Daily testing
+ Automation
+ Fast feedback
+
+ Old testing
+
+ Testing at end
+ Slow feedback
+ Many bugs late
+
+EXAMPLE
+
+Old method:
+Husband checks bank balance month end → shock 😱
+
+Agile method:
+Checks daily → safe 😎
+
+---
+
+ 7️⃣ Traditional Testing vs Agile Testing
+
+| Traditional       | Agile            |
+| ----------------- | ---------------- |
+| Testing after dev | Testing with dev |
+| Big release       | Small release    |
+| Late bugs         | Early bugs       |
+| Separate teams    | One team         |
+
+EXAMPLE 
+
+Traditional marriage:
+Talk after fight 😆
+
+Agile marriage:
+Talk during fight 😎
+
+---
+
+ 8️⃣ What is Iteration 0?
+
+ 👉 Meaning
+
+Preparation phase before sprint starts.
+
+Things done:
+
+ Environment setup
+ Tools setup
+ Test strategy
+ Requirement understanding
+
+ 👉 Example
+
+Before building app:
+
+ Install tools
+ Setup server
+ Create test data
+
+That is iteration 0.
+
+EXAMPLE 
+
+Before wedding:
+
+ Venue booking
+ Clothes shopping
+ Invitation printing
+
+That is Iteration 0 🤣
+
+---
+
+ 9️⃣ User Story Perspective in Agile Testing
+
+ 👉 User Story format
+
+“As a user, I want login feature so I can access account”
+
+Tester checks:
+
+ Valid login
+ Invalid login
+ Error message
+ UI
+ Performance
+
+ 👉 Real-time
+
+Swiggy story:
+“As a user, I want to order food”
+
+Tester tests:
+
+ Search
+ Cart
+ Payment
+ Delivery
+
+EXAMPLE 
+
+Wife story:
+“As a wife, I want shopping so I feel happy”
+
+Acceptance criteria:
+
+ Husband pays
+ No complaints
+ Fast billingEXAMPLE
+
+---
+
+ 🔟 Tester Mindset Change in Agile
+
+Old mindset:
+❌ Only testing
+❌ After development
+❌ Finding bugs only
+
+New Agile mindset:
+✔ Work with developer
+✔ Understand business
+✔ Suggest improvements
+✔ Automation
+✔ Fast testing
+
+Tester = Quality owner
+
+EXAMPLE
+
+Old husband:
+“Food bad” 😡
+
+Agile husband:
+“Let’s cook together” 😍
+
+Quality improves 😆
+
+---
+
+ 🔵 What is Static Testing?
+
+ 👉 Simple meaning
+
+Static testing = Testing without running application
+
+Just check documents/code manually.
+
+✔ Requirement document
+✔ Test cases
+✔ Design
+✔ Code review
+
+No execution.
+
+---
+
+ 🟢 Real-time example
+
+Developer writes code for login.
+Before running app, tester checks code & requirement.
+
+Find mistake early.
+
+---
+
+EXAMPLE
+
+Wife writes shopping list 📝
+Husband checks list before going to market.
+
+If mistake found before shopping → Static testing 🤣
+
+If he goes and then finds mistake → Dynamic testing 😆
+
+---
+
+ 🔵 Types of Testing Techniques
+
+There are 2 main types:
+
+| Type            | Meaning             |
+| --------------- | ------------------- |
+| Static Testing  | Without running app |
+| Dynamic Testing | By running app      |
+
+---
+
+ 🟢 Example
+
+Check question paper before exam → Static
+Write exam & see mistakes → Dynamic
+
+---
+
+EXAMPLE 
+
+Before cooking → checking recipe = Static
+After cooking → tasting food = Dynamic 🤣
+
+---
+
+ 🔵 Static vs Dynamic Testing
+
+| Static Testing                 | Dynamic Testing   |
+| ------------------------------ | ----------------- |
+| No execution                   | Execution needed  |
+| Early stage                    | After build       |
+| Find requirement/design issues | Find runtime bugs |
+| Manual review                  | Run application   |
+
+---
+
+ 🟢 Real-time example
+
+Static:
+Check requirement → login needs OTP
+
+Dynamic:
+Run app → OTP not coming
+
+---
+
+EXAMPLE
+
+Before marriage: background checkEXAMPLE (Static)
+After marriage: real behaviour 😆 (Dynamic)
+
+---
+
+ 🔵 Static Testing Basics
+
+ 👉 When done?
+
+Before coding & before execution.
+
+ 👉 What checked?
+
+ Requirement document
+ Design document
+ Code
+ Test cases
+
+ 👉 Who does?
+
+ Tester
+ Developer
+ BA
+ Architect
+
+---
+
+ 🟢 Example
+
+Requirement says:
+Password must be 8 characters
+
+Developer coded 6 characters
+
+Tester finds in document review → static testing success.
+
+---
+
+EXAMPLE 
+
+Wife message:
+“Bring 1kg sugar”
+
+Husband reads properly → brings correct
+Static testing success 🤣
+
+If he doesn’t read → brings salt 😆
+
+---
+
+
+ 🔵 Benefits of Static Testing
+
+ ✔ Find bugs early
+
+ ✔ Saves money
+
+ ✔ Improves quality
+
+ ✔ Less rework
+
+ ✔ Better understanding
+
+---
+
+ 🟢 Real-time example
+
+If requirement wrong → whole app wrong
+
+Finding early saves project.
+
+---
+
+EXAMPLE 
+
+If wife tells wrong train date 😆
+Finding early saves travel disaster 🤣
+
+---
+
+🔵 What is Use Case Testing?
+
+
+Use case testing = testing application based on
+how real user uses system step-by-step
+
+We test full user flow.
+
+🟢 Real-time example: ATM withdraw
+
+User steps:
+
+Insert card
+
+Enter PIN
+
+Select withdraw
+
+Take cash
+
+Tester tests full flow.
+
+📊 Line diagram
+User → Insert card → Enter PIN → Withdraw → Get cash
+            ↑                          ↓
+          Error? ←------ System response
+
+
+This full user flow = use case testing.
+
+ Husband-wife example
+
+Morning routine use case:
+
+Wife wakes husband → gives tea → sends office
+           ↓
+      Husband late?
+           ↓
+        Fight 😆
+
+
+Full life flow testing 🤣
+
+🔵 Use Case Modeling
+👉 Meaning
+
+Drawing or writing how user interacts with system.
+
+Shows:
+
+user steps
+
+system response
+
+alternate paths
+
+🟢 Swiggy example
+Open app → Search food → Add to cart → Pay → Order placed
+
+
+Diagram:
+
+User
+ ↓
+Open App
+ ↓
+Search Food
+ ↓
+Add to Cart
+ ↓
+Payment
+ ↓
+Order Confirmed
+
+
+This full flow = use case model.
+
+🔵 Actor (Who uses system)
+
+Actor = user of system.
+
+Examples:
+
+Customer
+
+Admin
+
+Seller
+
+Bank user
+
+🟢 ATM example
+        [Customer]
+            ↓
+         ATM system
+            ↓
+        Withdraw cash
+
+
+Actor = customer
+
+ EXAMPLE
+
+Home system:
+
+Wife (Main actor)
+   ↓
+Husband (system) 🤣
+   ↓
+Money transfer
+
+
+# 🟢 REAL TIME USE CASE TESTING EXAMPLE
+
+# 🛒 E-commerce Website – “Place Order” Feature
+
+This is 100% real company example.
+
+---
+
+# 🔵 Step 1: Actor (Who is user?)
+
+Actor = Customer (who buys product)
+
+```
+Actor → Customer
+System → Amazon/Flipkart website
+```
+
+---
+
+# 🔵 Step 2: Goal of user
+
+Customer goal:
+👉 Buy product successfully
+
+---
+
+# 🔵 Step 3: Main Use Case Flow (Happy path)
+
+This is normal successful scenario.
+
+# 📊 Use Case Flow Diagram
+
+```
+Customer
+   ↓
+Login
+   ↓
+Search product
+   ↓
+Add to cart
+   ↓
+Proceed to payment
+   ↓
+Enter address
+   ↓
+Make payment
+   ↓
+Order placed successfully
+```
+
+This full flow = USE CASE
+
+Tester must test full flow.
+
+---
+
+# 🔵 Step 4: Precondition
+
+Before starting:
+
+✔ User account must exist
+✔ Product available
+✔ Internet working
+✔ Payment method available
+
+---
+
+# 🔵 Step 5: Postcondition
+
+After success:
+
+✔ Order placed
+✔ Order ID generated
+✔ Confirmation message
+✔ Email/SMS sent
+
+---
+
+# 🔵 Step 6: Alternate Paths (Very important)
+
+Alternate = different way user completes.
+
+# Case 1: Different payment method
+
+```
+Payment page
+   ↓
+User selects UPI instead of card
+   ↓
+Payment success
+   ↓
+Order placed
+```
+
+# Case 2: Guest checkout
+
+```
+User not login
+   ↓
+Guest checkout
+   ↓
+Enter address
+   ↓
+Payment
+```
+
+Tester must test these.
+
+---
+
+# 🔵 Step 7: Exception Scenarios
+
+Unexpected situation.
+
+# Case 1: Product out of stock
+
+```
+Add to cart
+   ↓
+Product unavailable 😱
+   ↓
+Show "Out of stock"
+```
+
+# Case 2: Server down
+
+```
+Payment processing
+   ↓
+Server error
+   ↓
+Show error message
+```
+
+---
+
+# 🔵 Step 8: Failure Scenarios (MOST IMPORTANT)
+
+Tester must test failures.
+
+# Case 1: Payment failed
+
+```
+Enter card details
+   ↓
+Wrong OTP
+   ↓
+Payment failed
+   ↓
+Order not placed
+```
+
+# Case 2: Money deducted but order not placed 😱
+
+(Most critical bug)
+
+```
+Payment success
+Money deducted
+   ↓
+Order not created
+   ↓
+BIG DEFECT 🚨
+```
+
+Tester must test this carefully.
+
+---
+
+# 🔵 Step 9: What Tester does in Use Case Testing?
+
+Tester tests full end-to-end flow.
+
+# Tester checklist:
+
+✔ Login working?
+✔ Search working?
+✔ Add to cart working?
+✔ Payment working?
+✔ Order created?
+✔ Email received?
+✔ Failure handled?
+
+---
+
+# 🔵 Step 10: Simple Use Case Diagram
+
+```
+              Customer
+                 |
+                 v
+              Login
+                 |
+                 v
+           Search Product
+                 |
+                 v
+             Add to Cart
+                 |
+                 v
+              Payment
+             /      \
+       Success      Failed
+          |           |
+      Order placed   Retry
+```
+
+Tester must test ALL paths.
+
+---
