@@ -154,3 +154,33 @@ public class First {
 	}
 
 }
+===================
+package com.abc.demo;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.facebook.com");
+		
+		List<WebElement> info = 
+				driver.findElements(By.className("inputtext"));
+	
+		for(int i = 0; i < info.size(); i++)
+		{
+			info.get(i).sendKeys("raju@gmail.com");
+		}
+//		info.get(0).sendKeys("raju@gmail.com");
+//		info.get(1).sendKeys("Welcome@1234");
+	}
+
+}
+
