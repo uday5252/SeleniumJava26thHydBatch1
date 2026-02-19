@@ -1,0 +1,37 @@
+package com.abc.demo;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com");
+		
+		
+		String expectedTitle = "Facebook – log in or sign up";
+		String actualTitle = driver.getTitle();
+		
+		System.out.println(driver.getCurrentUrl());
+	
+		
+		if(expectedTitle.equals(actualTitle))
+			{
+			System.out.println("Title is matching!");
+			}
+		else
+			{
+			System.out.println("Title is not matching!");
+			}
+		
+		Thread.sleep(5000); 
+		
+		driver.close();
+
+	}
+
+
+}
