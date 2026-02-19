@@ -35,3 +35,59 @@ public class First {
 
 
 }
+===============================
+package com.abc.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+
+//		Open the Browser
+		ChromeDriver driver = new ChromeDriver();
+		
+//		Navigate to Facebook
+		driver.get("https://www.facebook.com");
+		
+//		Identify Email Web Element
+		WebElement email = driver.findElement(By.id("email"));
+		
+//		Enter the invalid email
+		email.sendKeys("&*^&*^@gmail.com");
+
+//		WebElement password = driver.findElement(By.id("pass"));
+//		password.sendKeys("Welcome@897797");
+		
+		driver.findElement(By.id("pass"))
+		.sendKeys("Welcome@8769824");
+	}
+
+
+}
+========================================
+package com.abc.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.edge.EdgeDriver;
+
+//ctrl + shift + o
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		EdgeDriver driver = new EdgeDriver();
+		
+		driver.get("https://www.facebook.com");
+		
+		driver.findElement(By.className("inputtext"))
+		.sendKeys("Hello");
+		
+		
+		
+	}
+
+}
