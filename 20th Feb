@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 id="one">Welcome to Selenium</h1>
+    Enter Username:<input id="one" class="one" type="text" />
+    Enter Email:<input id="two" class="two" type="text" />
+    
+</body>
+</html>
+======================================================
+======================================================
+======================================================
+======================================================
+id, name, class, tagname, linktext and partiallinktext
+CSS Selector
+It is a locator that is also used to locate various web
+elements on the page
+types of css selector:-
+1) tagname with id
+<h1 id="one">Welcome</h1>
+<input id="one" type="text" />
+<input id="two" type="text" />
+
+input#one
+2) tagname with class
+input.one
+3) tagname with attribute
+attribute value
+
+
+<input id="one" type="text" />
+
+
+
+Tagname
+attribute name
+attr name + attr value ==> attribute
+<h1 id="one" data="info">Welcome</h1>
+<input id="one" type="text" />
+<input id="two" type="text" />
+h1[data='info']
+tagname[attrname='attrvalue']
+4,5,6 are also based on tagname with attribute
+h1[id^='one'] ==> id=onehello, id=helloone
+h1[id$='one'] ==> id=onehello, id=helloone
+h1[id*='one'] ==> id=onehello, id=helloone
