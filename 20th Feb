@@ -145,4 +145,39 @@ ChromeDriver driver = new ChromeDriver();
 		
 		driver.findElement(By.xpath("//span[contains(text(),'C SHIVAJI MAH T - CSMT')]"))
 		.click();
+		================================
+		ChromeDriver driver = new ChromeDriver();
 		
+		driver.manage().window().maximize();
+		
+//		driver.manage().timeouts()
+//		.implicitlyWait(Duration.ofSeconds(20));
+				
+		driver.get("https://www.irctc.co.in/nget/train-search");
+		
+		driver.findElement(By.xpath("(//input[@role='searchbox'])[1]"))
+		.sendKeys("Mumbai");
+
+		
+//		WebDriverWait wait = new WebDriverWait(driver,
+//				Duration.ofSeconds(50));
+//		
+//		wait.until(ExpectedConditions
+//				.visibilityOfElementLocated
+//				(By.xpath("//span[contains(text(),'C SHIVAJI MAH T - CSMT')]")))
+//		.click();
+		
+		FluentWait wait = new FluentWait<>(driver);
+		
+		wait.withTimeout(Duration.ofSeconds(50));
+		wait.pollingEvery(Duration.ofSeconds(5));
+//		wait.ignoring(NoSuchElementException.class);
+		
+		
+		WebElement ele = (WebElement) wait.until( a -> 
+		driver.findElement
+		(By.xpath
+				("//span[contains(text(),'C SHIVAJI MAH T - CSMT')]")));
+	
+		ele.click();
+	
