@@ -101,3 +101,28 @@ public class Second {
 		.sendKeys("raju123@gmail.com");
 
 		Thread.sleep(4000);
+===============================
+ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.irctc.co.in/nget/train-search");
+		
+		driver.findElement(By.xpath("(//input[@role='searchbox'])[1]"))
+		.sendKeys("Mumbai");
+		
+		driver.findElement(By.xpath("(//input[@role='searchbox'])[2]"))
+		.sendKeys("Hyderabad");
+		
+		Thread.sleep(4000);
+		
+		driver.close();
+	}
+===================================
+Relative Xpath with tagname and attribute
+input[name='pass'] ==> CSS ==> password web ele
+//input[@name='pass'] ==> XPATH
+
+tagname[attrname=attrvalue] ==> CSS
+//tagname[@attrname=attrvalue] ==> XPATH
+//input[@role="searchbox"]
