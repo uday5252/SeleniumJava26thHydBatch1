@@ -48,3 +48,43 @@ tagname[attrname='attrvalue']
 h1[id^='one'] ==> id=onehello, id=helloone
 h1[id$='one'] ==> id=onehello, id=helloone
 h1[id*='one'] ==> id=onehello, id=helloone
+
+================================================
+package com.abc.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Second {
+
+	public static void main(String[] args) {
+		
+//		tagname with id
+		
+//		ChromeDriver driver = new ChromeDriver();
+//		driver.get("http://127.0.0.1:5500/index.html");
+//		driver.findElement(By.cssSelector("input#one"))
+//		.sendKeys("Raju");
+		
+//		tagname with class
+		
+//		ChromeDriver driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.get("http://127.0.0.1:5500/index.html");
+//		driver.findElement(By.cssSelector("input.one"))
+//		.sendKeys("Raju");
+		
+//		tagname with attribute
+		
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://127.0.0.1:5500/index.html");
+		String outputText = driver.findElement(By
+				.cssSelector("h1[id='one']"))
+		.getText();
+	
+		System.out.println(outputText);
+
+	}
+
+}
