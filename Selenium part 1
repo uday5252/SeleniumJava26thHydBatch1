@@ -1,0 +1,405 @@
+
+
+ 1️⃣ WebDriver (Main Interface)
+
+ ✅ What is WebDriver?
+
+WebDriver is the main Selenium interface used to control browser.
+
+It acts like a remote control for browser.
+
+👉 WebDriver talks to:
+
+* ChromeDriver → Chrome
+* GeckoDriver → Firefox
+
+---
+
+ ✅ Syntax
+
+```java
+WebDriver driver;
+```
+
+---
+
+ ✅ Example
+
+```java
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo {
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();   // Launch browser
+        driver.get("https://google.com");        // Open URL
+        driver.quit();                           // Close browser
+    }
+}
+```
+
+---
+
+ 🔹 Important WebDriver Methods
+
+| Method                      | Purpose              |
+| --------------------------- | -------------------- |
+| driver.get(url)             | Open website         |
+| driver.getTitle()           | Get page title       |
+| driver.getCurrentUrl()      | Get URL              |
+| driver.close()              | Close current tab    |
+| driver.quit()               | Close entire browser |
+| driver.navigate().back()    | Go back              |
+| driver.navigate().forward() | Go forward           |
+| driver.navigate().refresh() | Refresh page         |
+
+---
+
+ 2️⃣ ChromeDriver
+
+ ✅ What is ChromeDriver?
+
+ChromeDriver is a class that controls Google Chrome browser.
+
+It implements WebDriver interface.
+
+---
+
+ ✅ Syntax
+
+```java
+WebDriver driver = new ChromeDriver();
+```
+
+---
+
+ ✅ With Options
+
+```java
+import org.openqa.selenium.chrome.ChromeOptions;
+
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--start-maximized");
+
+WebDriver driver = new ChromeDriver(options);
+```
+
+---
+
+ 3️⃣ FirefoxDriver
+
+FirefoxDriver uses GeckoDriver internally.
+
+---
+
+ ✅ Syntax
+
+```java
+WebDriver driver = new FirefoxDriver();
+```
+
+---
+
+ ✅ Example
+
+```java
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+WebDriver driver = new FirefoxDriver();
+driver.get("https://example.com");
+```
+
+---
+
+ 4️⃣ WebElement
+
+ ✅ What is WebElement?
+
+WebElement represents HTML element on webpage.
+
+Example:
+
+* Button
+* Textbox
+* Link
+* Checkbox
+
+---
+
+ ✅ Syntax
+
+```java
+WebElement element = driver.findElement(By.id("username"));
+```
+
+---
+
+ ✅ Common WebElement Methods
+
+| Method         | Purpose             |
+| -------------- | ------------------- |
+| sendKeys()     | Type text           |
+| click()        | Click               |
+| getText()      | Get text            |
+| getAttribute() | Get attribute value |
+| isDisplayed()  | Check visibility    |
+| isEnabled()    | Check enabled       |
+| isSelected()   | Check selected      |
+
+---
+
+ ✅ Example
+
+```java
+WebElement user = driver.findElement(By.id("username"));
+user.sendKeys("Uday");
+
+WebElement loginBtn = driver.findElement(By.id("login"));
+loginBtn.click();
+```
+
+---
+
+ 5️⃣ Locators in Selenium
+
+Locators are used to identify elements.
+
+---
+
+ ✅ Types of Locators
+
+| Locator         | Syntax                    |
+| --------------- | ------------------------- |
+| id              | By.id("value")            |
+| name            | By.name("value")          |
+| className       | By.className("value")     |
+| tagName         | By.tagName("input")       |
+| linkText        | By.linkText("Login")      |
+| partialLinkText | By.partialLinkText("Log") |
+| cssSelector     | By.cssSelector("css")     |
+| xpath           | By.xpath("xpath")         |
+
+---
+
+ ✅ Example
+
+```java
+driver.findElement(By.id("email"));
+driver.findElement(By.name("password"));
+driver.findElement(By.className("form-control"));
+driver.findElement(By.xpath("//input[@type='text']"));
+```
+
+---
+
+ 6️⃣ XPath
+
+XPath is most powerful locator.
+
+---
+
+ 🔹 6.1 Absolute XPath
+
+Starts from root `/html`
+
+Example:
+
+```xpath
+/html/body/div[1]/form/input[1]
+```
+
+---
+
+ ❌ Disadvantages
+
+* Very long
+* Breaks easily
+* Not recommended
+
+---
+
+ 🔹 6.2 Relative XPath ✅ (Recommended)
+
+Starts with `//`
+
+Example:
+
+```xpath
+//input[@id='username']
+```
+
+---
+
+ Syntax
+
+```xpath
+//tagname[@attribute='value']
+```
+
+---
+
+ Example in Selenium
+
+```java
+driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Uday");
+```
+
+---
+
+ 🔹 6.3 Relative XPath with Tag Name
+
+```xpath
+//button[@type='submit']
+```
+
+```java
+driver.findElement(By.xpath("//button[@type='submit']")).click();
+```
+
+---
+
+ 🔹 6.4 text() in XPath
+
+Used when element text is visible.
+
+---
+
+ Syntax
+
+```xpath
+//tagname[text()='Exact Text']
+```
+
+---
+
+ Example
+
+```xpath
+//button[text()='Login']
+```
+
+```java
+driver.findElement(By.xpath("//button[text()='Login']")).click();
+```
+
+---
+
+ 🔹 6.5 contains() in XPath
+
+Used for partial matching.
+
+---
+
+ ✅ Contains with attribute
+
+```xpath
+//input[contains(@id,'user')]
+```
+
+---
+
+ ✅ Contains with text
+
+```xpath
+//button[contains(text(),'Log')]
+```
+
+---
+
+ Selenium Example
+
+```java
+driver.findElement(By.xpath("//button[contains(text(),'Log')]")).click();
+```
+
+---
+
+ 7️⃣ Waits in Selenium
+
+Waits are used for synchronization.
+
+---
+
+ 🔹 7.1 Implicit Wait
+
+Waits globally for all elements.
+
+---
+
+ Syntax
+
+```java
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+```
+
+---
+
+ Example
+
+```java
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+driver.findElement(By.id("login")).click();
+```
+
+---
+
+ 🔹 7.2 Explicit Wait
+
+Waits for specific condition.
+
+---
+
+ Syntax
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
+```
+
+---
+
+ Example
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+WebElement ele = wait.until(
+        ExpectedConditions.elementToBeClickable(By.id("login")));
+
+ele.click();
+```
+
+---
+
+ 🔹 7.3 Fluent Wait
+
+Advanced explicit wait with polling.
+
+---
+
+ Syntax
+
+```java
+Wait<WebDriver> wait = new FluentWait<>(driver)
+        .withTimeout(Duration.ofSeconds(10))
+        .pollingEvery(Duration.ofSeconds(2))
+        .ignoring(NoSuchElementException.class);
+```
+
+---
+
+ Example
+
+```java
+Wait<WebDriver> wait = new FluentWait<>(driver)
+        .withTimeout(Duration.ofSeconds(10))
+        .pollingEvery(Duration.ofSeconds(2))
+        .ignoring(NoSuchElementException.class);
+
+WebElement ele = wait.until(d -> 
+        d.findElement(By.id("login")));
+
+ele.click();
+```
+
