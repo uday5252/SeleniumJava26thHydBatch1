@@ -126,3 +126,23 @@ input[name='pass'] ==> CSS ==> password web ele
 tagname[attrname=attrvalue] ==> CSS
 //tagname[@attrname=attrvalue] ==> XPATH
 //input[@role="searchbox"]
+=====================
+ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts()
+		.implicitlyWait(Duration.ofSeconds(20));
+				
+		driver.get("https://www.irctc.co.in/nget/train-search");
+		
+		driver.findElement(By.xpath("(//input[@role='searchbox'])[1]"))
+		.sendKeys("Mumbai");
+		
+//		> 20 sec
+		
+//		Thread.sleep(30000);
+		
+		driver.findElement(By.xpath("//span[contains(text(),'C SHIVAJI MAH T - CSMT')]"))
+		.click();
+		
