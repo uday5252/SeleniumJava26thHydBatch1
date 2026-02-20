@@ -88,3 +88,16 @@ public class Second {
 	}
 
 }
+=====================
+
+		driver.manage().window().maximize();
+		
+		driver.get("http://127.0.0.1:5500/index.html");
+		
+		driver.findElement(By.xpath("html/body/input[1]"))
+		.sendKeys("Raju");
+		
+		driver.findElement(By.xpath("html/body/input[2]"))
+		.sendKeys("raju123@gmail.com");
+
+		Thread.sleep(4000);
