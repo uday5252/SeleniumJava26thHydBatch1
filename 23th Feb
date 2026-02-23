@@ -118,3 +118,91 @@ public class Third {
 	}
 
 }
+=======================================================================
+package com.abc.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Fourth {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://vinothqaacademy.com/iframe/");
+		
+//		to switch to the 0th frame
+		driver.switchTo().frame(0);
+		
+		driver.findElement(By.id("nameInput")).sendKeys("Raju");
+		
+//		driver.switchTo().defaultContent();
+		driver.switchTo().parentFrame();
+//		
+		driver.switchTo().frame(2);
+		
+		driver.findElement(By.id("vfb-5")).sendKeys("Ramu");
+	}
+
+}
+=====================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Enter FirstName:<input type="text">
+    <iframe src="second.html" frameborder="0"></iframe>
+</body>
+</html>
+==========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Enter MiddleName:<input type="text">
+    <iframe src="third.html" frameborder="0"></iframe>
+
+</body>
+</html>
+========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Enter Last Name:<input type="text">
+
+    <iframe src="fourth.html" frameborder="0"></iframe>
+</body>
+</html>
+=================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Enter FullName:<input type="text">
+
+</body>
+</html>
