@@ -206,3 +206,27 @@ public class Fourth {
 
 </body>
 </html>
+============================================
+package com.abc.demo;
+
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Fifth {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get("https://echoecho.com/javascript4.htm");
+		driver.findElement(By.name("B1")).click();
+		Thread.sleep(4000);
+		Alert anotherDriver = driver.switchTo().alert();
+		anotherDriver.accept();
+		
+	}
+
+}
