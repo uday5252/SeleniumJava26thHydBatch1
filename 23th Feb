@@ -41,3 +41,80 @@ public class Third {
 	}
 
 }
+============================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="second.html" target="blank">Click1</a>
+
+</body>
+</html>
+==========================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="third.html">Click2</a>
+
+</body>
+</html>
+==========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Enter Username:<input id="username" type="text" />
+
+</body>
+</html>
+=======================================================
+package com.abc.demo;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Third {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("http://127.0.0.1:5500/first.html");
+		
+		driver.findElement(By.linkText("Click1")).click();
+		
+		
+		Set<String> allAddr = driver.getWindowHandles();
+		
+		for(String i : allAddr)
+		{
+//			i ==> 2nt ele ==> parent addr
+			driver.switchTo().window(i);
+		}
+		
+		driver.findElement(By.linkText("Click2")).click();
+		
+		driver.findElement(By.id("username")).sendKeys("Raju");
+	}
+
+}
