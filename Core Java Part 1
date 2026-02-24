@@ -1,0 +1,458 @@
+
+ 🟢 1. Classes and Objects
+
+ 🧠 Real-life analogy
+
+Think of Car blueprint.
+
+* Blueprint → Class
+* Real car → Object
+
+Blueprint has design but not real.
+Car is real and usable.
+
+Same in Java:
+
+* Class → template
+* Object → real instance
+
+---
+
+ 🧾 Class syntax
+
+```java
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+}
+```
+
+👉 Class contains:
+
+* Variables (data)
+* Methods (behavior)
+
+---
+
+ 🧾 Creating object
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student(); // object creation
+
+        s1.name = "Uday";
+        s1.age = 25;
+
+        s1.display();
+    }
+}
+```
+
+ 🔥 Output
+
+```
+Uday 25
+```
+
+---
+
+ 🟢 2. Packages
+
+ 🧠 Real-life analogy
+
+Mobile apps folder:
+
+* WhatsApp folder
+* Photos folder
+* Music folder
+
+Same → Java packages organize classes.
+
+---
+
+ 🧾 Creating package
+
+```java
+package com.company.student;
+
+public class Student {
+    public void show() {
+        System.out.println("Inside package");
+    }
+}
+```
+
+---
+
+ 🧾 Using package
+
+```java
+import com.company.student.Student;
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.show();
+    }
+}
+```
+
+---
+
+ 🎯 Why packages?
+
+✔ Avoid class name conflict
+✔ Organize project
+✔ Industry standard
+
+---
+
+ 🟢 3. Access Specifiers (VERY IMPORTANT 🔥)
+
+Controls visibility.
+
+| Access    | Same class | Same package | Other package       |
+| --------- | ---------- | ------------ | ------------------- |
+| private   | ✅          | ❌            | ❌                   |
+| default   | ✅          | ✅            | ❌                   |
+| protected | ✅          | ✅            | ✅ (via inheritance) |
+| public    | ✅          | ✅            | ✅                   |
+
+---
+
+ 🧾 Example
+
+```java
+class Test {
+
+    private int a = 10;
+    int b = 20; // default
+    protected int c = 30;
+    public int d = 40;
+
+    void show(){
+        System.out.println(a);
+    }
+}
+```
+
+---
+
+ 🟢 4. Constructors
+
+Constructor runs automatically when object created.
+
+ 🧠 Real-life analogy
+
+When baby born → name given automatically
+Same → constructor initializes object.
+
+---
+
+ 🔹 Default constructor
+
+```java
+class Student {
+
+    Student() {
+        System.out.println("Default constructor called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+    }
+}
+```
+
+Output:
+
+```
+Default constructor called
+```
+
+---
+
+ 🔹 Parameterized constructor
+
+```java
+class Student {
+    String name;
+    int age;
+
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display(){
+        System.out.println(name + " " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Uday", 25);
+        s.display();
+    }
+}
+```
+
+Output:
+
+```
+Uday 25
+```
+
+---
+
+ 🟢 5. `this` keyword
+
+`this` refers to current object
+
+ 🧠 Why needed?
+
+When local variable and instance variable same name.
+
+---
+
+ 🧾 Example
+
+```java
+class Student {
+    String name;
+    int age;
+
+    Student(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
+    void display(){
+        System.out.println(name + " " + age);
+    }
+}
+```
+
+ 🔥 this.name → class variable
+
+ name → constructor variable
+
+---
+
+ 🧾 Calling method using this
+
+```java
+class Test {
+    void show(){
+        System.out.println("Hello");
+    }
+
+    void display(){
+        this.show();
+    }
+}
+```
+
+---
+
+ 🟢 6. static keyword
+
+ 🧠 Real-life analogy
+
+College name same for all students.
+
+Each student different
+But college name same.
+
+So make it static.
+
+---
+
+ 🔹 Static variable (shared)
+
+```java
+class Student {
+    String name;
+    static String college = "ABC College";
+
+    void display(){
+        System.out.println(name + " " + college);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Uday";
+
+        Student s2 = new Student();
+        s2.name = "Ravi";
+
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+Output:
+
+```
+Uday ABC College
+Ravi ABC College
+```
+
+---
+
+ 🔹 Static method
+
+```java
+class Demo {
+    static void show(){
+        System.out.println("Static method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo.show(); // no object needed
+    }
+}
+```
+
+---
+
+Output:
+
+```
+Static block executed
+Main method
+```
+
+---
+
+ 🟢 7. Best Practices (INTERVIEW LEVEL ⭐)
+
+ 🔥 Naming conventions
+
+Class → PascalCase
+
+```
+StudentData
+EmployeeDetails
+```
+
+Variable → camelCase
+
+```
+studentName
+empSalary
+```
+
+---
+
+ 🔥 Always use constructor for initialization
+
+❌ Bad:
+
+```java
+Student s = new Student();
+s.name = "Uday";
+```
+
+✔ Good:
+
+```java
+Student s = new Student("Uday",25);
+```
+
+---
+
+ 🔥 Make variables private (encapsulation)
+
+```java
+class Student {
+    private String name;
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+}
+```
+
+---
+
+ 🔥 Use static only when needed
+
+Use static for:
+
+* common data
+* utility methods
+* constants
+
+---
+
+ 🟣 Interview Questions They Ask 😈
+
+ Q1: Difference class vs object?
+
+Class → blueprint
+Object → instance
+
+ Q2: Constructor return type?
+
+❌ No return type
+
+ Q3: Can constructor be private?
+
+✔ Yes (Singleton)
+
+ Q4: Static belongs to?
+
+Class, not object
+
+ Q5: this keyword refers to?
+
+Current object
+
+---
+
+ 🟢 Real-time Selenium example
+
+```java
+class LoginPage {
+
+    String url;
+    static String browser = "Chrome";
+
+    LoginPage(String url){
+        this.url = url;
+    }
+
+    void open(){
+        System.out.println("Opening " + url + " in " + browser);
+    }
+}
+
+public class TestRun {
+    public static void main(String[] args) {
+
+        LoginPage lp = new LoginPage("https://google.com");
+        lp.open();
+    }
+}
+```
+
+---
+
