@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="1px" cellspacing="0px">
+
+        <tbody>
+            <thead>
+            <th>NAME</th>
+            <th>ROLE</th>
+            <th>STATUS</th>
+            <th>ACTION</th>
+        </thead>
+
+        <tr>
+            <td>Raju</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>Edit</td>
+        </tr>
+       
+        <tr>
+            <td>Ramu</td>
+            <td>User</td>
+            <td>Active</td>
+            <td>Edit</td>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>Admin</td>
+            <td>Inactive</td>
+            <td>Edit</td>
+        </tr>
+
+        <tr>
+            <td>Sam</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>Edit</td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+
+package com.abc.demo;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Eight {
+	public static void main(String[] args) {
+	
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		driver.get("http://127.0.0.1:5500/index.html");
+		
+//		1. verify the total row count
+		
+		int expectedRowsCount = 4;
+		
+		List<WebElement> allRows = 
+				driver.findElements(By.xpath("//table/tbody[2]/tr"));
+		
+		int actualRowsCount = allRows.size();
+		
+		if(expectedRowsCount == actualRowsCount)
+		{
+			System.out.println("Total row count is matched!");
+		}
+		else
+		{
+			System.out.println("Total row count is not matched!");
+		}
+		
+//		2. verify whether the name "Raju" is displayed or not
+		
+		String expectedName = "Raju";
+		
+	    List<WebElement> allNames = driver.findElements(By.xpath("//table/tbody[2]/tr/td[1]"));
+		
+	    boolean nameStatus = false;
+	    
+	    for(WebElement ele : allNames)
+	    {
+	    	if(ele.getText().equals(expectedName))
+	    	{
+	    		nameStatus = true;
+	    	}
+	    	
+	    }
+	    
+	    if(nameStatus)
+	    {
+	    	System.out.println("Name is present!");
+	    }
+	    else
+    	{
+    		System.out.println("Name is not present!");
+    	}
+		
+	}
+}
+
