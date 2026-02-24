@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Table</title>
+    <style>
+        body{
+            font-family: Arial;
+            background:#111;
+            color:white;
+            text-align:center;
+            margin-top:40px;
+        }
+        table{
+            margin:auto;
+            border-collapse: collapse;
+            width:80%;
+            background:white;
+            color:black;
+        }
+        th, td{
+            border:1px solid black;
+            padding:12px;
+            text-align:center;
+        }
+        th{
+            background:#333;
+            color:white;
+        }
+        button{
+            padding:6px 12px;
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Employee Management Table</h2>
+
+<table id="empTable">
+    <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Salary</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        <td>101</td>
+        <td>Raju</td>
+        <td>QA</td>
+        <td>40000</td>
+        <td>Active</td>
+        <td><button>Edit</button></td>
+    </tr>
+
+    <tr>
+        <td>102</td>
+        <td>Meena</td>
+        <td>Dev</td>
+        <td>65000</td>
+        <td>Inactive</td>
+        <td><button>Edit</button></td>
+    </tr>
+
+    <tr>
+        <td>103</td>
+        <td>Arjun</td>
+        <td>DevOps</td>
+        <td>70000</td>
+        <td>Active</td>
+        <td><button>Edit</button></td>
+    </tr>
+
+    <tr>
+        <td>104</td>
+        <td>Kiran</td>
+        <td>QA</td>
+        <td>45000</td>
+        <td>Active</td>
+        <td><button>Edit</button></td>
+    </tr>
+
+    <tr>
+        <td>105</td>
+        <td>Divya</td>
+        <td>HR</td>
+        <td>50000</td>
+        <td>Inactive</td>
+        <td><button>Edit</button></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+
+Assume this table in application:
+
+| EmpID | Name  | Dept   | Salary | Status   | Action |
+| ----- | ----- | ------ | ------ | -------- | ------ |
+| 101   | Raju  | QA     | 40000  | Active   | Edit   |
+| 102   | Meena | Dev    | 65000  | Inactive | Edit   |
+| 103   | Arjun | DevOps | 70000  | Active   | Edit   |
+| 104   | Kiran | QA     | 45000  | Active   | Edit   |
+| 105   | Divya | HR     | 50000  | Inactive | Edit   |
+
+---
+
+ 🔥 Industry Level Selenium WebTable Questions
+
+ 🟥 Q1 — Verify employee exists
+
+Check whether employee "Arjun" exists in table dynamically.
+
+---
+
+ 🟥 Q2 — Print all active employees
+
+Print names of employees whose Status = Active
+
+Expected output:
+
+
+Raju
+Arjun
+Kiran
+
+
+---
+
+ 🟥 Q3 — Get salary of specific employee
+
+Fetch salary of Meena
+
+Expected:
+
+
+Salary = 65000
+
+
+---
+
+ 🟥 Q4 — Click Edit of specific employee
+
+Click Edit button for employee Divya
+
+(very frequently asked)
+
+---
+
+ 🟥 Q5 — Count employees in QA department
+
+Count how many employees belong to QA department
+
+Expected:
+
+
+Total QA employees = 2
+
+
+---
+
+ 🟥 Q6 — Get highest salary from table
+
+Find employee having highest salary
+
+Expected:
+
+
+Arjun – 70000
+
