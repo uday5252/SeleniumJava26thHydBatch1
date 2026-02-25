@@ -1,0 +1,60 @@
+package com.abc.demo.FirstProject;
+
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Second {
+	public static void main(String[] args) throws IOException {
+	
+		XSSFWorkbook workBook = 
+				new XSSFWorkbook("C:\\Users\\udayk\\JAVACGFRAMEWORKS\\FirstProject\\src\\test\\resources\\login.xlsx");
+	
+		XSSFSheet sheet = 
+				workBook.getSheet("logindata");
+		
+		int rowsCount = sheet.getPhysicalNumberOfRows();
+//		rowsCount = 4
+		for(int i = 1; i < rowsCount; i++)
+		{
+//			i = 1 ==> access 1st row
+
+			XSSFRow rowData = sheet.getRow(i);
+//			rowData = Student	Password123
+			
+			if(rowData == null)
+			{
+				// blank row
+				continue;
+			}
+			
+//			DataFormatter class
+			
+			DataFormatter formatter = new DataFormatter();
+			
+			String recievedUsername = formatter.formatCellValue(rowData.getCell(0));
+			String recievedPassword = formatter.formatCellValue(rowData.getCell(1));
+			
+			System.out.println(recievedUsername);
+			System.out.println(recievedPassword);
+			
+//			==========================================
+
+			//		XSSFCell usernameCell = rowData.getCell(0);
+//		if(usernameCell.getCellType() == CellType.STRING)
+//		{
+//			System.out.println(usernameCell.getStringCellValue());
+//		}
+//		else if(usernameCell.getCellType() == CellType.NUMERIC)
+//		{
+//			usernameCell.getNumericCellValue();
+//		}
+		
+		}
+	}
+}
