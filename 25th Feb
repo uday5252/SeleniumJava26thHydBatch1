@@ -58,3 +58,69 @@ public class Second {
 		}
 	}
 }
+===========================================================================================
+package com.abc.demo.FirstProject;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Second {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        // load excel
+        FileInputStream fis = new FileInputStream(
+                "C:\\Users\\udayk\\JAVACGFRAMEWORKS\\FirstProject\\src\\test\\resources\\login.xlsx");
+
+        XSSFWorkbook workBook = new XSSFWorkbook(fis);
+        XSSFSheet sheet = workBook.getSheet("logindata");
+
+        int rowsCount = sheet.getPhysicalNumberOfRows();
+
+        for (int i = 1; i < rowsCount; i++) {
+
+            XSSFRow row = sheet.getRow(i);
+
+            if (row == null)
+                continue;
+
+            DataFormatter formatter = new DataFormatter();
+
+            String username = formatter.formatCellValue(row.getCell(0));
+            String password = formatter.formatCellValue(row.getCell(1));
+
+            System.out.println("Trying -> " + username + " | " + password);
+
+           
+          
+            WebDriver driver = new ChromeDriver();
+
+            driver.manage().window().maximize();
+
+            driver.get("https://practicetestautomation.com/practice-test-login/");
+
+            // input username
+            driver.findElement(By.id("username")).sendKeys(username);
+
+            // input password
+            driver.findElement(By.id("password")).sendKeys(password);
+
+            // click submit
+            driver.findElement(By.id("submit")).click();
+
+            Thread.sleep(2000);
+
+            driver.quit();
+            // ---- end Selenium ----
+
+        }
+
+        workBook.close();
+    }
+}
