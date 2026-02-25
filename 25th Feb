@@ -124,3 +124,87 @@ public class Second {
         workBook.close();
     }
 }
+=====================================================
+package com.abc.demo.FirstProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		
+		Login login = new Login(driver);
+		
+		login.enterUsername("student");
+		login.enterPassword("Password123");
+		login.clickSubmit();
+		
+		Logout logout = new Logout(driver);
+		
+		logout.clickLogout();
+
+	}
+
+}
+=================================================
+package com.abc.demo.FirstProject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Login {
+	
+	WebDriver driver;
+	
+	By user = By.id("username");
+	By pass = By.id("password");
+	By btn = By.id("submit");
+	
+	Login(WebDriver driver) //driver = driver
+	{
+		this.driver = driver;
+	}
+	
+	public void enterUsername(String username)
+	{
+		driver.findElement(user).sendKeys(username);
+	}
+	
+	public void enterPassword(String password)
+	{
+		driver.findElement(pass).sendKeys(password);
+	}
+	
+	public void clickSubmit()
+	{
+		driver.findElement(btn).click();
+	}
+
+}
+=====================================
+package com.abc.demo.FirstProject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Logout {
+	
+	WebDriver driver;
+	
+	By logoutBtn = By.xpath("//a[text()='Log out']");
+	
+	public Logout(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void clickLogout()
+	{
+		driver.findElement(logoutBtn)
+		.click();
+	}
+
+}
