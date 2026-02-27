@@ -122,3 +122,174 @@ public class ListenerLogic implements ITestListener{
     <version>5.1.2</version>
     <scope>compile</scope>
 </dependency>
+
+=============================================
+package com.abc.demo;
+
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ListenerLogic implements ITestListener{
+
+	ExtentReports extentReport;
+	public static ThreadLocal<ExtentTest> extentTest = 
+			new ThreadLocal<ExtentTest>();
+	
+	@Override
+	public void onStart(ITestContext context) {
+//		Logic to create a report! ==> HTML file
+		ExtentSparkReporter sparkReporter = 
+				new ExtentSparkReporter("report.html");
+		
+		sparkReporter.config().setReportName("First Extent Report!");
+		
+		extentReport = new ExtentReports();
+		extentReport.attachReporter(sparkReporter);
+		
+		extentReport.setSystemInfo("Tester Name", "Raju");
+		extentReport.setSystemInfo("Operating System", System.getProperty("os.name"));
+		extentReport.setSystemInfo("Java Version", System.getProperty("java.version"));
+		
+		
+		
+	}
+	
+//	@Override
+//	public void onTestStart(ITestResult result) {
+//		extentTest = extentReport.createTest(result.getName());
+//		extentTest.info("Test case execution started!");
+//	}
+	
+	 @Override
+	    public void onTestStart(ITestResult result) {
+
+	        ExtentTest test = extentReport.createTest(result.getName());
+	        extentTest.set(test);
+	        extentTest.get().info("Test case execution started!");
+	    }
+
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		extentTest.get().pass("Test case passed!");
+	}
+
+	@Override
+	public void onTestFailure(ITestResult result) {
+		System.out.println(result.getName() + " has failed!");
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		System.out.println(result.getName() + " has skipped!");
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+		extentReport.flush();
+	    
+//		open the report
+		File f = new File("report.html");
+		
+		try {
+			Desktop.getDesktop().open(f);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+============================================
+package com.abc.demo;
+
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+@Listeners(ListenerLogic.class)
+public class Login  {
+	
+	@Test
+	public void validLogin()
+	{
+		WebDriver driver = new ChromeDriver();
+		ListenerLogic.extentTest.get().pass("Browser opened!");
+		
+		
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		ListenerLogic.extentTest.get().pass("Navigation successfull!");
+		
+		driver.findElement(By.id("username")).sendKeys("student");
+		ListenerLogic.extentTest.get().pass("Entered username!");
+		
+		driver.findElement(By.id("password")).sendKeys("Password123");
+		ListenerLogic.extentTest.get().pass("Entered password!");
+		
+		driver.findElement(By.id("submit")).click();
+		ListenerLogic.extentTest.get().pass("Submit click successfull!");
+		
+		String expectedOutput = "Logged In Successfully";
+		String actualOutput = driver.findElement(By.xpath("//h1[text()='Logged In Successfully']"))
+		.getText();
+		
+//		Assertions / Validations
+		assertEquals(expectedOutput, actualOutput);
+		
+		driver.close();
+		ListenerLogic.extentTest.get().pass("Browser closed successfully!");
+	}
+	
+	@Test
+	public void InvalidLogin()
+	{
+	    WebDriver driver = new ChromeDriver();
+	    ListenerLogic.extentTest.get().pass("Browser opened!");
+
+	    driver.get("https://practicetestautomation.com/practice-test-login/");
+	    ListenerLogic.extentTest.get().pass("Navigation successful!");
+
+	    driver.findElement(By.id("username")).sendKeys("raju");
+	    ListenerLogic.extentTest.get().pass("Entered invalid username!");
+
+	    driver.findElement(By.id("password")).sendKeys("Password123");
+	    ListenerLogic.extentTest.get().pass("Entered password!");
+
+	    driver.findElement(By.id("submit")).click();
+	    ListenerLogic.extentTest.get().pass("Clicked submit button!");
+
+	    String expectedOutput = "Your username is invalid!";
+	    String actualOutput = driver.findElement(By.id("error")).getText();
+
+	    // Assertion
+	    assertEquals(expectedOutput, actualOutput);
+	    ListenerLogic.extentTest.get().pass("Validation successful! Error message verified.");
+
+	    driver.close();
+	    ListenerLogic.extentTest.get().pass("Browser closed successfully!");
+	}
+	
+}
+===============================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="methods" thread-count="2">
+  <test name="Test">
+    <classes>
+      <class name="com.abc.demo.Login"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
