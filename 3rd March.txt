@@ -1,0 +1,58 @@
+java -jar selenium-server-4.40.0.jar hub
+java -jar selenium-server-4.40.0.jar node
+=====================================================================================
+@Test
+	public void validLogin() throws MalformedURLException
+	{
+//		chrome
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName("chrome");
+		
+		RemoteWebDriver driver = 
+				new RemoteWebDriver(new URL("http://localhost:4444"), cap);
+		
+	
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		driver.findElement(By.id("username")).sendKeys("student");
+		driver.findElement(By.id("password")).sendKeys("Password123");
+		driver.findElement(By.id("submit")).click();
+		
+		String actualOutput = driver.findElement(By.className("post-title")).getText();
+		assertEquals(actualOutput, "Logged In Successfully");
+		
+		driver.close();
+	}
+	@Test
+	public void invalidLogin01() throws MalformedURLException
+	{
+//		chrome
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName("chrome");
+		
+		RemoteWebDriver driver = 
+				new RemoteWebDriver(new URL("http://localhost:4444"), cap);
+		
+		
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		driver.findElement(By.id("username")).sendKeys("raju");
+		driver.findElement(By.id("password")).sendKeys("Password123");
+		driver.findElement(By.id("submit")).click();
+		driver.close();
+		}
+	
+	@Test
+	public void invalidLogin02() throws MalformedURLException
+	{
+//		Edge
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName("MicrosoftEdge");
+		
+		RemoteWebDriver driver = 
+				new RemoteWebDriver(new URL("http://localhost:4444"), cap);
+		
+		driver.get("https://practicetestautomation.com/practice-test-login/");
+		driver.findElement(By.id("username")).sendKeys("student");
+		driver.findElement(By.id("password")).sendKeys("Welcome@1234");
+		driver.findElement(By.id("submit")).click();
+		driver.close();
+	}
