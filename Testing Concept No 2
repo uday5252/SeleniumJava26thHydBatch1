@@ -1,0 +1,243 @@
+
+ ✅ What is Traceability Matrix?
+
+Traceability Matrix (RTM) is a document that maps:
+
+> Requirements ↔ Test Cases
+
+to make sure every requirement is tested.
+
+In simple words:
+
+👉 It ensures nothing is missed in testing.
+
+---
+
+ 🧠 Simple Definition (Interview Ready)
+
+> Traceability Matrix is a document used to track requirements and ensure that all requirements are covered by test cases.
+
+---
+
+ 🏫 Easy Analogy: Exam Syllabus vs Questions
+
+Imagine:
+
+ Teacher gives 10 chapters (Requirements)
+ You prepare 20 questions (Test Cases)
+
+Now you check:
+
+ Did I prepare questions for all 10 chapters?
+ Did I miss any chapter?
+
+If Chapter 7 has no questions → You forgot to study it ❌
+
+RTM is like that checking sheet.
+
+---
+
+ 🏢 Real-Time Software Example
+
+Suppose client gives 3 requirements for Login page:
+
+| Req ID | Requirement                              |
+| ------ | ---------------------------------------- |
+| R1     | User should login with valid credentials |
+| R2     | Show error for invalid password          |
+| R3     | Password should be minimum 8 characters  |
+
+Now you create test cases:
+
+| TC ID | Test Case                            |
+| ----- | ------------------------------------ |
+| TC1   | Login with valid username & password |
+| TC2   | Login with wrong password            |
+| TC3   | Check password length validation     |
+
+Now RTM will look like:
+
+| Req ID | Requirement                | TC ID |
+| ------ | -------------------------- | ----- |
+| R1     | Valid login                | TC1   |
+| R2     | Invalid password error     | TC2   |
+| R3     | Password length validation | TC3   |
+
+👉 This ensures all requirements are covered.
+
+---
+Good 👍 Now let’s clearly understand:
+
+1️⃣ Requirement Traceability Matrix (RTM)
+2️⃣ Defect Traceability Matrix (DTM)
+
+Both are very important in software testing.
+
+---
+
+ ✅ 1️⃣ Requirement Traceability Matrix (RTM)
+
+ 🔹 Definition
+
+> Requirement Traceability Matrix is a document that maps Requirements ↔ Test Cases to ensure all requirements are covered by testing.
+
+---
+
+ 🧠 Easy Analogy – School Syllabus
+
+Teacher gives 5 chapters (Requirements).
+You prepare questions (Test Cases).
+
+RTM checks:
+
+👉 Did I prepare questions for ALL chapters?
+👉 Did I miss any chapter?
+
+If Chapter 4 has no questions → You missed testing that requirement ❌
+
+---
+Easy Analogy: Building a House
+
+Imagine you are building a house.
+
+Client gives requirements:
+
+3 Bedrooms
+
+2 Bathrooms
+
+1 Kitchen
+
+🧠 Think of RTM like a Construction Checklist
+
+It checks:
+
+👉 Did we build all 3 bedrooms?
+👉 Did we build 2 bathrooms?
+👉 Did we forget kitchen?
+
+If kitchen is missing ❌ → Big problem!
+
+So RTM ensures:
+
+All client requirements are built and tested.
+
+🔹 In Software
+
+Requirement = Login should work
+Test Case = Test login with valid data
+
+RTM checks:
+
+👉 Is login tested?
+👉 Did we miss anything?
+
+ 🏢 Real-Time Example (Login Page)
+
+ Requirements:
+
+| Req ID | Requirement                     |
+| ------ | ------------------------------- |
+| R1     | Login with valid credentials    |
+| R2     | Show error for invalid password |
+| R3     | Password must be 8 characters   |
+
+ Test Cases:
+
+| TC ID | Description          |
+| ----- | -------------------- |
+| TC1   | Test valid login     |
+| TC2   | Test wrong password  |
+| TC3   | Test password length |
+
+ RTM Table:
+
+| Req ID | TC ID |
+| ------ | ----- |
+| R1     | TC1   |
+| R2     | TC2   |
+| R3     | TC3   |
+
+✅ Ensures 100% coverage.
+
+---
+
+ 🎯 Purpose of RTM
+
+ Avoid missing requirements
+ Track coverage
+ Used during audits
+ Helps in impact analysis
+
+---
+
+ ✅ 2️⃣ Defect Traceability Matrix (DTM)
+
+Now this is different 👇
+
+ 🔹 Definition
+
+> Defect Traceability Matrix is a document that maps Defects ↔ Test Cases ↔ Requirements.
+
+It helps track which requirement caused which defect.
+
+---
+
+ 🧠 Easy Analogy – Hospital Example
+
+Requirement = Healthy Body
+Test Case = Medical Test
+Defect = Disease Found
+
+DTM tracks:
+
+👉 Which test found which disease?
+👉 Which body part (requirement) had problem?
+
+---
+
+2️⃣ DTM (Defect Traceability Matrix)
+
+Now imagine:
+
+After building house:
+
+Bathroom tap is leaking
+
+Bedroom window is broken
+
+You write a record:
+
+Which room has problem?
+
+Who fixed it?
+
+Is it fixed properly?
+
+That record is DTM.
+
+ 🏢 Real-Time Example
+
+Suppose:
+
+| Req ID | Requirement         |
+| ------ | ------------------- |
+| R1     | Valid login         |
+| R2     | Password validation |
+
+Test Case TC2 fails and finds bug.
+
+Bug ID = BUG101
+
+---
+
+ DTM Table:
+
+| Bug ID | TC ID | Req ID | Status |
+| ------ | ----- | ------ | ------ |
+| BUG101 | TC2   | R2     | Open   |
+
+Now we know:
+
+ Bug belongs to R2
+ Found by TC2
