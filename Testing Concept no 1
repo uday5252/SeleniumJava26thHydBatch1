@@ -1,0 +1,144 @@
+
+ ✅ Definition of Bug Life Cycle
+
+The Bug Life Cycle (also called Defect Life Cycle) is the journey of a bug from the time it is found until it is fixed and closed.
+
+In simple words:
+
+> It shows the different stages a defect goes through in a testing process.
+
+---
+
+ 🔄 Stages of Bug Life Cycle
+
+1. New
+2. Assigned
+3. Open
+4. Fixed
+5. Retest
+6. Closed
+7. Reopen (if issue still exists)
+
+---
+
+ 🧠 Real-Time Analogy: 🏥 Hospital Patient Treatment
+
+Think of a bug like a patient in a hospital.
+
+---
+
+ 🟢 1️⃣ New → Patient Admitted
+
+ Tester finds a defect.
+ Reports it in tool (like Jira).
+ Status = New
+
+👉 Like a patient entering hospital and getting registered.
+
+---
+
+ 🟢 2️⃣ Assigned → Doctor Assigned
+
+ Test lead assigns bug to developer.
+
+👉 Like hospital assigning a doctor to the patient.
+
+---
+
+ 🟢 3️⃣ Open → Doctor Checking Patient
+
+ Developer starts working on the bug.
+ Status = Open
+
+👉 Doctor begins treatment.
+
+---
+
+ 🟢 4️⃣ Fixed → Treatment Done
+
+ Developer fixes the issue.
+ Status = Fixed
+
+👉 Doctor says treatment completed.
+
+---
+
+ 🟢 5️⃣ Retest → Nurse Checks Recovery
+
+ Tester retests the application.
+
+👉 Nurse checks if patient recovered properly.
+
+---
+
+ 🟢 6️⃣ Closed → Patient Discharged
+
+ If working fine, tester closes the bug.
+
+👉 Patient is healthy and discharged.
+
+---
+
+ 🔴 7️⃣ Reopen → Patient Still Sick
+
+ If issue still exists.
+ Tester reopens the bug.
+
+👉 Patient still has symptoms → sent back to doctor.
+
+---
+
+ 📊 Visual Flow
+
+```
+New → Assigned → Open → Fixed → Retest → Closed
+                               ↓
+                             Reopen
+```
+
+other bug statuses apart from basic ones.
+
+ 🔵 1️⃣ Rejected
+
+ Developer says: "This is not a bug."
+ Maybe it is expected behavior.
+
+🧠 Example:
+Tester reports → "Login page background color is blue."
+Developer says → "Yes, it is designed that way."
+Status → Rejected
+
+---
+
+ 🟡 2️⃣ Duplicate
+
+ Same bug already reported earlier.
+
+🧠 Example:
+Two testers report same login error.
+Second bug marked as → Duplicate
+
+---
+
+ 🟢 3️⃣ Deferred
+
+ Bug is valid but will be fixed later.
+ Not high priority for current release.
+
+🧠 Example:
+Minor spelling mistake in footer.
+Release is urgent → fix postponed.
+Status → Deferred
+
+---
+
+ 🟣 4️⃣ Not Reproducible (Cannot Reproduce)
+
+ Developer cannot reproduce the issue.
+
+🧠 Example:
+Bug happens only in tester’s system.
+Developer tests → works fine.
+Status → Not Reproducible
+
+---
