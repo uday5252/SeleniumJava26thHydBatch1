@@ -1,0 +1,204 @@
+
+
+ ✅ What is Scrum?
+
+Scrum is a framework used in Agile to manage and complete work in small cycles called Sprints.
+
+👉 Agile = Philosophy
+👉 Scrum = Practical method to implement Agile
+
+---
+
+ ✅ Important Points in Scrum
+
+---
+
+ 1️⃣ Sprint
+
+ Short development cycle (usually 2 weeks)
+ At end of sprint → working product is delivered
+e Each sprint has fixed time
+
+👉 Small steps, fast delivery
+
+---
+
+ 2️⃣ Product Backlog
+
+ List of all features/requirements
+ Created and managed by Product Owner
+ It keeps changing
+
+Example:
+
+ Login feature
+ Payment feature
+ Report generation
+
+---
+
+ 3️⃣ Sprint Backlog
+
+ Selected items from product backlog
+ Work planned for current sprint
+
+👉 Smaller list for 2 weeks
+
+---
+
+ 4️⃣ Roles in Scrum
+
+ 🟢 Product Owner
+
+ Decides what to build
+ Talks with client
+ Manages backlog
+
+ 🔵 Scrum Master
+
+ Removes obstacles
+ Ensures team follows Scrum rules
+ Facilitates meetings
+
+ 🟡 Development Team(SCRUM Team)
+
+ Developers
+ Testers
+ Designers(Architects)
+
+---
+
+ 5️⃣ Daily Stand-up Meeting
+
+ 15-minute daily meeting
+ Everyone answers:
+
+  1. What did I do yesterday?
+  2. What will I do today?
+  3. Any blockers(problems)?
+
+👉 Keeps team aligned
+
+---
+
+ 6️⃣ Sprint Planning Meeting
+
+ Done at start of sprint
+ Team selects work from backlog
+ Work is estimated
+
+---
+
+ 7️⃣ Sprint Review Meeting
+
+ Done at end of sprint
+ Team shows working product to client
+ Feedback collected
+
+---
+
+ 8️⃣ Sprint Retrospective Meeting
+
+ Team meeting to improve process
+ Discuss:
+
+   What went well?
+   What can improve?
+
+---
+
+
+ 1️⃣ User Story
+
+A small requirement written from user perspective.
+
+Format usually:
+
+> As a user, I want feature, so that benefit.
+As a user, i want login page, so that
+i can loginw ith a valid username and valid password
+
+Example:
+
+> As a user, I want to login so that I can access my account.
+
+---
+
+ 2️⃣ Story Points
+
+Used to estimate effort of a task.
+
+Instead of hours, Scrum uses numbers like:
+
+Planning Poker
+1, 2, 3, 5, 8, 13
+
+Example:
+
+ Simple login page → 3 points
+ Payment integration → 8 points
+
+---
+
+ 3️⃣ Velocity
+
+Amount of work completed in one sprint.
+
+Example:
+
+Sprint 1 → 20 story points
+Sprint 2 → 25 story points
+
+Average velocity = ~22 points
+
+Helps plan future sprints.
+
+---
+
+ 4️⃣ Epic
+
+A large feature that contains multiple user stories.
+
+Example:
+
+Epic = Payment System
+
+User Stories inside it:
+
+ Add credit card
+ Pay using card
+ View payment history
+
+---
+
+ 5️⃣ Task
+
+Small technical work required to complete a story.
+
+Example:
+
+User Story: Login Feature
+
+Tasks:
+
+ Create login UI
+ Write API
+ Write test cases
+
+---
+
+ 6️⃣ Burndown Chart
+
+A graph showing remaining work vs time.
+
+Goal:
+Work should go down to zero before sprint ends.
+
+Used to track sprint progress.
+
+---
+
+6️⃣ Burnup Chart ==> oppopsite of Burndown chart
+
+ 
+---
