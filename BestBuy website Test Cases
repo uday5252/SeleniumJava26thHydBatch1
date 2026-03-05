@@ -1,0 +1,149 @@
+
+ 🧪 Test Cases – Best Buy Website
+
+ 1️⃣ Test Case: Verify Homepage Title
+
+Steps
+
+1. Open browser
+2. Navigate to the Best Buy website
+3. Capture the page title
+4. Compare it with the expected title
+
+Expected Result
+
+ Homepage title should match the expected title.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 2️⃣ Test Case: Verify Homepage URL
+
+Steps
+
+1. Launch browser
+2. Open Best Buy website
+3. Capture current URL
+4. Compare it with expected URL
+
+Expected Result
+
+ URL should match the homepage URL.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 3️⃣ Test Case: Verify Search Functionality
+
+Steps
+
+1. Open Best Buy website
+2. Locate the search box
+3. Enter product name "iPhone 15"
+4. Click search button
+5. Capture search results page heading
+
+Expected Result
+
+ Search results should show the searched product name.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 4️⃣ Test Case: Verify Search Results Display
+
+Steps
+
+1. Search for "iPhone 15"
+2. Wait for search results page to load
+3. Capture the number of products displayed
+
+Expected Result
+
+ Product list should be displayed.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 5️⃣ Test Case: Verify Product Details Page
+
+Steps
+
+1. Search for a product
+2. Click the first product from the list
+3. Capture product title from product page
+
+Expected Result
+
+ Product title should match the selected product.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 6️⃣ Test Case: Verify Product Price
+
+Steps
+
+1. Open a product page
+2. Capture the displayed price
+
+Expected Result
+
+ Price should match the expected product price.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 7️⃣ Test Case: Verify Add to Cart Functionality
+
+Steps
+
+1. Open a product page
+2. Click Add to Cart
+3. Navigate to cart page
+4. Capture number of items in cart
+
+Expected Result
+
+ Cart should contain 1 product.
+
+Assertion
+
+ `Assert Equals`
+
+---
+
+ 8️⃣ Test Case: Verify Product in Cart
+
+Steps
+
+1. Add a product to cart
+2. Open cart page
+3. Capture product name in cart
+
+Expected Result
+
+ Product name in cart should match the selected product.
+
+Assertion
+
+ `Assert Equals`
+
